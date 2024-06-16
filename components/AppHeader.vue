@@ -1,11 +1,11 @@
 <script setup>
 const links = [
-  { name: 'Home', path: '/' },
-  { name: 'Euro 2024', path: '/partnerek' },
-  { name: 'Sportwetten-Tipps', path: '/szolgaltatasok' },
-  { name: 'Die besten Wettanbieter', path: '/dokumentumok' },
-  { name: 'Fußball News', path: '/ajanlatkeres' },
-  { name: 'Blog', path: '/kapcsolat' },
+  { name: 'Kezdőlap', path: '/' },
+  { name: 'Galéria', path: '/partnerek' },
+  { name: 'Rólunk', path: '/szolgaltatasok' },
+  { name: 'Ajánlatkérés', path: '/dokumentumok' },
+  { name: 'Szolgáltatások', path: '/ajanlatkeres' },
+  { name: 'Árlista', path: '/kapcsolat' },
 ]
 
 const isMenuOpen = ref(false)
@@ -14,15 +14,6 @@ const isMenuOpen = ref(false)
 <template>
   <header class="header pr">
     <div class="header-content d-flex">
-      <div class="logo-box header-content__logo-box">
-        <a href="/" class="header-content__logo-box__link">
-          <NuxtImg
-            src="/img/header/logo.svg"
-            alt="Sport wetten"
-            class="header-content__logo-box__link__img"
-          />
-        </a>
-      </div>
       <div class="nav-box header-content__nav-box d-flex">
         <button
           @click="isMenuOpen = !isMenuOpen"
@@ -38,7 +29,7 @@ const isMenuOpen = ref(false)
             <li v-for="link in links" :key="link.path" class="menu__list__li">
               <NuxtLink
                 :to="link.path"
-                :class="['menu__item text-color-w text-transform-uppercase f-600']"
+                :class="['menu__item text-color-w f-500']"
               >
                 <template v-if="link.imagePath">
                   <NuxtImg
@@ -55,6 +46,15 @@ const isMenuOpen = ref(false)
             </li>
           </ul>
         </nav>
+      </div>
+      <div class="logo-box header-content__logo-box t-end">
+        <a href="/" class="header-content__logo-box__link">
+          <NuxtImg
+            src="/img/header/logo.svg"
+            alt="Sport wetten"
+            class="header-content__logo-box__link__img"
+          />
+        </a>
       </div>
     </div>
   </header>
