@@ -24,7 +24,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(100deg, #001647, #001647, #001647);
+  background: linear-gradient(100deg, #428af5, #428af5, #428af5);
   background-size: 180% 180%;
   width: 0;
   height: 25%;
@@ -140,7 +140,7 @@ ul {
 }
 
 .linear-font {
-  background: linear-gradient(100deg, #001647, #155b9b, #001647);
+  background: linear-gradient(100deg, #428af5, #428af5, #428af5);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -220,6 +220,11 @@ ul {
   gap: 1em;
 }
 
+.services-content__iTextBox-content,
+.page-information-content__iTextBox {
+  box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
+}
+
 /********************  Identical instructions end **********************/
 
 /********************  Header formating start **********************/
@@ -286,13 +291,12 @@ ul {
 /********************  Services formating start **********************/
 
 .services-content {
-  padding: 0 3em;
+  padding: 0 4%;
 }
 
 .services-content__iTextBox-content {
   border-radius: 1.7em;
-  box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
-  padding: 0.3em 2em;
+  padding: 2% 7%;
 }
 
 .services-content__iTextBox-content__iBox__img {
@@ -304,11 +308,11 @@ ul {
 }
 
 .services-content__h3 {
-  margin: 2.5em 0 3.5em 0;
+  margin: 3.2% 0 4.2% 0;
 }
 
 .services-content__linkItextBox {
-  padding: 0 6em;
+  padding: 0 7%;
 }
 
 .services-content__linkItextBox__content__tBox {
@@ -320,9 +324,28 @@ ul {
 
 /********************  Services formating end **********************/
 
-/********************  Partners formating start **********************/
+/********************  Page information formating start **********************/
 
-/********************  Partners formating end **********************/
+.page-information-content {
+  padding: 9% 4% 0 4%;
+}
+
+.page-information-content__img {
+  width: 70%;
+}
+
+.page-information-content__iTextBox {
+  border-radius: 100px;
+}
+
+.page-information-content__iTextBox {
+  width: 45%;
+  padding: 4% 4% 5% 4%;
+  top: 7%;
+  right: 4%;
+}
+
+/********************  Page information formating end **********************/
 
 /********************  Services formating start **********************/
 
