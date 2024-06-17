@@ -70,6 +70,7 @@ ul {
 
 .grid-2,
 .grid-3,
+.grid-6,
 .grid-7 {
   display: grid;
 }
@@ -80,6 +81,10 @@ ul {
 
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .grid-7 {
@@ -203,7 +208,8 @@ ul {
 
 .slider-content__img,
 .services-content__linkItextBox__content__img,
-.services-content__linkItextBox__content__tBox {
+.services-content__linkItextBox__content__tBox,
+.prices-content__iTextBox__div__prices-box {
   width: 100%;
 }
 
@@ -216,13 +222,28 @@ ul {
 }
 
 .services-content__iTextBox,
-.services-content__linkItextBox {
+.services-content__linkItextBox,
+.prices-content__iTextBox {
   gap: 1em;
 }
 
 .services-content__iTextBox-content,
-.page-information-content__iTextBox {
+.page-information-content__iTextBox,
+.prices-content__iTextBox__div {
   box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
+}
+
+.services-content__h3,
+.prices-content__h3 {
+  margin: 3.2% 0 4.2% 0;
+}
+
+.services-content__iTextBox-content {
+  border-radius: 1.7em;
+}
+
+.prices-content__iTextBox__div__prices-box {
+  background: #428af5;
 }
 
 /********************  Identical instructions end **********************/
@@ -295,7 +316,6 @@ ul {
 }
 
 .services-content__iTextBox-content {
-  border-radius: 1.7em;
   padding: 2% 7%;
 }
 
@@ -305,10 +325,6 @@ ul {
 
 .services-content__iTextBox-content__tBox {
   padding-left: 1em;
-}
-
-.services-content__h3 {
-  margin: 3.2% 0 4.2% 0;
 }
 
 .services-content__linkItextBox {
@@ -347,9 +363,53 @@ ul {
 
 /********************  Page information formating end **********************/
 
-/********************  Services formating start **********************/
+/********************  Prices formating start **********************/
 
-/********************  Services formating end **********************/
+.prices-content {
+  background-image: url(/img/prices/prices-bg.webp);
+  background-size: cover;
+  padding: 7% 4% 4% 4%;
+  margin-top: -4%;
+}
+
+.prices-content__iTextBox__div {
+  border-radius: 3.5em;
+}
+
+.prices-content__iTextBox__div__actionImg {
+  right: -7%;
+  width: 27%;
+}
+
+.prices-content__iTextBox__div__img {
+  width: 37%;
+  height: 30%;
+  display: block;
+  margin: auto;
+  padding: 17% 0 0 0;
+}
+
+.prices-content__iTextBox__div__h6 {
+  padding: 10% 10% 0% 10%;
+}
+
+.prices-content__iTextBox__div__prices-box {
+  height: 30%;
+  bottom: 0;
+  padding: 15% 10% 0 10%;
+  border-bottom-left-radius: 3.5em;
+  border-bottom-right-radius: 3.5em;
+}
+
+.prices-content__iTextBox__div__prices-box--actionBG {
+  background: #eb5858;
+}
+
+.prices-content__lBox {
+  padding: 3% 0 3% 0;
+}
+
+/********************  Prices formating end **********************/
 
 /********************  Blog formating start **********************/
 
