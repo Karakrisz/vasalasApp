@@ -351,7 +351,7 @@ ul {
 }
 
 .page-information-content__iTextBox {
-  border-radius: 100px;
+  border-radius: 5em;
 }
 
 .page-information-content__iTextBox {
@@ -361,14 +361,32 @@ ul {
   right: 4%;
 }
 
+.prices-content,
+.page-information-content--bg {
+  background-size: cover;
+}
+
+.page-information-content--bg {
+  background-image: url(/img/page-information/page-information-bg.webp);
+  margin-top: -20%;
+}
+
+.page-information-content__iTextBox--format {
+  right: unset;
+  top: -11%;
+  text-align: left;
+}
+
+.page-information-content--format {
+  padding: 0 4% 0 4%;
+}
 /********************  Page information formating end **********************/
 
 /********************  Prices formating start **********************/
 
 .prices-content {
   background-image: url(/img/prices/prices-bg.webp);
-  background-size: cover;
-  padding: 7% 4% 4% 4%;
+  padding: 7% 4% 33% 4%;
   margin-top: -4%;
 }
 
