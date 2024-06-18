@@ -51,7 +51,7 @@ const isMenuOpen = ref(false)
         <a href="/" class="header-content__logo-box__link">
           <NuxtImg
             src="/img/header/logo.svg"
-            alt="Sport wetten"
+            alt="Vasalás Mester"
             class="header-content__logo-box__link__img"
           />
         </a>

@@ -24,7 +24,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(100deg, #428af5, #428af5, #428af5);
+  background: linear-gradient(100deg, #1f447a, #1f447a, #1f447a);
   background-size: 180% 180%;
   width: 0;
   height: 25%;
@@ -213,15 +213,18 @@ ul {
 .page-information-content__blog-content__gBox__iTextBox__img,
 .footer-content__img-box__img,
 .form-group__input,
-.form-group__textarea {
+.form-group__textarea,
+.footer-content__bottom__mapIgmBox__img {
   width: 100%;
 }
 
-.services-content__linkItextBox__content__img {
+.services-content__linkItextBox__content__img,
+.footer-content__img-box__img {
   height: 100%;
 }
 
-.services-content__iTextBox-content {
+.services-content__iTextBox-content,
+.contact-form__link-box {
   align-items: center;
 }
 
@@ -236,8 +239,14 @@ ul {
 .page-information-content__iTextBox,
 .prices-content__iTextBox__div,
 .page-information-content__blog-content__gBox__iTextBox__tBox,
-.page-information-content__blog-content__gBox__iTextBox__img {
+.page-information-content__blog-content__gBox__iTextBox__img,
+.footer-content__text-box,
+.footer-content__img-box__img {
   box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
+}
+
+.footer-content__img-box__img {
+  object-fit: cover;
 }
 
 .services-content__h3,
@@ -251,7 +260,8 @@ ul {
   border-radius: 1.7em;
 }
 
-.prices-content__iTextBox__div__prices-box {
+.prices-content__iTextBox__div__prices-box,
+.footer-content__bottom__infoBox__header {
   background: #428af5;
 }
 
@@ -266,7 +276,8 @@ ul {
   text-align: left;
 }
 
-.page-information-content__blog-content__gBox__iTextBox__tBox {
+.page-information-content__blog-content__gBox__iTextBox__tBox,
+.footer-content__text-box {
   background: #1f447a;
 }
 
@@ -281,13 +292,18 @@ ul {
   border-top-right-radius: 3.5em;
 }
 
+.header,
+.page-information-content__blog-content__gBox,
+.footer-content__img-box {
+  z-index: 10;
+}
+
 /********************  Identical instructions end **********************/
 
 /********************  Header formating start **********************/
 
 .header {
   height: 0;
-  z-index: 10;
 }
 
 .header-content {
@@ -412,10 +428,6 @@ ul {
 
 /********************  Blog start **********************/
 
-.page-information-content__blog-content__gBox {
-  z-index: 10;
-}
-
 .page-information-content__blog-content__gBox__iTextBox__img {
   height: 60%;
 }
@@ -484,8 +496,17 @@ ul {
 /********************  Footer formating start **********************/
 .footer-content {
   background-image: url(/img/footer/footer-bg.webp);
-  padding: 22% 4% 0 4%;
+  padding: 25% 4% 0 4%;
   margin-top: -20%;
+}
+
+.footer-content__h3--mb-format {
+  margin-bottom: 3%;
+}
+
+.footer-content__text-box,
+.footer-content__img-box__img {
+  border-radius: 3.5em;
 }
 
 .footer-content__text-box__h6 {
@@ -506,31 +527,64 @@ ul {
 }
 
 .footer-content__flex-box__blank-div {
-  width: 45%;
+  width: 50%;
 }
 
 .footer-content__img-box {
-  width: 55%;
+  width: 50%;
 }
 
 .footer-content__text-box {
-  width: 47%;
-  transform: translateY(-50%);
-  top: 70%;
-  right: 4%;
+  width: 54%;
+  padding: 3.5% 5.5% 2% 11.5%;
+  margin: 3% 0 3% -4%;
+}
+
+.footer-content__text-box__p {
+  padding: 0;
+  margin: 0 0 5% 0;
+}
+
+.contact-form__link-box__text-box__p {
+  margin-top: 2.5%;
 }
 
 .form-group__input,
 .form-group__textarea {
   border: 0;
   background: #f7f7f7;
-  margin-bottom: 0.5em;
-  padding: 1em;
+}
+
+.form-group__input {
+  border-radius: 3.5em;
+  padding: 1em 2em;
+  margin-bottom: 2.5%;
+}
+
+.form-group__textarea {
+  border-radius: 3em;
+  padding: 2em;
 }
 
 .form-group__input::-webkit-input-placeholder,
 .form-group__textarea::-webkit-input-placeholder {
   color: #9d9d9d;
+}
+
+.footer-content__bottom {
+  margin-top: 5%;
+  align-items: flex-end;
+}
+
+.footer-content__bottom__infoBox,
+.footer-content__bottom__mapIgmBox {
+  width: 50%;
+}
+
+.footer-content__bottom__infoBox__header__iBox,
+.footer-content__bottom__infoBox__header__lBox,
+.footer-content__bottom__infoBox__header__socialBox {
+  width: 33%;
 }
 
 /********************  Footer formating end **********************/
