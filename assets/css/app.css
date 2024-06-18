@@ -209,7 +209,8 @@ ul {
 .slider-content__img,
 .services-content__linkItextBox__content__img,
 .services-content__linkItextBox__content__tBox,
-.prices-content__iTextBox__div__prices-box {
+.prices-content__iTextBox__div__prices-box,
+.page-information-content__blog-content__gBox__iTextBox__img {
   width: 100%;
 }
 
@@ -223,18 +224,22 @@ ul {
 
 .services-content__iTextBox,
 .services-content__linkItextBox,
-.prices-content__iTextBox {
+.prices-content__iTextBox,
+.page-information-content__blog-content__gBox {
   gap: 1em;
 }
 
 .services-content__iTextBox-content,
 .page-information-content__iTextBox,
-.prices-content__iTextBox__div {
+.prices-content__iTextBox__div,
+.page-information-content__blog-content__gBox__iTextBox__tBox,
+.page-information-content__blog-content__gBox__iTextBox__img {
   box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
 }
 
 .services-content__h3,
-.prices-content__h3 {
+.prices-content__h3,
+.page-information-content__blog-content__h3 {
   margin: 3.2% 0 4.2% 0;
 }
 
@@ -244,6 +249,31 @@ ul {
 
 .prices-content__iTextBox__div__prices-box {
   background: #428af5;
+}
+
+.prices-content,
+.page-information-content--bg {
+  background-size: cover;
+}
+
+.page-information-content__iTextBox--format,
+.page-information-content__blog-content__gBox__iTextBox__tBox {
+  text-align: left;
+}
+
+.page-information-content__blog-content__gBox__iTextBox__tBox {
+  background: #1f447a;
+}
+
+.prices-content__iTextBox__div__prices-box,
+.page-information-content__blog-content__gBox__iTextBox__tBox {
+  border-bottom-left-radius: 3.5em;
+  border-bottom-right-radius: 3.5em;
+}
+
+.page-information-content__blog-content__gBox__iTextBox__img {
+  border-top-left-radius: 3.5em;
+  border-top-right-radius: 3.5em;
 }
 
 /********************  Identical instructions end **********************/
@@ -361,11 +391,6 @@ ul {
   right: 4%;
 }
 
-.prices-content,
-.page-information-content--bg {
-  background-size: cover;
-}
-
 .page-information-content--bg {
   background-image: url(/img/page-information/page-information-bg.webp);
   margin-top: -20%;
@@ -374,19 +399,35 @@ ul {
 .page-information-content__iTextBox--format {
   right: unset;
   top: -11%;
-  text-align: left;
 }
 
 .page-information-content--format {
   padding: 0 4% 0 4%;
 }
+
+/********************  Blog start **********************/
+
+.page-information-content__blog-content__gBox__iTextBox__img {
+  height: 60%;
+}
+
+.page-information-content__blog-content__gBox__iTextBox__tBox {
+  margin-top: -13px;
+  padding: 7% 7% 7% 7%;
+}
+
+.page-information-content__blog-content__gBox__iTextBox__tBox__p {
+  margin: 1em 0 0 0;
+}
+/********************  Blog end **********************/
+
 /********************  Page information formating end **********************/
 
 /********************  Prices formating start **********************/
 
 .prices-content {
   background-image: url(/img/prices/prices-bg.webp);
-  padding: 7% 4% 33% 4%;
+  padding: 7% 13% 33% 13%;
   margin-top: -4%;
 }
 
@@ -415,8 +456,6 @@ ul {
   height: 30%;
   bottom: 0;
   padding: 15% 10% 0 10%;
-  border-bottom-left-radius: 3.5em;
-  border-bottom-right-radius: 3.5em;
 }
 
 .prices-content__iTextBox__div__prices-box--actionBG {
@@ -428,10 +467,6 @@ ul {
 }
 
 /********************  Prices formating end **********************/
-
-/********************  Blog formating start **********************/
-
-/********************  Blog formating end **********************/
 
 /********************  Footer formating start **********************/
 

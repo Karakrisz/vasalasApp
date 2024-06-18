@@ -447,40 +447,105 @@
     <div
       class="page-information-content page-information-content--format page-information-content--bg t-end pr"
     >
-        <NuxtImg
-          src="/img/page-information/page-information2.webp"
-          alt="Vasalás Mester"
-          class="page-information-content__img"
-        />
+      <NuxtImg
+        src="/img/page-information/page-information2.webp"
+        alt="Vasalás Mester"
+        class="page-information-content__img"
+      />
 
-        <div
-          class="page-information-content__iTextBox page-information-content__iTextBox--format bg-color-w pa"
+      <div
+        class="page-information-content__iTextBox page-information-content__iTextBox--format bg-color-w pa"
+      >
+        <h4
+          class="page-information-content__iTextBox__h4 text-transform-uppercase f-700"
         >
-          <h4
-            class="page-information-content__iTextBox__h4 text-transform-uppercase f-700"
-          >
-            RÓLUNK
-          </h4>
-          <p class="page-information-content__iTextBox__p f-500">
-            A vasalás.net 100%-ig magyar tulajdonban álló vállalkozás, amely
-            2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik az
-            otthonokban felgyülemlett szennyes ruházat mosása, vasalása; a
-            különleges kezelést igénylő kabátok, öltönyök, és kosztümök
-            tisztítása; valamint a ruhák, huzatok, textilanyagok varrása és
-            javítása.
-          </p>
-          <p class="page-information-content__iTextBox__p f-500">
-            Ha már Ön is unja a vasalást, mosást és a házimunkát; ha nincs ideje
-            és már jó ideje tornyosul a szennyes; ha egy megbízható
-            ruhatisztítót, ruhaklinikát keres, akkor nézze meg a vasalás.net
-            ajánlatát!
-          </p>
-          <div class="page-information-content__iTextBox__link-box">
-            <NuxtLink class="page-link text-color f-600">
-              Leadom a rendelésem
-            </NuxtLink>
+          RÓLUNK
+        </h4>
+        <p class="page-information-content__iTextBox__p f-500">
+          A vasalás.net 100%-ig magyar tulajdonban álló vállalkozás, amely
+          2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik az
+          otthonokban felgyülemlett szennyes ruházat mosása, vasalása; a
+          különleges kezelést igénylő kabátok, öltönyök, és kosztümök
+          tisztítása; valamint a ruhák, huzatok, textilanyagok varrása és
+          javítása.
+        </p>
+        <p class="page-information-content__iTextBox__p f-500">
+          Ha már Ön is unja a vasalást, mosást és a házimunkát; ha nincs ideje
+          és már jó ideje tornyosul a szennyes; ha egy megbízható ruhatisztítót,
+          ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát!
+        </p>
+        <div class="page-information-content__iTextBox__link-box">
+          <NuxtLink class="page-link text-color f-600">
+            Leadom a rendelésem
+          </NuxtLink>
+        </div>
+      </div>
+      <div class="page-information-content__blog-content">
+        <h3
+          class="page-information-content__blog-content__h3 text-center text-transform-uppercase f-700"
+        >
+          BLOG
+        </h3>
+
+        <div class="page-information-content__blog-content__gBox grid-3">
+          <div class="page-information-content__blog-content__gBox__iTextBox">
+            <NuxtImg
+              src="/img/page-information/blog/blog.jpg"
+              alt="Vasalás Mester"
+              class="page-information-content__blog-content__gBox__iTextBox__img"
+            />
+            <div
+              class="page-information-content__blog-content__gBox__iTextBox__tBox"
+            >
+              <h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w">A Gyűrődésmentesség Művészete</h5>
+              <p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w">
+                Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
+                Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
+                segítenek a gyűrődések nélküli, kifogástalan megjelenés
+                elérésében, akár otthon, akár útközben.
+              </p>
+            </div>
+          </div>
+
+          <div class="page-information-content__blog-content__gBox__iTextBox">
+            <NuxtImg
+              src="/img/page-information/blog/blog2.jpg"
+              alt="Vasalás Mester"
+              class="page-information-content__blog-content__gBox__iTextBox__img"
+            />
+            <div
+              class="page-information-content__blog-content__gBox__iTextBox__tBox"
+            >
+              <h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w">A Gyűrődésmentesség Művészete</h5>
+              <p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w">
+                Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
+                Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
+                segítenek a gyűrődések nélküli, kifogástalan megjelenés
+                elérésében, akár otthon, akár útközben.
+              </p>
+            </div>
+          </div>
+
+          <div class="page-information-content__blog-content__gBox__iTextBox">
+            <NuxtImg
+              src="/img/page-information/blog/blog3.jpg"
+              alt="Vasalás Mester"
+              class="page-information-content__blog-content__gBox__iTextBox__img"
+            />
+            <div
+              class="page-information-content__blog-content__gBox__iTextBox__tBox"
+            >
+              <h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w">A Gyűrődésmentesség Művészete</h5>
+              <p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w">
+                Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
+                Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
+                segítenek a gyűrődések nélküli, kifogástalan megjelenés
+                elérésében, akár otthon, akár útközben.
+              </p>
+            </div>
           </div>
         </div>
+      </div>
     </div>
   </section>
 </template>
