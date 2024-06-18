@@ -299,7 +299,9 @@
   </section>
   <section>
     <div class="prices-content">
-      <h3 class="prices-content__h3 text-center text-transform-uppercase f-700">
+      <h3
+        class="prices-content__h3 prices-content__h3--mt0 text-center text-transform-uppercase f-700"
+      >
         ÁRAINK
       </h3>
 
@@ -487,7 +489,7 @@
           BLOG
         </h3>
 
-        <div class="page-information-content__blog-content__gBox grid-3">
+        <div class="page-information-content__blog-content__gBox pr grid-3">
           <div class="page-information-content__blog-content__gBox__iTextBox">
             <NuxtImg
               src="/img/page-information/blog/blog.jpg"
@@ -497,8 +499,14 @@
             <div
               class="page-information-content__blog-content__gBox__iTextBox__tBox"
             >
-              <h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w">A Gyűrődésmentesség Művészete</h5>
-              <p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w">
+              <h5
+                class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
+              >
+                A Gyűrődésmentesség Művészete
+              </h5>
+              <p
+                class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
+              >
                 Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
                 Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
                 segítenek a gyűrődések nélküli, kifogástalan megjelenés
@@ -516,8 +524,14 @@
             <div
               class="page-information-content__blog-content__gBox__iTextBox__tBox"
             >
-              <h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w">A Gyűrődésmentesség Művészete</h5>
-              <p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w">
+              <h5
+                class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
+              >
+                A Gyűrődésmentesség Művészete
+              </h5>
+              <p
+                class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
+              >
                 Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
                 Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
                 segítenek a gyűrődések nélküli, kifogástalan megjelenés
@@ -535,8 +549,14 @@
             <div
               class="page-information-content__blog-content__gBox__iTextBox__tBox"
             >
-              <h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w">A Gyűrődésmentesség Művészete</h5>
-              <p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w">
+              <h5
+                class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
+              >
+                A Gyűrődésmentesség Művészete
+              </h5>
+              <p
+                class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
+              >
                 Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
                 Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
                 segítenek a gyűrődések nélküli, kifogástalan megjelenés

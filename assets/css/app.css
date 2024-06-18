@@ -210,7 +210,10 @@ ul {
 .services-content__linkItextBox__content__img,
 .services-content__linkItextBox__content__tBox,
 .prices-content__iTextBox__div__prices-box,
-.page-information-content__blog-content__gBox__iTextBox__img {
+.page-information-content__blog-content__gBox__iTextBox__img,
+.footer-content__img-box__img,
+.form-group__input,
+.form-group__textarea {
   width: 100%;
 }
 
@@ -239,7 +242,8 @@ ul {
 
 .services-content__h3,
 .prices-content__h3,
-.page-information-content__blog-content__h3 {
+.page-information-content__blog-content__h3,
+.footer-content__h3 {
   margin: 3.2% 0 4.2% 0;
 }
 
@@ -252,7 +256,8 @@ ul {
 }
 
 .prices-content,
-.page-information-content--bg {
+.page-information-content--bg,
+.footer-content {
   background-size: cover;
 }
 
@@ -407,6 +412,10 @@ ul {
 
 /********************  Blog start **********************/
 
+.page-information-content__blog-content__gBox {
+  z-index: 10;
+}
+
 .page-information-content__blog-content__gBox__iTextBox__img {
   height: 60%;
 }
@@ -429,6 +438,10 @@ ul {
   background-image: url(/img/prices/prices-bg.webp);
   padding: 7% 13% 33% 13%;
   margin-top: -4%;
+}
+
+.prices-content__h3--mt0 {
+  margin-top: 0;
 }
 
 .prices-content__iTextBox__div {
@@ -469,6 +482,56 @@ ul {
 /********************  Prices formating end **********************/
 
 /********************  Footer formating start **********************/
+.footer-content {
+  background-image: url(/img/footer/footer-bg.webp);
+  padding: 22% 4% 0 4%;
+  margin-top: -20%;
+}
+
+.footer-content__text-box__h6 {
+  margin-bottom: 1.7em;
+}
+
+.contact-form__link-box {
+  margin-top: 1em;
+  justify-content: space-between;
+}
+
+.footer-link {
+  margin-bottom: 0.7em;
+}
+
+.contact-form__link-box__text-box {
+  width: 70%;
+}
+
+.footer-content__flex-box__blank-div {
+  width: 45%;
+}
+
+.footer-content__img-box {
+  width: 55%;
+}
+
+.footer-content__text-box {
+  width: 47%;
+  transform: translateY(-50%);
+  top: 70%;
+  right: 4%;
+}
+
+.form-group__input,
+.form-group__textarea {
+  border: 0;
+  background: #f7f7f7;
+  margin-bottom: 0.5em;
+  padding: 1em;
+}
+
+.form-group__input::-webkit-input-placeholder,
+.form-group__textarea::-webkit-input-placeholder {
+  color: #9d9d9d;
+}
 
 /********************  Footer formating end **********************/
 
