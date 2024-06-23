@@ -45,7 +45,7 @@ const sendEmail = async () => {
 
 <template>
   <footer>
-    <div class="footer-content">
+    <div class="footer-content pr">
       <h3
         class="footer-content__h3 footer-content__h3--mb-format text-center text-transform-uppercase f-700"
       >
@@ -146,7 +146,7 @@ const sendEmail = async () => {
               </div>
               <div class="contact-form__link-box__NuxtLink">
                 <NuxtLink
-                  class="page-nuxt-link text-transform-uppercase text-color-w f-700"
+                  class="page-link text-transform-uppercase text-color-w f-700"
                 >
                   KÜLDÉS
                 </NuxtLink>

@@ -228,6 +228,7 @@ ul {
   width: 100%;
 }
 
+.slider-content__img,
 .services-content__linkItextBox__content__img,
 .footer-content__img-box__img,
 .footer-content__bottom__mapBox__iframe {
@@ -318,6 +319,18 @@ ul {
   border-top-left-radius: 3.5em;
 }
 
+.page-link {
+  background: #fff;
+  color: #1e1e1e;
+  padding: 0.7em 2em;
+  border-radius: 2em;
+}
+
+.page-link--format {
+  background: #428af5;
+  color: #fff;
+}
+
 /********************  Identical instructions end **********************/
 
 /********************  Header formating start **********************/
@@ -327,7 +340,7 @@ ul {
 }
 
 .header-content {
-  padding: 1em 7em;
+  padding: 2% 4% 0 4%;
 }
 
 .header-content,
@@ -368,14 +381,14 @@ ul {
 /********************  Slider formating start **********************/
 
 .slider-content__tBox {
-  bottom: 15%;
-  left: 9%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 11%;
   width: 33em;
 }
 
 .slider-content__tBox__h5 {
   width: max-content;
-  padding: 0.5em 1em;
 }
 
 .slider-content__tBox__topImg {
@@ -389,12 +402,20 @@ ul {
   width: 30%;
 }
 
+.slider-content__tBox__lBox {
+  margin-top: 7%;
+}
+
+.slider-content__tBox__h1 {
+  margin: 5% 0 5% 0;
+}
 /********************  Slider formating end **********************/
 
 /********************  Services formating start **********************/
 
 .services-content {
   padding: 0 4%;
+  margin-top: -4em;
 }
 
 .services-content__iTextBox-content {
@@ -439,7 +460,7 @@ ul {
 
 .page-information-content__iTextBox {
   width: 45%;
-  padding: 4% 4% 5% 4%;
+  padding: 4% 4% 7% 4%;
   top: 7%;
   right: 4%;
 }
@@ -458,6 +479,10 @@ ul {
   padding: 0 4% 0 4%;
 }
 
+.page-information-content__iTextBox__link-box {
+  margin-top: 7%;
+}
+
 /********************  Blog start **********************/
 
 .page-information-content__blog-content__gBox__iTextBox__img {
@@ -471,6 +496,10 @@ ul {
 
 .page-information-content__blog-content__gBox__iTextBox__tBox__p {
   margin: 1em 0 0 0;
+}
+
+.page-information-content__blog-content {
+  padding-bottom: 13%;
 }
 /********************  Blog end **********************/
 
@@ -528,8 +557,8 @@ ul {
 /********************  Footer formating start **********************/
 .footer-content {
   background-image: url(/img/footer/footer-bg.webp);
-  padding: 25% 4% 0 4%;
-  margin-top: -22%;
+  padding: 18% 4% 0 4%;
+  margin-top: -25%;
 }
 
 .footer-content__h3--mb-format {
@@ -673,6 +702,10 @@ ul {
   margin-right: 5%;
 }
 
+.footer-content__bottom__mapBox__iframe div {
+  padding: 10% !important;
+}
+
 /********************  Footer formating end **********************/
 
 /********************  Subpage formating start **********************/
@@ -682,6 +715,29 @@ ul {
 /********************  Media formating start **********************/
 
 @media (min-width: 2200px) and (max-width: 2570px) {
+  p,
+  .page-link,
+  .menu__item {
+    font-size: 1.5rem;
+  }
+  .slider-content__tBox__h1 {
+    font-size: 4rem;
+    width: 5em;
+  }
+  .slider-content__tBox__h5 {
+    font-size: 1.9rem;
+  }
+  .slider-content__tBox {
+    width: 50em;
+  }
+  .slider-content__tBox__nextTopImg {
+    right: -3%;
+    top: -13%;
+  }
+  .slider-content__tBox__topImg {
+    top: -30%;
+    left: -13%;
+  }
 }
 
 @media (min-width: 2000px) and (max-width: 2200px) {

@@ -45,9 +45,9 @@
     </div>
   </section>
   <section>
-    <div class="services-content">
+    <div class="services-content pr">
       <div class="services-content__iTextBox grid-3">
-        <div class="services-content__iTextBox-content d-flex">
+        <div class="services-content__iTextBox-content d-flex bg-color-w">
           <div class="services-content__iTextBox-content__iBox">
             <NuxtImg
               src="/img/services/phone.svg"
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <div class="services-content__iTextBox-content d-flex">
+        <div class="services-content__iTextBox-content d-flex bg-color-w">
           <div class="services-content__iTextBox-content__iBox">
             <NuxtImg
               src="/img/services/time.svg"
@@ -89,7 +89,7 @@
           </div>
         </div>
 
-        <div class="services-content__iTextBox-content d-flex">
+        <div class="services-content__iTextBox-content d-flex bg-color-w">
           <div class="services-content__iTextBox-content__iBox">
             <NuxtImg
               src="/img/services/map.svg"
@@ -303,7 +303,7 @@
           ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát!
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <NuxtLink class="page-link text-color f-600">
+          <NuxtLink class="page-link page-link--format text-color f-600">
             Leadom a rendelésem
           </NuxtLink>
         </div>
@@ -474,23 +474,23 @@
         <h4
           class="page-information-content__iTextBox__h4 text-transform-uppercase f-700"
         >
-          RÓLUNK
+          HÁZTÓL HÁZIG SZÁLLÍTÁS
         </h4>
         <p class="page-information-content__iTextBox__p f-500">
-          A vasalás.net 100%-ig magyar tulajdonban álló vállalkozás, amely
-          2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik az
-          otthonokban felgyülemlett szennyes ruházat mosása, vasalása; a
-          különleges kezelést igénylő kabátok, öltönyök, és kosztümök
-          tisztítása; valamint a ruhák, huzatok, textilanyagok varrása és
-          javítása.
+          Cégünk büszkén kínálja vevőinek a folyamatos, 0-24 órás online
+          megrendelési lehetőséget, ami lehetővé teszi, hogy bármikor, bárhol
+          leadhassák rendeléseiket. Elkötelezettek vagyunk amellett, hogy
+          termékeinket gyorsan és hatékonyan szállítsuk háztól házig, biztosítva
+          ezzel, hogy mindenki számára kényelmes és zökkenőmentes legyen a
+          vásárlási élmény.
         </p>
         <p class="page-information-content__iTextBox__p f-500">
-          Ha már Ön is unja a vasalást, mosást és a házimunkát; ha nincs ideje
-          és már jó ideje tornyosul a szennyes; ha egy megbízható ruhatisztítót,
-          ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát!
+          A házhozszállításunk rugalmas és megbízható, így ügyfeleink mindig
+          időben megkapják a kívánt termékeket, mindezt anélkül, hogy otthonuk
+          kényelmét elhagynák.
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <NuxtLink class="page-link text-color f-600">
+          <NuxtLink class="page-link page-link--format text-color f-600">
             Leadom a rendelésem
           </NuxtLink>
         </div>
