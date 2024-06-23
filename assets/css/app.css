@@ -206,6 +206,7 @@ ul {
 
 /********************  Identical instructions start **********************/
 
+.services-content__iTextBox-content__tBox__p,
 .footer-content__bottom__infoBox__copyRBox__h6,
 .footer-content__bottom__infoBox__header__socialBox__p,
 .content__bottom__infoBox__header__lBox__p {
@@ -415,11 +416,11 @@ ul {
 
 .services-content {
   padding: 0 4%;
-  margin-top: -4em;
+  margin-top: -4.2%;
 }
 
 .services-content__iTextBox-content {
-  padding: 2% 7%;
+  padding: 7%;
 }
 
 .services-content__iTextBox-content__iBox__img {
@@ -431,7 +432,7 @@ ul {
 }
 
 .services-content__linkItextBox {
-  padding: 0 7%;
+  padding: 0 7% 2% 7%;
 }
 
 .services-content__linkItextBox__content__tBox {
@@ -440,6 +441,11 @@ ul {
   padding: 9%;
   border-bottom-left-radius: 1.7em;
   border-bottom-right-radius: 1.7em;
+}
+
+.services-content__iTextBox-content__tBox__h2 {
+  font-size: 1rem;
+  margin-bottom: 4%;
 }
 
 /********************  Services formating end **********************/
@@ -549,7 +555,7 @@ ul {
 }
 
 .prices-content__lBox {
-  padding: 3% 0 3% 0;
+  padding: 7% 0 3% 0;
 }
 
 /********************  Prices formating end **********************/
@@ -702,10 +708,9 @@ ul {
   margin-right: 5%;
 }
 
-.footer-content__bottom__mapBox__iframe div {
-  padding: 10% !important;
+.footer-content__bottom__infoBox__copyRBox__span {
+  margin-right: 1%;
 }
-
 /********************  Footer formating end **********************/
 
 /********************  Subpage formating start **********************/
@@ -717,7 +722,9 @@ ul {
 @media (min-width: 2200px) and (max-width: 2570px) {
   p,
   .page-link,
-  .menu__item {
+  .menu__item,
+  .form-group__input,
+  .form-group__textarea {
     font-size: 1.5rem;
   }
   .slider-content__tBox__h1 {
@@ -737,6 +744,37 @@ ul {
   .slider-content__tBox__topImg {
     top: -30%;
     left: -13%;
+  }
+  .services-content__iTextBox-content__iBox__img {
+    width: 4em;
+  }
+  .services-content__iTextBox-content__tBox__h2 {
+    font-size: 1.5rem;
+  }
+  .services-content__h3,
+  .prices-content__h3,
+  .page-information-content__blog-content__h3,
+  .footer-content__h3 {
+    font-size: 1.8rem;
+  }
+  .services-content__linkItextBox__content__tBox__link,
+  .page-information-content__iTextBox__h4,
+  .page-information-content__blog-content__gBox__iTextBox__tBox__h5,
+  .footer-content__text-box__h6 {
+    font-size: 1.7rem;
+  }
+  .prices-content__iTextBox__div__h6 {
+    font-size: 1.5rem;
+  }
+  .prices-content__iTextBox__div__prices-box__h3 {
+    font-size: 2rem;
+  }
+  .footer-content__bottom__infoBox__link,
+  .footer-content__bottom__infoBox__bodyLinkBox__link {
+    font-size: 1.4rem;
+  }
+  .footer-content__bottom__infoBox__copyRBox__h6 {
+    font-size: 1.2rem;
   }
 }
 

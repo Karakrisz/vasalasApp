@@ -279,7 +279,7 @@ const sendEmail = async () => {
           </div>
           <div class="footer-content__bottom__infoBox__copyRBox bg-color-w">
             <h6 class="footer-content__bottom__infoBox__copyRBox__h6">
-              <span class="footer-content__bottom__infoBox__copyRBox__span"
+              <span class="footer-content__bottom__infoBox__copyRBox__span f-300"
                 >2024
               </span>
               DIGITAL SEED STUDIO

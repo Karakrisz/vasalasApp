@@ -57,12 +57,14 @@
             />
           </div>
           <div class="services-content__iTextBox-content__tBox">
-            <h2 class="services-content__iTextBox-content__tBox__h2 text-color">
+            <h2
+              class="services-content__iTextBox-content__tBox__h2 f-600 text-color"
+            >
               Kérdése van? Hívjon bizalommal
             </h2>
             <p class="services-content__iTextBox-content__tBox__p">
               <a
-                class="services-content__iTextBox-content__tBox__link text-color"
+                class="services-content__iTextBox-content__tBox__link f-300 text-color"
                 href="tel:+36707777609"
                 >06 70 7777 609</a
               >
@@ -80,10 +82,14 @@
             />
           </div>
           <div class="services-content__iTextBox-content__tBox">
-            <h2 class="services-content__iTextBox-content__tBox__h2 text-color">
+            <h2
+              class="services-content__iTextBox-content__tBox__h2 f-600 text-color"
+            >
               Nyitva vagyunk
             </h2>
-            <p class="services-content__iTextBox-content__tBox__p text-color">
+            <p
+              class="services-content__iTextBox-content__tBox__p f-300 text-color"
+            >
               H-P 08:00 - 17:00
             </p>
           </div>
@@ -99,12 +105,14 @@
             />
           </div>
           <div class="services-content__iTextBox-content__tBox">
-            <h2 class="services-content__iTextBox-content__tBox__h2 text-color">
+            <h2
+              class="services-content__iTextBox-content__tBox__h2 f-600 text-color"
+            >
               Jöjjön el személyesen
             </h2>
             <p class="services-content__iTextBox-content__tBox__p">
               <a
-                class="services-content__iTextBox-content__tBox__link text-color"
+                class="services-content__iTextBox-content__tBox__link f-300 text-color"
                 target="_blank"
                 href="https://www.google.com/maps/place/Budapest,+J%C3%B3zsef+Attila+u.+36,+1042/@47.5615728,19.0831989,17z/data=!3m1!4b1!4m6!3m5!1s0x4741da31219d1d95:0x9681f22116d16e6d!8m2!3d47.5615692!4d19.0857738!16s%2Fg%2F11fwhllv70?authuser=0&entry=ttu"
                 >1042 Budapest, József Attila utca 36.</a
@@ -339,7 +347,7 @@
             class="prices-content__iTextBox__div__prices-box prices-content__iTextBox__div__prices-box--actionBG pa"
           >
             <h3
-              class="prices-content__iTextBox__div__prices-box__h3 text-color-w"
+              class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
               1990 Ft/kg
             </h3>
@@ -359,7 +367,7 @@
           </h6>
           <div class="prices-content__iTextBox__div__prices-box pa">
             <h3
-              class="prices-content__iTextBox__div__prices-box__h3 text-color-w"
+              class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
               800 Ft/db
             </h3>
@@ -379,7 +387,7 @@
           </h6>
           <div class="prices-content__iTextBox__div__prices-box pa">
             <h3
-              class="prices-content__iTextBox__div__prices-box__h3 text-color-w"
+              class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
               2250 Ft/kg
             </h3>
@@ -406,7 +414,7 @@
             class="prices-content__iTextBox__div__prices-box prices-content__iTextBox__div__prices-box--actionBG pa"
           >
             <h3
-              class="prices-content__iTextBox__div__prices-box__h3 text-color-w"
+              class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
               1200 Ft/kg
             </h3>
@@ -426,7 +434,7 @@
           </h6>
           <div class="prices-content__iTextBox__div__prices-box pa">
             <h3
-              class="prices-content__iTextBox__div__prices-box__h3 text-color-w"
+              class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
               2000 Ft-tól
             </h3>
@@ -446,7 +454,7 @@
           </h6>
           <div class="prices-content__iTextBox__div__prices-box pa">
             <h3
-              class="prices-content__iTextBox__div__prices-box__h3 text-color-w"
+              class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
               1400 Ft-tól
             </h3>
@@ -454,7 +462,7 @@
         </div>
       </div>
       <div class="prices-content__lBox text-center">
-        <NuxtLink class="page-link text-color f-600"> Teljes árlista </NuxtLink>
+        <NuxtLink class="page-link page-link--format text-color f-600"> Teljes árlista </NuxtLink>
       </div>
     </div>
   </section>
