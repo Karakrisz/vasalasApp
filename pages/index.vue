@@ -10,6 +10,19 @@
       />
 
       <div class="slider-content__tBox pa">
+        <NuxtImg
+          src="/img/slider/slider-elem.svg"
+          alt="Vasalás Mester"
+          class="slider-content__tBox__topImg pa"
+          height="100%"
+        />
+
+        <NuxtImg
+          src="/img/slider/slider-elem2.svg"
+          alt="Vasalás Mester"
+          class="slider-content__tBox__nextTopImg pa"
+          height="100%"
+        />
         <h1
           class="slider-content__tBox__h1 text-transform-uppercase text-color-w f-800"
         >

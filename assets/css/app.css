@@ -206,6 +206,16 @@ ul {
 
 /********************  Identical instructions start **********************/
 
+.footer-content__bottom__infoBox__copyRBox__h6,
+.footer-content__bottom__infoBox__header__socialBox__p,
+.content__bottom__infoBox__header__lBox__p {
+  margin: 0;
+}
+
+.footer-content__bottom__mapBox__iframe {
+  border: 0;
+}
+
 .slider-content__img,
 .services-content__linkItextBox__content__img,
 .services-content__linkItextBox__content__tBox,
@@ -214,12 +224,13 @@ ul {
 .footer-content__img-box__img,
 .form-group__input,
 .form-group__textarea,
-.footer-content__bottom__mapIgmBox__img {
+.footer-content__bottom__mapBox__iframe {
   width: 100%;
 }
 
 .services-content__linkItextBox__content__img,
-.footer-content__img-box__img {
+.footer-content__img-box__img,
+.footer-content__bottom__mapBox__iframe {
   height: 100%;
 }
 
@@ -241,7 +252,9 @@ ul {
 .page-information-content__blog-content__gBox__iTextBox__tBox,
 .page-information-content__blog-content__gBox__iTextBox__img,
 .footer-content__text-box,
-.footer-content__img-box__img {
+.footer-content__img-box__img,
+.footer-content__bottom__infoBox__header,
+.footer-content__bottom__mapBox__iframe {
   box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
 }
 
@@ -254,10 +267,6 @@ ul {
 .page-information-content__blog-content__h3,
 .footer-content__h3 {
   margin: 3.2% 0 4.2% 0;
-}
-
-.services-content__iTextBox-content {
-  border-radius: 1.7em;
 }
 
 .prices-content__iTextBox__div__prices-box,
@@ -277,7 +286,8 @@ ul {
 }
 
 .page-information-content__blog-content__gBox__iTextBox__tBox,
-.footer-content__text-box {
+.footer-content__text-box,
+.footer-content__bottom__infoBox__menuBox {
   background: #1f447a;
 }
 
@@ -287,7 +297,8 @@ ul {
   border-bottom-right-radius: 3.5em;
 }
 
-.page-information-content__blog-content__gBox__iTextBox__img {
+.page-information-content__blog-content__gBox__iTextBox__img,
+.footer-content__bottom__mapBox__iframe {
   border-top-left-radius: 3.5em;
   border-top-right-radius: 3.5em;
 }
@@ -296,6 +307,15 @@ ul {
 .page-information-content__blog-content__gBox,
 .footer-content__img-box {
   z-index: 10;
+}
+
+.services-content__iTextBox-content,
+.services-content__linkItextBox__content__img {
+  border-radius: 1.7em;
+}
+
+.footer-content__bottom__infoBox__header {
+  border-top-left-radius: 3.5em;
 }
 
 /********************  Identical instructions end **********************/
@@ -358,6 +378,17 @@ ul {
   padding: 0.5em 1em;
 }
 
+.slider-content__tBox__topImg {
+  width: 90%;
+  top: -45%;
+  left: -9%;
+}
+
+.slider-content__tBox__nextTopImg {
+  right: 20%;
+  width: 30%;
+}
+
 /********************  Slider formating end **********************/
 
 /********************  Services formating start **********************/
@@ -386,7 +417,8 @@ ul {
   background-color: rgba(30, 30, 30, 0.6);
   bottom: 0;
   padding: 9%;
-  border-radius: 0em 0em 1.3em 1.3em;
+  border-bottom-left-radius: 1.7em;
+  border-bottom-right-radius: 1.7em;
 }
 
 /********************  Services formating end **********************/
@@ -497,7 +529,7 @@ ul {
 .footer-content {
   background-image: url(/img/footer/footer-bg.webp);
   padding: 25% 4% 0 4%;
-  margin-top: -20%;
+  margin-top: -22%;
 }
 
 .footer-content__h3--mb-format {
@@ -572,19 +604,73 @@ ul {
 }
 
 .footer-content__bottom {
-  margin-top: 5%;
-  align-items: flex-end;
+  margin-top: 7%;
 }
 
 .footer-content__bottom__infoBox,
-.footer-content__bottom__mapIgmBox {
+.footer-content__bottom__mapBox {
   width: 50%;
 }
 
+.footer-content__bottom__infoBox {
+  margin-top: 5%;
+}
+
+.footer-content__bottom__infoBox__header__lBox {
+  width: 80%;
+  padding-left: 10%;
+}
+
 .footer-content__bottom__infoBox__header__iBox,
-.footer-content__bottom__infoBox__header__lBox,
 .footer-content__bottom__infoBox__header__socialBox {
-  width: 33%;
+  width: 20%;
+}
+
+.footer-content__bottom__infoBox__header {
+  padding: 3% 0 3% 10%;
+  align-items: flex-end;
+}
+
+.footer-content__bottom__infoBox__header__iBox__img {
+  width: 85%;
+}
+
+.footer-content__bottom__infoBox__header__socialBox__img {
+  width: 23%;
+}
+
+.footer-content__bottom__infoBox__header__socialBox__img--format {
+  width: 27%;
+  margin-left: -1%;
+}
+
+.footer-content__bottom__infoBox__menuBox {
+  padding: 5%;
+}
+
+.footer-content__bottom__infoBox__header__lBox__img {
+  width: 5%;
+}
+.footer-content__bottom__infoBox__copyRBox__h6 {
+  padding: 2% 5% 2% 5%;
+}
+
+.footer-content__bottom__infoBox__bodyLinkBox {
+  margin-top: 3%;
+}
+
+.footer-content__bottom__infoBox__header__lBox__img {
+  width: 5%;
+  margin: 0 0 -1% 1%;
+}
+
+.footer-content__bottom__infoBox__header__lBox__p__link--format {
+  text-decoration: underline;
+}
+
+.footer-content__bottom__infoBox__link,
+.footer-content__bottom__infoBox__bodyLinkBox__link {
+  margin-right: 5%;
 }
 
 /********************  Footer formating end **********************/
