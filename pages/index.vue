@@ -157,7 +157,7 @@
             <NuxtLink
               class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
             >
-              VASALÁS
+              MOSÁS
             </NuxtLink>
           </div>
         </div>
@@ -174,7 +174,7 @@
             <NuxtLink
               class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
             >
-              VASALÁS
+              TISZTÍTÁS
             </NuxtLink>
           </div>
         </div>
@@ -462,7 +462,9 @@
         </div>
       </div>
       <div class="prices-content__lBox text-center">
-        <NuxtLink class="page-link page-link--format text-color f-600"> Teljes árlista </NuxtLink>
+        <NuxtLink class="page-link page-link--format text-color f-600">
+          Teljes árlista
+        </NuxtLink>
       </div>
     </div>
   </section>

@@ -48,13 +48,13 @@ const isMenuOpen = ref(false)
         </nav>
       </div>
       <div class="logo-box header-content__logo-box t-end">
-        <a href="/" class="header-content__logo-box__link">
+        <NuxtLink to="/" class="header-content__logo-box__link">
           <NuxtImg
             src="/img/header/logo.svg"
             alt="Vasalás Mester"
             class="header-content__logo-box__link__img"
           />
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </header>
