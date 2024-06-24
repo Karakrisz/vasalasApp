@@ -727,6 +727,7 @@ ul {
   .slider-content__tBox__h1 {
     font-size: 4rem;
     width: 5em;
+    margin: 5% 0 5% 0;
   }
   .slider-content__tBox__h5 {
     font-size: 1.9rem;
@@ -792,6 +793,7 @@ ul {
   .slider-content__tBox__h1 {
     font-size: 3.7rem;
     width: 5em;
+    margin: 4% 0 4% 0;
   }
   .slider-content__tBox__h5 {
     font-size: 1.6rem;
@@ -858,6 +860,7 @@ ul {
   .slider-content__tBox__h1 {
     font-size: 3.5rem;
     width: 5em;
+    margin: 3% 0 3% 0;
   }
   .slider-content__tBox__h5 {
     font-size: 1.4rem;
@@ -928,6 +931,7 @@ ul {
   .slider-content__tBox__h1 {
     font-size: 3.1rem;
     width: 5em;
+    margin: 3% 0 3% 0;
   }
   .slider-content__tBox__h5 {
     font-size: 1.3rem;
@@ -998,6 +1002,7 @@ ul {
   .slider-content__tBox__h1 {
     font-size: 3rem;
     width: 5em;
+    margin: 2% 0 2% 0;
   }
   .slider-content__tBox__h5 {
     font-size: 1.3rem;
@@ -1009,14 +1014,14 @@ ul {
     width: 35em;
   }
   .slider-content__tBox__nextTopImg {
-    right: 33%;
+    right: 23%;
     top: -13%;
-    width: 20%;
+    width: 23%;
   }
   .slider-content__tBox__topImg {
-    top: -30%;
+    top: -40%;
     left: -13%;
-    width: 60%;
+    width: 67%;
   }
   .slider-content__tBox__lBox {
     margin-top: 4%;
@@ -1060,17 +1065,18 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .header-content__logo-box__link__img {
     width: 50%;
   }
   .slider-content__tBox__h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     width: 5em;
+    margin: 2% 0 2% 0;
   }
   .slider-content__tBox__h5 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .slider-content__tBox {
     width: 50em;
@@ -1079,7 +1085,7 @@ ul {
     width: 35em;
   }
   .slider-content__tBox__nextTopImg {
-    right: 30%;
+    right: 33%;
     top: -13%;
     width: 20%;
   }
@@ -1095,19 +1101,19 @@ ul {
     width: 2.5em;
   }
   .services-content__iTextBox-content__tBox__h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .services-content__h3,
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
   .footer-content__h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .page-information-content__iTextBox__h4,
   .page-information-content__blog-content__gBox__iTextBox__tBox__h5,
   .footer-content__text-box__h6 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .prices-content__iTextBox__div__h6 {
     font-size: 1rem;
@@ -1125,9 +1131,183 @@ ul {
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
+  p,
+  .page-link,
+  .menu__item,
+  .form-group__input,
+  .form-group__textarea {
+    font-size: 1rem;
+  }
+  .header-content__logo-box__link__img {
+    width: 50%;
+  }
+  .slider-content__tBox__h1 {
+    font-size: 2.7rem;
+    width: 5em;
+    margin: 2% 0 2% 0;
+  }
+  .slider-content__tBox__h5 {
+    font-size: 1.2rem;
+  }
+  .slider-content__tBox {
+    width: 50em;
+  }
+  .slider-content__tBox__p {
+    width: 35em;
+  }
+  .slider-content__tBox__nextTopImg {
+    right: 40%;
+    top: -13%;
+    width: 18%;
+  }
+  .slider-content__tBox__topImg {
+    top: -30%;
+    left: -13%;
+    width: 55%;
+  }
+  .slider-content__tBox__lBox {
+    margin-top: 4%;
+  }
+  .services-content__iTextBox-content__iBox__img {
+    width: 2em;
+  }
+  .services-content__iTextBox-content__tBox__h2 {
+    font-size: 1rem;
+  }
+  .services-content__iTextBox-content__tBox__link {
+    font-size: 0.9rem;
+  }
+  .services-content__h3,
+  .services-content__linkItextBox__content__tBox__link,
+  .prices-content__h3,
+  .page-information-content__blog-content__h3,
+  .footer-content__h3 {
+    font-size: 1.1rem;
+  }
+  .page-information-content__iTextBox__h4,
+  .page-information-content__blog-content__gBox__iTextBox__tBox__h5,
+  .footer-content__text-box__h6 {
+    font-size: 1.1rem;
+  }
+  .prices-content__iTextBox__div__h6 {
+    font-size: 0.9rem;
+  }
+  .prices-content__iTextBox__div__prices-box__h3 {
+    font-size: 1.3rem;
+  }
+  .prices-content {
+    padding: 7% 9% 33% 9%;
+  }
+  .footer-content {
+    padding: 24% 4% 0 4%;
+    margin-top: -28%;
+  }
+  .footer-content__bottom__infoBox__header {
+    padding: 3% 0 3% 9%;
+  }
+  .footer-content__bottom__infoBox__header__lBox {
+    padding-left: 5%;
+  }
+  .footer-content__bottom__infoBox__link,
+  .footer-content__bottom__infoBox__bodyLinkBox__link {
+    font-size: 0.7rem;
+  }
+  .footer-content__bottom__infoBox__copyRBox__h6 {
+    font-size: 0.7rem;
+  }
 }
 
 @media (min-width: 991px) and (max-width: 1200px) {
+  p,
+  .page-link,
+  .menu__item,
+  .form-group__input,
+  .form-group__textarea {
+    font-size: 0.9rem;
+  }
+  .header-content__logo-box__link__img {
+    width: 60%;
+  }
+  .slider-content__tBox__h1 {
+    font-size: 2.7rem;
+    width: 5em;
+    margin: 2% 0 2% 0;
+  }
+  .slider-content__tBox__h5 {
+    font-size: 1.2rem;
+  }
+  .slider-content__tBox {
+    width: 50em;
+  }
+  .slider-content__tBox__p {
+    width: 35em;
+  }
+  .slider-content__tBox__nextTopImg {
+    right: 50%;
+    top: -3%;
+    width: 15%;
+  }
+  .slider-content__tBox__topImg {
+    top: -24%;
+    left: -8%;
+    width: 45%;
+  }
+  .slider-content__tBox__lBox {
+    margin-top: 4%;
+  }
+  .services-content__iTextBox-content__iBox__img {
+    width: 2em;
+  }
+  .services-content__iTextBox-content__tBox__h2 {
+    font-size: 1rem;
+  }
+  .services-content__iTextBox-content__tBox__link {
+    font-size: 0.9rem;
+  }
+  .services-content__h3,
+  .services-content__linkItextBox__content__tBox__link,
+  .prices-content__h3,
+  .page-information-content__blog-content__h3,
+  .footer-content__h3 {
+    font-size: 1rem;
+  }
+  .services-content__h3,
+  .prices-content__h3,
+  .page-information-content__blog-content__h3,
+  .footer-content__h3 {
+    margin: 4.2% 0 5.2% 0;
+  }
+  .page-information-content__iTextBox__h4,
+  .page-information-content__blog-content__gBox__iTextBox__tBox__h5,
+  .footer-content__text-box__h6 {
+    font-size: 1.1rem;
+  }
+  .prices-content__iTextBox__div__h6 {
+    font-size: 0.8rem;
+  }
+  .prices-content__iTextBox__div__prices-box__h3 {
+    font-size: 1rem;
+  }
+  .prices-content {
+    padding: 7% 9% 33% 9%;
+  }
+  .footer-content {
+    padding: 29% 4% 0 4%;
+    margin-top: -32%;
+  }
+  .footer-content__bottom__infoBox__header {
+    padding: 3% 0 3% 9%;
+  }
+  .footer-content__bottom__infoBox__header__lBox {
+    padding-left: 2%;
+  }
+  .footer-content__bottom__infoBox__link,
+  .footer-content__bottom__infoBox__bodyLinkBox__link {
+    font-size: 0.6rem;
+  }
+  .footer-content__bottom__infoBox__copyRBox__h6 {
+    font-size: 0.6rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
