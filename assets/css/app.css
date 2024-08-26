@@ -1527,6 +1527,7 @@ ul {
     border: none;
     cursor: pointer;
     padding: 0.7em;
+    border-radius: 0.5em;
   }
   .bar {
     height: 0.23em;
@@ -1548,9 +1549,7 @@ ul {
   }
   .header-content__logo-box__link__img {
     width: 7em;
-    background: #1f447a;
     padding: 1em;
-    border-radius: 1em;
   }
   .page__header {
     width: 30%;
@@ -1590,9 +1589,9 @@ ul {
   }
   .slider-content__tBox__nextTopImg {
     right: 0%;
-    width: 30%;
-    top: -13%;
-    display: none;
+    width: 12em;
+    top: -70%;
+    left: 7%;
   }
   .slider-content__tBox__topImg {
     width: 40%;
@@ -1806,7 +1805,7 @@ ul {
     font-size: 1rem;
   }
   .header-content {
-    padding: 1em 2em;
+    padding: 0 2em;
     align-items: center;
   }
 
@@ -2132,6 +2131,9 @@ ul {
   .page-information-content__blog-content__gBox,
   .footer-content__img-box {
     z-index: 0;
+  }
+  .supage-content__img {
+    width: 100%;
   }
 }
 

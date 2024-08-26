@@ -32,7 +32,7 @@ useHead({
       üzleti találkozóra, eseményre vagy hétköznapi viselésre.
     </p>
 
-    <h3 class="supage-content__h3 text-transform-uppercase">
+    <h3 class="supage-content__h3">
       Ingek Vasalása - Szakértelem és Gondosság
     </h3>
 
@@ -46,7 +46,7 @@ useHead({
       és a varratok alapos kisimítására.
     </p>
 
-    <h4 class="supage-content__h4 text-transform-uppercase">
+    <h4 class="supage-content__h4">
       Környezetbarát Vasalási Eljárások
     </h4>
 
@@ -61,7 +61,7 @@ useHead({
       hozzájárulva a fenntartható fejlődéshez.
     </p>
 
-    <h5 class="supage-content__h5 text-transform-uppercase">
+    <h5 class="supage-content__h5">
       Szolgáltatási Terület és Kényelmi Szolgáltatások
     </h5>
 
@@ -76,7 +76,7 @@ useHead({
       feladatot, és élvezze a gondtalan kiszolgálás előnyeit!
     </p>
 
-    <h6 class="supage-content__h6 text-transform-uppercase">
+    <h6 class="supage-content__h6">
       Miért válassza a Vasalás Mestert?
     </h6>
 

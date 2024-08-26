@@ -219,71 +219,75 @@
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services6.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="nagy-mennyiseg"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services6.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               NAGY MENNYISÉG
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services7.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="meretre-szabas-igazitas"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services7.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               MÉRETRE SZABÁS IGAZÍTÁS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services8.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="kolcsonzes"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services8.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               KÖLCSÖNZÉS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services9.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="egyeni-igenyek"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services9.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               EGYÉNI IGÉNYEK MEGVALÓSÍTÁSA
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
