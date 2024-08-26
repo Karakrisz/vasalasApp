@@ -1,11 +1,31 @@
 <script setup>
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const specialPaths = [
+  '/galeria',
+  '/rolunk',
+  '/ajanlatkeres',
+  '/szolgaltatasok',
+  '/arlista',
+  '/vasalas',
+  '/mosas',
+  '/tisztitas',
+  '/varras',
+  '/javitas',
+]
+
+const isSpecialPage = computed(() => specialPaths.includes(route.path))
+
 const links = [
   { name: 'Kezdőlap', path: '/' },
-  { name: 'Galéria', path: '/partnerek' },
-  { name: 'Rólunk', path: '/szolgaltatasok' },
-  { name: 'Ajánlatkérés', path: '/dokumentumok' },
-  { name: 'Szolgáltatások', path: '/ajanlatkeres' },
-  { name: 'Árlista', path: '/kapcsolat' },
+  { name: 'Galéria', path: '/galeria' },
+  { name: 'Rólunk', path: '/rolunk' },
+  { name: 'Ajánlatkérés', path: '/ajanlatkeres' },
+  { name: 'Szolgáltatások', path: '/szolgaltatasok' },
+  { name: 'Árlista', path: '/arlista' },
 ]
 
 const isMenuOpen = ref(false)
@@ -13,7 +33,12 @@ const isMenuOpen = ref(false)
 
 <template>
   <header class="header pr">
-    <div class="header-content d-flex">
+    <div
+      :class="[
+        'header-content d-flex',
+        { 'header-content-bg-special': isSpecialPage },
+      ]"
+    >
       <div class="nav-box header-content__nav-box d-flex">
         <button
           @click="isMenuOpen = !isMenuOpen"

@@ -1,12 +1,27 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useNuxtApp } from '#app'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const FooterSpecialPaths = [
+  '/galeria',
+  '/rolunk',
+  '/ajanlatkeres',
+  '/szolgaltatasok',
+  '/arlista',
+]
+
+const FooterIsSpecialPage = computed(() =>
+  FooterSpecialPaths.includes(route.path)
+)
 
 const FooterLinks = [
-  { name: 'Galéria', path: '/partnerek' },
-  { name: 'Rólunk', path: '/szolgaltatasok' },
-  { name: 'Ajánlatkérés', path: '/dokumentumok' },
-  { name: 'Szolgáltatások', path: '/ajanlatkeres' },
+  { name: 'Galéria', path: '/galeria' },
+  { name: 'Rólunk', path: '/rolunk' },
+  { name: 'Ajánlatkérés', path: '/ajanlatkeres' },
+  { name: 'Szolgáltatások', path: '/szolgaltatasok' },
 ]
 
 const nuxtApp = useNuxtApp()
@@ -45,7 +60,12 @@ const sendEmail = async () => {
 
 <template>
   <footer>
-    <div class="footer-content pr">
+    <div
+      :class="[
+        'footer-content pr',
+        { 'footer-content-margin-special': FooterIsSpecialPage },
+      ]"
+    >
       <h3
         class="footer-content__h3 footer-content__h3--mb-format text-center text-transform-uppercase f-700"
       >
@@ -279,7 +299,8 @@ const sendEmail = async () => {
           </div>
           <div class="footer-content__bottom__infoBox__copyRBox bg-color-w">
             <h6 class="footer-content__bottom__infoBox__copyRBox__h6">
-              <span class="footer-content__bottom__infoBox__copyRBox__span f-300"
+              <span
+                class="footer-content__bottom__infoBox__copyRBox__span f-300"
                 >2024
               </span>
               DIGITAL SEED STUDIO

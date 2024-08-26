@@ -256,7 +256,8 @@ ul {
 .footer-content__text-box,
 .footer-content__img-box__img,
 .footer-content__bottom__infoBox__header,
-.footer-content__bottom__mapBox__iframe {
+.footer-content__bottom__mapBox__iframe,
+.supage-content__img {
   box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
 }
 
@@ -312,7 +313,8 @@ ul {
 }
 
 .services-content__iTextBox-content,
-.services-content__linkItextBox__content__img {
+.services-content__linkItextBox__content__img,
+.supage-content__img {
   border-radius: 1.7em;
 }
 
@@ -712,6 +714,68 @@ ul {
 
 /********************  Subpage formating start **********************/
 
+.header-content-bg-special {
+  background: #1f447a;
+  padding-bottom: 1.7em;
+}
+
+.footer-content-margin-special {
+  margin-top: 0;
+}
+
+.supage-content {
+  padding: 13% 4% 23% 4%;
+}
+
+.supage-content__img {
+  margin: 3% 0 1% 0;
+  width: 70%;
+}
+
+.supage-content__ul {
+  margin-bottom: 3%;
+}
+
+.supage-content__ul__li {
+  margin-bottom: 1.5%;
+}
+
+.supage-content__h6 {
+  margin: 3% 0;
+}
+
+.go-back-button {
+  align-items: center;
+  background-color: #1f447a;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-flex;
+  margin-top: 40px;
+  overflow: hidden;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.go-back-button:hover {
+  background-color: #1f447a;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.go-back-button__icon {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.go-back-button:hover .go-back-button__icon {
+  transform: translate(-5px);
+}
+
+.go-back-button__text {
+  position: relative;
+  z-index: 1;
+}
+
 /********************  Subpage formating formating end **********************/
 
 /********************  Media formating start **********************/
@@ -721,7 +785,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1.5rem;
   }
   .slider-content__tBox__h1 {
@@ -759,7 +824,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.8rem;
   }
   .page-information-content__iTextBox__h4,
@@ -787,7 +857,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1.4rem;
   }
   .slider-content__tBox__h1 {
@@ -826,7 +897,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.7rem;
   }
   .page-information-content__iTextBox__h4,
@@ -854,7 +930,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1.3rem;
   }
   .slider-content__tBox__h1 {
@@ -894,7 +971,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.6rem;
   }
   .page-information-content__iTextBox__h4,
@@ -922,7 +1004,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1.1rem;
   }
   .header-content__logo-box__link__img {
@@ -965,7 +1048,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.4rem;
   }
   .page-information-content__iTextBox__h4,
@@ -993,7 +1081,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1.1rem;
   }
   .header-content__logo-box__link__img {
@@ -1036,7 +1125,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.3rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1064,7 +1158,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1rem;
   }
   .header-content__logo-box__link__img {
@@ -1107,7 +1202,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.2rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1135,7 +1235,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 1rem;
   }
   .header-content__logo-box__link__img {
@@ -1181,7 +1282,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1.1rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1222,7 +1328,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 0.9rem;
   }
   .header-content__logo-box__link__img {
@@ -1268,7 +1375,12 @@ ul {
   .services-content__linkItextBox__content__tBox__link,
   .prices-content__h3,
   .page-information-content__blog-content__h3,
-  .footer-content__h3 {
+  .footer-content__h3,
+  .supage-content__h2,
+  .supage-content__h3,
+  .supage-content__h4,
+  .supage-content__h5,
+  .supage-content__h6 {
     font-size: 1rem;
   }
   .services-content__h3,
@@ -1315,7 +1427,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 0.9rem;
   }
   .grid-3,
@@ -1512,7 +1625,8 @@ ul {
   .prices-content__h3,
   .page-information-content__blog-content__h3,
   .footer-content__h3,
-  .services-content__linkItextBox__content__tBox {
+  .services-content__linkItextBox__content__tBox,
+  .supage-content__h2 {
     font-size: 1.3rem;
   }
   .services-content__linkItextBox__content__tBox {
@@ -1665,7 +1779,8 @@ ul {
   .page-link,
   .menu__item,
   .form-group__input,
-  .form-group__textarea {
+  .form-group__textarea,
+  .supage-content__ul__li {
     font-size: 0.9rem;
   }
   .grid-3,
@@ -1860,7 +1975,8 @@ ul {
   .prices-content__h3,
   .page-information-content__blog-content__h3,
   .footer-content__h3,
-  .services-content__linkItextBox__content__tBox {
+  .services-content__linkItextBox__content__tBox,
+  .supage-content__h2 {
     font-size: 1.1rem;
   }
   .services-content__linkItextBox__content__tBox {

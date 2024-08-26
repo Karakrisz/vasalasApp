@@ -5,5 +5,8 @@ useHead({
 </script>
 
 <template>
-  <div class="subpage-content subpage-footer-content"></div>
+  <div class="supage-content position-relative">
+    <h2 class="supage-content__h2">Ajánlatkérés</h2>
+    <p>feltöltés alatt...</p>
+  </div>
 </template>

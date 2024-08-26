@@ -1,0 +1,374 @@
+import { _ as _export_sfc, b as __nuxt_component_0, a as __nuxt_component_0$1 } from "../server.mjs";
+import { withCtx, createTextVNode, useSSRContext } from "vue";
+import { ssrRenderComponent } from "vue/server-renderer";
+import "#internal/nitro";
+import "ofetch";
+import "hookable";
+import "unctx";
+import "h3";
+import "unhead";
+import "@unhead/shared";
+import "vue-router";
+import "radix3";
+import "defu";
+import "klona";
+import "ufo";
+import "devalue";
+import "destr";
+const _sfc_main = {};
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
+  const _component_NuxtImg = __nuxt_component_0;
+  const _component_NuxtLink = __nuxt_component_0$1;
+  _push(`<!--[--><section><div class="slider-content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/slider/slider.webp",
+    alt: "Vasalás Mester",
+    class: "slider-content__img",
+    height: "100%"
+  }, null, _parent));
+  _push(`<div class="slider-content__tBox pa">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/slider/slider-elem.svg",
+    alt: "Vasalás Mester",
+    class: "slider-content__tBox__topImg pa",
+    height: "100%"
+  }, null, _parent));
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/slider/slider-elem2.svg",
+    alt: "Vasalás Mester",
+    class: "slider-content__tBox__nextTopImg pa",
+    height: "100%"
+  }, null, _parent));
+  _push(`<h1 class="slider-content__tBox__h1 text-transform-uppercase text-color-w f-800"> TISZTA ILLATOS EGYENES </h1><h5 class="slider-content__tBox__h5 text-color-w f-500"> Mi így szeretjük. </h5><p class="slider-content__tBox__p text-color-w f-500"> Cégünk komplex szolgáltatást nyújt magánszemélyeknek és cégeknek egyaránt már 35 éve! Akár egy ruhadarabot is elvállalunk, vagy akár több ezret is egyszerre - igénytől függően. </p><div class="slider-content__tBox__lBox">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "page-link text-color f-600" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` Leadom a rendelésem `);
+      } else {
+        return [
+          createTextVNode(" Leadom a rendelésem ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div></div></section><section><div class="services-content pr"><div class="services-content__iTextBox grid-3"><div class="services-content__iTextBox-content d-flex bg-color-w"><div class="services-content__iTextBox-content__iBox">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/phone.svg",
+    alt: "Vasalás Mester",
+    class: "services-content__iTextBox-content__iBox__img",
+    height: "100%"
+  }, null, _parent));
+  _push(`</div><div class="services-content__iTextBox-content__tBox"><h2 class="services-content__iTextBox-content__tBox__h2 f-600 text-color"> Kérdése van? Hívjon bizalommal </h2><p class="services-content__iTextBox-content__tBox__p"><a class="services-content__iTextBox-content__tBox__link f-300 text-color" href="tel:+36707777609">06 70 7777 609</a></p></div></div><div class="services-content__iTextBox-content d-flex bg-color-w"><div class="services-content__iTextBox-content__iBox">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/time.svg",
+    alt: "Vasalás Mester",
+    class: "services-content__iTextBox-content__iBox__img",
+    height: "100%"
+  }, null, _parent));
+  _push(`</div><div class="services-content__iTextBox-content__tBox"><h2 class="services-content__iTextBox-content__tBox__h2 f-600 text-color"> Nyitva vagyunk </h2><p class="services-content__iTextBox-content__tBox__p f-300 text-color"> H-P 08:00 - 17:00 </p></div></div><div class="services-content__iTextBox-content d-flex bg-color-w"><div class="services-content__iTextBox-content__iBox">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/map.svg",
+    alt: "Vasalás Mester",
+    class: "services-content__iTextBox-content__iBox__img",
+    height: "100%"
+  }, null, _parent));
+  _push(`</div><div class="services-content__iTextBox-content__tBox"><h2 class="services-content__iTextBox-content__tBox__h2 f-600 text-color"> Jöjjön el személyesen </h2><p class="services-content__iTextBox-content__tBox__p"><a class="services-content__iTextBox-content__tBox__link f-300 text-color" target="_blank" href="https://www.google.com/maps/place/Budapest,+J%C3%B3zsef+Attila+u.+36,+1042/@47.5615728,19.0831989,17z/data=!3m1!4b1!4m6!3m5!1s0x4741da31219d1d95:0x9681f22116d16e6d!8m2!3d47.5615692!4d19.0857738!16s%2Fg%2F11fwhllv70?authuser=0&amp;entry=ttu">1042 Budapest, József Attila utca 36.</a></p></div></div></div><h3 class="services-content__h3 text-center text-transform-uppercase f-700"> SZOLGÁLTATÁSAINK </h3><div class="services-content__linkItextBox grid-3"><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` VASALÁS `);
+      } else {
+        return [
+          createTextVNode(" VASALÁS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services2.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` MOSÁS `);
+      } else {
+        return [
+          createTextVNode(" MOSÁS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services3.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` TISZTÍTÁS `);
+      } else {
+        return [
+          createTextVNode(" TISZTÍTÁS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services4.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` VARRÁS `);
+      } else {
+        return [
+          createTextVNode(" VARRÁS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services5.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` JAVÍTÁS `);
+      } else {
+        return [
+          createTextVNode(" JAVÍTÁS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services6.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` NAGY MENNYISÉG `);
+      } else {
+        return [
+          createTextVNode(" NAGY MENNYISÉG ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services7.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` MÉRETRE SZABÁS IGAZÍTÁS `);
+      } else {
+        return [
+          createTextVNode(" MÉRETRE SZABÁS IGAZÍTÁS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services8.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` KÖLCSÖNZÉS `);
+      } else {
+        return [
+          createTextVNode(" KÖLCSÖNZÉS ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="services-content__linkItextBox__content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/services/services9.webp",
+    alt: "Vasalás Mester",
+    class: "services-content__linkItextBox__content__img"
+  }, null, _parent));
+  _push(`<div class="services-content__linkItextBox__content__tBox text-center pa">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` EGYÉNI IGÉNYEK MEGVALÓSÍTÁSA `);
+      } else {
+        return [
+          createTextVNode(" EGYÉNI IGÉNYEK MEGVALÓSÍTÁSA ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div></div></div></section><section><div class="page-information-content pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/page-information/page-information.webp",
+    alt: "Vasalás Mester",
+    class: "page-information-content__img"
+  }, null, _parent));
+  _push(`<div class="page-information-content__iTextBox bg-color-w pa"><h4 class="page-information-content__iTextBox__h4 text-transform-uppercase f-700"> RÓLUNK </h4><p class="page-information-content__iTextBox__p f-500"> A vasalás.net 100%-ig magyar tulajdonban álló vállalkozás, amely 2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik az otthonokban felgyülemlett szennyes ruházat mosása, vasalása; a különleges kezelést igénylő kabátok, öltönyök, és kosztümök tisztítása; valamint a ruhák, huzatok, textilanyagok varrása és javítása. </p><p class="page-information-content__iTextBox__p f-500"> Ha már Ön is unja a vasalást, mosást és a házimunkát; ha nincs ideje és már jó ideje tornyosul a szennyes; ha egy megbízható ruhatisztítót, ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát! </p><div class="page-information-content__iTextBox__link-box">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "page-link page-link--format text-color f-600" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` Leadom a rendelésem `);
+      } else {
+        return [
+          createTextVNode(" Leadom a rendelésem ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div></div></section><section><div class="prices-content"><h3 class="prices-content__h3 prices-content__h3--mt0 text-center text-transform-uppercase f-700"> ÁRAINK </h3><div class="prices-content__iTextBox grid-6"><div class="prices-content__iTextBox__div bg-color-w pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/action.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__actionImg pa"
+  }, null, _parent));
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/prices.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__img"
+  }, null, _parent));
+  _push(`<h6 class="prices-content__iTextBox__div__h6 text-transform-uppercase f-700"> VEGYES RUHA VASALÁS </h6><div class="prices-content__iTextBox__div__prices-box prices-content__iTextBox__div__prices-box--actionBG pa"><h3 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"> 1990 Ft/kg </h3></div></div><div class="prices-content__iTextBox__div bg-color-w pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/prices2.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__img"
+  }, null, _parent));
+  _push(`<h6 class="prices-content__iTextBox__div__h6 text-transform-uppercase f-700"> ING-BLÚZ VASALÁS </h6><div class="prices-content__iTextBox__div__prices-box pa"><h3 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"> 800 Ft/db </h3></div></div><div class="prices-content__iTextBox__div bg-color-w pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/prices3.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__img"
+  }, null, _parent));
+  _push(`<h6 class="prices-content__iTextBox__div__h6 text-transform-uppercase f-700"> MOSÁS-VASALÁS </h6><div class="prices-content__iTextBox__div__prices-box pa"><h3 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"> 2250 Ft/kg </h3></div></div><div class="prices-content__iTextBox__div bg-color-w pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/action.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__actionImg pa"
+  }, null, _parent));
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/prices4.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__img"
+  }, null, _parent));
+  _push(`<h6 class="prices-content__iTextBox__div__h6 text-transform-uppercase f-700"> MOSÁS </h6><div class="prices-content__iTextBox__div__prices-box prices-content__iTextBox__div__prices-box--actionBG pa"><h3 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"> 1200 Ft/kg </h3></div></div><div class="prices-content__iTextBox__div bg-color-w pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/prices5.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__img"
+  }, null, _parent));
+  _push(`<h6 class="prices-content__iTextBox__div__h6 text-transform-uppercase f-700"> CIPZÁRCSERE </h6><div class="prices-content__iTextBox__div__prices-box pa"><h3 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"> 2000 Ft-tól </h3></div></div><div class="prices-content__iTextBox__div bg-color-w pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/prices/prices6.svg",
+    alt: "Vasalás Mester",
+    class: "prices-content__iTextBox__div__img"
+  }, null, _parent));
+  _push(`<h6 class="prices-content__iTextBox__div__h6 text-transform-uppercase f-700"> LAKÁSTEXTIL VEGYTISZTÍTÁS </h6><div class="prices-content__iTextBox__div__prices-box pa"><h3 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"> 1400 Ft-tól </h3></div></div></div><div class="prices-content__lBox text-center">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "page-link page-link--format text-color f-600" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` Teljes árlista `);
+      } else {
+        return [
+          createTextVNode(" Teljes árlista ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div></section><section><div class="page-information-content page-information-content--format page-information-content--bg t-end pr">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/page-information/page-information2.webp",
+    alt: "Vasalás Mester",
+    class: "page-information-content__img"
+  }, null, _parent));
+  _push(`<div class="page-information-content__iTextBox page-information-content__iTextBox--format bg-color-w pa"><h4 class="page-information-content__iTextBox__h4 text-transform-uppercase f-700"> HÁZTÓL HÁZIG SZÁLLÍTÁS </h4><p class="page-information-content__iTextBox__p f-500"> Cégünk büszkén kínálja vevőinek a folyamatos, 0-24 órás online megrendelési lehetőséget, ami lehetővé teszi, hogy bármikor, bárhol leadhassák rendeléseiket. Elkötelezettek vagyunk amellett, hogy termékeinket gyorsan és hatékonyan szállítsuk háztól házig, biztosítva ezzel, hogy mindenki számára kényelmes és zökkenőmentes legyen a vásárlási élmény. </p><p class="page-information-content__iTextBox__p f-500"> A házhozszállításunk rugalmas és megbízható, így ügyfeleink mindig időben megkapják a kívánt termékeket, mindezt anélkül, hogy otthonuk kényelmét elhagynák. </p><div class="page-information-content__iTextBox__link-box">`);
+  _push(ssrRenderComponent(_component_NuxtLink, { class: "page-link page-link--format text-color f-600" }, {
+    default: withCtx((_, _push2, _parent2, _scopeId) => {
+      if (_push2) {
+        _push2(` Leadom a rendelésem `);
+      } else {
+        return [
+          createTextVNode(" Leadom a rendelésem ")
+        ];
+      }
+    }),
+    _: 1
+  }, _parent));
+  _push(`</div></div><div class="page-information-content__blog-content"><h3 class="page-information-content__blog-content__h3 text-center text-transform-uppercase f-700"> BLOG </h3><div class="page-information-content__blog-content__gBox pr grid-3"><div class="page-information-content__blog-content__gBox__iTextBox">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/page-information/blog/blog.jpg",
+    alt: "Vasalás Mester",
+    class: "page-information-content__blog-content__gBox__iTextBox__img"
+  }, null, _parent));
+  _push(`<div class="page-information-content__blog-content__gBox__iTextBox__tBox"><h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"> A Gyűrődésmentesség Művészete </h5><p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"> Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait! Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek segítenek a gyűrődések nélküli, kifogástalan megjelenés elérésében, akár otthon, akár útközben. </p></div></div><div class="page-information-content__blog-content__gBox__iTextBox">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/page-information/blog/blog2.jpg",
+    alt: "Vasalás Mester",
+    class: "page-information-content__blog-content__gBox__iTextBox__img"
+  }, null, _parent));
+  _push(`<div class="page-information-content__blog-content__gBox__iTextBox__tBox"><h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"> A Gyűrődésmentesség Művészete </h5><p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"> Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait! Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek segítenek a gyűrődések nélküli, kifogástalan megjelenés elérésében, akár otthon, akár útközben. </p></div></div><div class="page-information-content__blog-content__gBox__iTextBox">`);
+  _push(ssrRenderComponent(_component_NuxtImg, {
+    src: "/img/page-information/blog/blog3.jpg",
+    alt: "Vasalás Mester",
+    class: "page-information-content__blog-content__gBox__iTextBox__img"
+  }, null, _parent));
+  _push(`<div class="page-information-content__blog-content__gBox__iTextBox__tBox"><h5 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"> A Gyűrődésmentesség Művészete </h5><p class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"> Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait! Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek segítenek a gyűrődések nélküli, kifogástalan megjelenés elérésében, akár otthon, akár útközben. </p></div></div></div></div></div></section><!--]-->`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  index as default
+};
+//# sourceMappingURL=index-nArGovcJ.js.map

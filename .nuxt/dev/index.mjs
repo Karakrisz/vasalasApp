@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHost, getRequestProtocol, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, setHeader, getHeader, getQuery as getQuery$1, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, getResponseStatusText } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHost, getRequestProtocol, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, setHeader, getHeader, getQuery as getQuery$1, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, readBody, getResponseStatusText } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/h3/dist/index.mjs';
 import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { stringify, uneval } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/devalue/index.js';
 import destr from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/destr/dist/index.mjs';
@@ -25,9 +25,6 @@ import { consola } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp
 import devalue from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/@nuxt/devalue/dist/devalue.mjs';
 import { getContext } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unctx/dist/index.mjs';
 import { toValue, version, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
-import nodemailer from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/nodemailer/lib/nodemailer.js';
-import options from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.nuxt/nuxt-mail/options.mjs';
-import send$1 from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.nuxt/nuxt-mail/send.mjs';
 import { fileURLToPath } from 'node:url';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ipx/dist/index.mjs';
 import { isAbsolute } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/pathe/dist/index.mjs';
@@ -177,7 +174,7 @@ const _inlineRuntimeConfig = {
       {
         "_priority": -3,
         "_context": "nuxt-site-config:config",
-        "url": "https://www.alkuszom.info",
+        "url": "https://www.vasalasmester.hu",
         "trailingSlash": true
       }
     ],
@@ -2145,19 +2142,6 @@ const _CToQqZ = defineEventHandler(async (e) => {
   return createSitemap(e, Object.values(sitemaps)[0], runtimeConfig);
 });
 
-const transport = nodemailer.createTransport(options.smtp);
-const _xN8ll3 = defineEventHandler(async event => {
-  try {
-    await send$1(await readBody(event), options, transport);
-  } catch (error) {
-    throw createError({
-      statusCode: 500,
-      statusMessage: error.message
-    });
-  }
-  return '';
-});
-
 const _lTXVz9 = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
@@ -2185,7 +2169,6 @@ const handlers = [
   { route: '/__sitemap__/debug.json', handler: _nZRYGK, lazy: false, middleware: false, method: undefined },
   { route: '/__sitemap__/style.xsl', handler: _t36c1X, lazy: false, middleware: false, method: undefined },
   { route: '/sitemap.xml', handler: _CToQqZ, lazy: false, middleware: false, method: undefined },
-  { route: '/mail/send', handler: _xN8ll3, lazy: false, middleware: false, method: "post" },
   { route: '/_ipx/**', handler: _lTXVz9, lazy: false, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_eiIGDu, lazy: true, middleware: false, method: undefined }
 ];
@@ -2422,10 +2405,10 @@ const sources$1 = [
                 "loc": "/ajanlatkeres"
             },
             {
-                "loc": "/dokumentumok"
+                "loc": "/arlista"
             },
             {
-                "loc": "/gepjarmu-biztositas"
+                "loc": "/galeria"
             },
             {
                 "loc": "/"
@@ -2434,25 +2417,22 @@ const sources$1 = [
                 "loc": "/kapcsolat"
             },
             {
-                "loc": "/karbejentes"
+                "loc": "/mosas"
             },
             {
-                "loc": "/partnerek"
-            },
-            {
-                "loc": "/rendezvenyszolgalat"
-            },
-            {
-                "loc": "/szemelyes-tanacsadas"
+                "loc": "/rolunk"
             },
             {
                 "loc": "/szolgaltatasok"
             },
             {
-                "loc": "/tanulobiztositas"
+                "loc": "/tisztitas"
             },
             {
-                "loc": "/utasbiztositas"
+                "loc": "/varras"
+            },
+            {
+                "loc": "/vasalas"
             }
         ],
         "sourceType": "app"
@@ -2527,7 +2507,7 @@ function createServerHead(options = {}) {
 
 const unheadPlugins = [];
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Személyre szabott biztosítási megoldások mindenkinek. Megbízható alkusz a biztosítási piacon."},{"name":"format-detection","content":"telephone=no"},{"hid":"robots","name":"robots","content":"index, follow"},{"http-equiv":"Content-Security-Policy","content":"\n            default-src 'self' https: data:;\n            img-src 'self' https: http: data:;\n            font-src 'self' https: data:;\n            style-src 'self' https: 'unsafe-inline';\n            script-src 'self' https: 'unsafe-inline' 'unsafe-eval';\n          "}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"canonical","href":"https://www.alkuszom.info"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet"}],"style":[],"script":[],"noscript":[],"title":"Biztos Alkuszom","htmlAttrs":{"lang":"hu"}};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Személyre szabott biztosítási megoldások mindenkinek. Megbízható alkusz a biztosítási piacon."},{"name":"format-detection","content":"telephone=no"},{"hid":"robots","name":"robots","content":"index, follow"},{"http-equiv":"Content-Security-Policy","content":"\n            default-src 'self' https: data:;\n            img-src 'self' https: http: data:;\n            font-src 'self' https: data:;\n            style-src 'self' https: 'unsafe-inline';\n            script-src 'self' https: 'unsafe-inline' 'unsafe-eval';\n          "}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"canonical","href":"https://www.vasalasmester.hu"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet"}],"style":[],"script":[],"noscript":[],"title":"Vasalás Mester","htmlAttrs":{"lang":"hu"}};
 
 const appRootId = "__nuxt";
 

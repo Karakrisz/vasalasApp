@@ -129,88 +129,93 @@
 
       <div class="services-content__linkItextBox grid-3">
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="vasalas"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               VASALÁS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services2.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="mosas"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services2.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               MOSÁS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services3.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="tisztitas"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services3.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               TISZTÍTÁS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services4.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="varras"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services4.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               VARRÁS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
-          <NuxtImg
-            src="/img/services/services5.webp"
-            alt="Vasalás Mester"
-            class="services-content__linkItextBox__content__img"
-          />
-          <div
-            class="services-content__linkItextBox__content__tBox text-center pa"
+          <NuxtLink
+            to="javitas"
+            class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
-            <NuxtLink
-              class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+            <NuxtImg
+              src="/img/services/services5.webp"
+              alt="Vasalás Mester"
+              class="services-content__linkItextBox__content__img"
+            />
+            <div
+              class="services-content__linkItextBox__content__tBox text-center pa"
             >
               JAVÍTÁS
-            </NuxtLink>
-          </div>
+            </div>
+          </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">

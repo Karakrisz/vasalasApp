@@ -1,0 +1,1 @@
+import{u as e,c as s,o as a,a as t}from"./Bd3y6TPe.js";const o={class:"supage-content position-relative"},c=t("h2",{class:"supage-content__h2"},"Árlista",-1),_=t("p",null,"feltöltés alatt...",-1),n=[c,_],u={__name:"arlista",setup(l){return e({title:"Árlista"}),(i,r)=>(a(),s("div",o,n))}};export{u as default};

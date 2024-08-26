@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     head: {
-      title: 'Biztos Alkuszom',
+      title: 'Vasalás Mester',
       htmlAttrs: {
         lang: 'hu',
       },
@@ -33,7 +33,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        { rel: 'canonical', href: 'https://www.alkuszom.info' },
+        { rel: 'canonical', href: 'https://www.vasalasmester.hu' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
         {
@@ -47,26 +47,27 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxtjs/sitemap',
-    [
-      'nuxt-mail',
-      {
-        message: {
-          to: 'web@alkuszom.info',
-        },
-        smtp: {
-          host: '',
-          port: '',
-          auth: {
-            user: '',
-            pass: '',
-          },
-        },
-      },
-    ],
+    // [
+    //   'nuxt-mail',
+    //   {
+    //     message: {
+    //       to: 'web@alkuszom.info',
+    //     },
+    //     smtp: {
+    //       host: '',
+    //       port: '',
+    //       auth: {
+    //         user: '',
+    //         pass: '',
+    //       },
+    //     },
+    //   },
+    // ],
   ],
 
   site: {
-    url: 'https://www.alkuszom.info',
+    url: 'https://www.vasalasmester.hu',
     trailingSlash: true,
   },
+
 })
