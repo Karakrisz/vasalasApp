@@ -2414,6 +2414,9 @@ const sources$1 = [
                 "loc": "/"
             },
             {
+                "loc": "/javitas"
+            },
+            {
                 "loc": "/kapcsolat"
             },
             {
