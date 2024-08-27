@@ -2408,6 +2408,9 @@ const sources$1 = [
                 "loc": "/arlista"
             },
             {
+                "loc": "/egyeni-igenyek"
+            },
+            {
                 "loc": "/galeria"
             },
             {
@@ -2420,7 +2423,16 @@ const sources$1 = [
                 "loc": "/kapcsolat"
             },
             {
+                "loc": "/kolcsonzes"
+            },
+            {
+                "loc": "/meretre-szabas-igazitas"
+            },
+            {
                 "loc": "/mosas"
+            },
+            {
+                "loc": "/nagy-mennyiseg"
             },
             {
                 "loc": "/rolunk"

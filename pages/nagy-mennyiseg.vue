@@ -12,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <div class="supage-content position-relative">
+  <div class="supage-content supage-content--services position-relative">
     <h2 class="supage-content__h2">
       Nagy Mennyiségű Ruhák Kezelése - Vasalás Mester
     </h2>

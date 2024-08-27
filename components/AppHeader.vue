@@ -19,6 +19,7 @@ const specialPaths = [
   '/meretre-szabas-igazitas',
   '/kolcsonzes',
   '/egyeni-igenyek',
+  '/adatvedelmi-tajekoztato',
 ]
 
 const isSpecialPage = computed(() => specialPaths.includes(route.path))

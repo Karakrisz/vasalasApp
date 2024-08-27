@@ -1,1 +1,0 @@
-import{u as s,c as e,o,a as t}from"./Bd3y6TPe.js";const a={class:"supage-content position-relative"},l=t("h2",{class:"supage-content__h2"},"Szolgáltatások",-1),c=t("p",null,"feltöltés alatt...",-1),_=[l,c],u={__name:"szolgaltatasok",setup(n){return s({title:"Szolgáltatások"}),(i,r)=>(o(),e("div",a,_))}};export{u as default};

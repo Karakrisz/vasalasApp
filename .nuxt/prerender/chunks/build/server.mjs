@@ -1,4 +1,4 @@
-import { version, ref, watchEffect, watch, getCurrentInstance, defineComponent, computed, h, provide, shallowReactive, inject, Suspense, nextTick, Transition, createElementBlock, unref, resolveComponent, useSSRContext, createApp, effectScope, reactive, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, hasInjectionContext, toRef, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, defineAsyncComponent, mergeProps, withCtx, openBlock, createBlock, Fragment, createTextVNode, toDisplayString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
+import { version, ref, watchEffect, watch, getCurrentInstance, defineComponent, computed, h, provide, shallowReactive, inject, Suspense, nextTick, Transition, unref, resolveComponent, useSSRContext, createApp, effectScope, reactive, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, hasInjectionContext, toRef, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, defineAsyncComponent, mergeProps, withCtx, openBlock, createBlock, Fragment, createTextVNode, toDisplayString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
 import { $fetch } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ofetch/dist/node.mjs';
 import { createHooks } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/hookable/dist/index.mjs';
 import { getContext } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unctx/dist/index.mjs';
@@ -584,7 +584,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./adatvedelmi-tajekoztato-BY4n2D0_.mjs').then((m) => m.default || m)
+    component: () => import('./adatvedelmi-tajekoztato-v9J6u2L6.mjs').then((m) => m.default || m)
   },
   {
     name: "ajanlatkeres",
@@ -592,7 +592,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./ajanlatkeres-Bk_swu9a.mjs').then((m) => m.default || m)
+    component: () => import('./ajanlatkeres-CsOESwAQ.mjs').then((m) => m.default || m)
   },
   {
     name: "arlista",
@@ -600,7 +600,15 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./arlista-DLgt6T4e.mjs').then((m) => m.default || m)
+    component: () => import('./arlista-tNF5FtUn.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "egyeni-igenyek",
+    path: "/egyeni-igenyek",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./egyeni-igenyek-BHNE714s.mjs').then((m) => m.default || m)
   },
   {
     name: "galeria",
@@ -608,7 +616,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./galeria-By_qdm7m.mjs').then((m) => m.default || m)
+    component: () => import('./galeria-C9ZWNNjK.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -616,7 +624,15 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-nArGovcJ.mjs').then((m) => m.default || m)
+    component: () => import('./index-HHqSff5i.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "javitas",
+    path: "/javitas",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./javitas-k62sCldR.mjs').then((m) => m.default || m)
   },
   {
     name: "kapcsolat",
@@ -624,7 +640,39 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./kapcsolat-Bn1j1YjQ.mjs').then((m) => m.default || m)
+    component: () => import('./kapcsolat-D6LcSdRJ.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "kolcsonzes",
+    path: "/kolcsonzes",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./kolcsonzes-C2z1u-nb.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "meretre-szabas-igazitas",
+    path: "/meretre-szabas-igazitas",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./meretre-szabas-igazitas-Bwm5GbwL.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "mosas",
+    path: "/mosas",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./mosas-WZcNONsV.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "nagy-mennyiseg",
+    path: "/nagy-mennyiseg",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./nagy-mennyiseg-B-UItZJ9.mjs').then((m) => m.default || m)
   },
   {
     name: "rolunk",
@@ -632,7 +680,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./rolunk-Du2tEhKR.mjs').then((m) => m.default || m)
+    component: () => import('./rolunk-DZ_0fkm4.mjs').then((m) => m.default || m)
   },
   {
     name: "szolgaltatasok",
@@ -640,7 +688,31 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./szolgaltatasok-MRKzNhr1.mjs').then((m) => m.default || m)
+    component: () => import('./szolgaltatasok-D94z-5Su.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "tisztitas",
+    path: "/tisztitas",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./tisztitas-C55Q-TRP.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "varras",
+    path: "/varras",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./varras-oBUtBC0X.mjs').then((m) => m.default || m)
+  },
+  {
+    name: "vasalas",
+    path: "/vasalas",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./vasalas-DEGcqewQ.mjs').then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -1799,7 +1871,17 @@ const _sfc_main$4 = {
       "/rolunk",
       "/ajanlatkeres",
       "/szolgaltatasok",
-      "/arlista"
+      "/arlista",
+      "/vasalas",
+      "/mosas",
+      "/tisztitas",
+      "/varras",
+      "/javitas",
+      "/nagy-mennyiseg",
+      "/meretre-szabas-igazitas",
+      "/kolcsonzes",
+      "/egyeni-igenyek",
+      "/adatvedelmi-tajekoztato"
     ];
     const isSpecialPage = computed(() => specialPaths.includes(route.path));
     const links = [
@@ -2028,30 +2110,6 @@ function hasChildrenRoutes(fork, newRoute, Component) {
   });
   return index < newRoute.matched.length - 1;
 }
-const clientOnlySymbol = Symbol.for("nuxt:client-only");
-defineComponent({
-  name: "ClientOnly",
-  inheritAttrs: false,
-  // eslint-disable-next-line vue/require-prop-types
-  props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
-  setup(_, { slots, attrs }) {
-    const mounted = ref(false);
-    provide(clientOnlySymbol, true);
-    return (props) => {
-      var _a;
-      if (mounted.value) {
-        return (_a = slots.default) == null ? void 0 : _a.call(slots);
-      }
-      const slot = slots.fallback || slots.placeholder;
-      if (slot) {
-        return slot();
-      }
-      const fallbackStr = props.fallback || props.placeholder || "";
-      const fallbackTag = props.fallbackTag || props.placeholderTag || "span";
-      return createElementBlock(fallbackTag, attrs, fallbackStr);
-    };
-  }
-});
 const _sfc_main$3 = {
   __name: "AppFooter",
   __ssrInlineRender: true,
@@ -2081,7 +2139,7 @@ const _sfc_main$3 = {
       subject: "",
       message: ""
     });
-    ref(false);
+    const isSent = ref(false);
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtImg = __nuxt_component_0$1;
       const _component_NuxtLink = __nuxt_component_0$2;
@@ -2094,20 +2152,23 @@ const _sfc_main$3 = {
         alt: "Vasalás Mester",
         class: "footer-content__img-box__img"
       }, null, _parent));
-      _push(`</div><div class="footer-content__text-box"><h6 class="footer-content__text-box__h6 text-transform-uppercase text-color-w"> ÍRJON NEKÜNK, HAMAR VÁLASZOLUNK </h6><p class="footer-content__text-box__p text-color-w"> Amennyiben bármilyen kérdése merülne fel, ne habozzon kapcsolatba lépni velünk! Írjon nekünk bátran, és csapatunk igyekszik a lehető leggyorsabban válaszolni minden érdeklődésre. Várjuk, hogy halljunk Öntől! </p><div class="contact-form"><form><div class="contact-form"><div class="form-group"><input class="form-group__input" placeholder="Név" type="text" id="name"${ssrRenderAttr("value", form.value.name)} required></div><div class="form-group"><input class="form-group__input" placeholder="Email cím" type="email" id="email"${ssrRenderAttr("value", form.value.email)} required></div><div class="form-group"><input class="form-group__input" placeholder="Telefonszám" type="text" id="phonenumber"${ssrRenderAttr("value", form.value.phonenumber)} required></div><div class="form-group"><input class="form-group__input" placeholder="Legalkalmasabb időpont a telefonhívásra" type="text" id="mobilecall"${ssrRenderAttr("value", form.value.mobilecall)} required></div><div class="form-group"><input class="form-group__input" placeholder="Tárgy" type="text" id="subject"${ssrRenderAttr("value", form.value.subject)} required></div><div class="form-group"><textarea rows="9" cols="300" class="form-group__textarea" placeholder="Üzenet..." id="message" required>${ssrInterpolate(form.value.message)}</textarea></div></div></form><div class="contact-form__link-box d-flex"><div class="contact-form__link-box__text-box"><p class="contact-form__link-box__text-box__p text-color-w"> A Küldés gombra való kattintással automatikusan elfogadja az Adatvédelmi Szabályzatot. </p></div><div class="contact-form__link-box__NuxtLink">`);
-      _push(ssrRenderComponent(_component_NuxtLink, { class: "page-link text-transform-uppercase text-color-w f-700" }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
-          if (_push2) {
-            _push2(` KÜLDÉS `);
-          } else {
-            return [
-              createTextVNode(" KÜLDÉS ")
-            ];
-          }
-        }),
-        _: 1
-      }, _parent));
-      _push(`</div></div></div></div></div><div class="footer-content__bottom d-flex"><div class="footer-content__bottom__infoBox"><div class="footer-content__bottom__infoBox__header d-flex"><div class="footer-content__bottom__infoBox__header__iBox">`);
+      _push(`</div><div class="footer-content__text-box"><h6 class="footer-content__text-box__h6 text-transform-uppercase text-color-w"> ÍRJON NEKÜNK, HAMAR VÁLASZOLUNK </h6><p class="footer-content__text-box__p text-color-w"> Amennyiben bármilyen kérdése merülne fel, ne habozzon kapcsolatba lépni velünk! Írjon nekünk bátran, és csapatunk igyekszik a lehető leggyorsabban válaszolni minden érdeklődésre. Várjuk, hogy halljunk Öntől! </p><div class="contact-form"><form><div class="contact-form"><div class="form-group"><input class="form-group__input" placeholder="Név" type="text" id="name"${ssrRenderAttr("value", form.value.name)} required></div><div class="form-group"><input class="form-group__input" placeholder="Email cím" type="email" id="email"${ssrRenderAttr("value", form.value.email)} required></div><div class="form-group"><input class="form-group__input" placeholder="Telefonszám" type="text" id="phonenumber"${ssrRenderAttr("value", form.value.phonenumber)} required></div><div class="form-group"><input class="form-group__input" placeholder="Legalkalmasabb időpont a telefonhívásra" type="text" id="mobilecall"${ssrRenderAttr("value", form.value.mobilecall)} required></div><div class="form-group"><input class="form-group__input" placeholder="Tárgy" type="text" id="subject"${ssrRenderAttr("value", form.value.subject)} required></div><div class="form-group"><textarea rows="9" cols="300" class="form-group__textarea" placeholder="Üzenet..." id="message" required>${ssrInterpolate(form.value.message)}</textarea></div></div><div class="contact-form__link-box d-flex">`);
+      if (!isSent.value) {
+        _push(`<div class="contact-form__link-box__text-box"><p class="contact-form__link-box__text-box__p text-color-w"> A Küldés gombra való kattintással automatikusan elfogadja az Adatvédelmi Szabályzatot. </p></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (!isSent.value) {
+        _push(`<div class="contact-form__link-box__NuxtLink"><button type="submit" class="page-link cursor text-transform-uppercase text-color-w f-700"> KÜLDÉS </button></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (isSent.value) {
+        _push(`<div class="confirmation-message bg-color-w text-center"><p class="confirmation-message__p text-color f-600"> Köszönjük az üzenetét, hamarosan felvesszük Önnel a kapcsolatot. </p></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div></form></div></div></div><div class="footer-content__bottom d-flex"><div class="footer-content__bottom__infoBox"><div class="footer-content__bottom__infoBox__header d-flex"><div class="footer-content__bottom__infoBox__header__iBox">`);
       _push(ssrRenderComponent(_component_NuxtImg, {
         src: "/img/header/logo.svg",
         alt: "Vasalás Mester",
@@ -2183,7 +2244,10 @@ const _sfc_main$3 = {
         }),
         _: 1
       }, _parent));
-      _push(ssrRenderComponent(_component_NuxtLink, { class: "footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500" }, {
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "adatvedelmi-tajekoztato",
+        class: "footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
+      }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(` Adatvédelmi Szabályzat `);
@@ -2195,7 +2259,10 @@ const _sfc_main$3 = {
         }),
         _: 1
       }, _parent));
-      _push(ssrRenderComponent(_component_NuxtLink, { class: "footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500" }, {
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "ajanlatkeres",
+        class: "footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
+      }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(` Kapcsolat `);
@@ -2207,7 +2274,10 @@ const _sfc_main$3 = {
         }),
         _: 1
       }, _parent));
-      _push(ssrRenderComponent(_component_NuxtLink, { class: "footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500" }, {
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "arlista",
+        class: "footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
+      }, {
         default: withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
             _push2(` Árlista `);
@@ -2276,8 +2346,8 @@ const _sfc_main$1 = {
     const statusMessage = _error.statusMessage ?? (is404 ? "Page Not Found" : "Internal Server Error");
     const description = _error.message || _error.toString();
     const stack = void 0;
-    const _Error404 = defineAsyncComponent(() => import('./error-404-BogR6Sms.mjs').then((r) => r.default || r));
-    const _Error = defineAsyncComponent(() => import('./error-500-1NIXTVVc.mjs').then((r) => r.default || r));
+    const _Error404 = defineAsyncComponent(() => import('./error-404-BEvbT0SN.mjs').then((r) => r.default || r));
+    const _Error = defineAsyncComponent(() => import('./error-500-BHZqTK2m.mjs').then((r) => r.default || r));
     const ErrorTemplate = is404 ? _Error404 : _Error;
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));

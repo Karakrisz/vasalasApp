@@ -12,7 +12,7 @@ useHead({
 </script>
 
 <template>
-  <div class="supage-content position-relative">
+  <div class="supage-content supage-content--services position-relative">
     <h2 class="supage-content__h2 text-transform-uppercase">
       Vasalás - Vasalás Mester
     </h2>
@@ -46,9 +46,7 @@ useHead({
       és a varratok alapos kisimítására.
     </p>
 
-    <h4 class="supage-content__h4">
-      Környezetbarát Vasalási Eljárások
-    </h4>
+    <h4 class="supage-content__h4">Környezetbarát Vasalási Eljárások</h4>
 
     <p class="supage-content__p">
       A Vasalás Mester kiemelt figyelmet fordít a környezetvédelemre. Minden
@@ -76,9 +74,7 @@ useHead({
       feladatot, és élvezze a gondtalan kiszolgálás előnyeit!
     </p>
 
-    <h6 class="supage-content__h6">
-      Miért válassza a Vasalás Mestert?
-    </h6>
+    <h6 class="supage-content__h6">Miért válassza a Vasalás Mestert?</h6>
 
     <ul class="supage-content__ul">
       <li class="supage-content__ul__li">

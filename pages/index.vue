@@ -37,9 +37,9 @@
           vagy akár több ezret is egyszerre - igénytől függően.
         </p>
         <div class="slider-content__tBox__lBox">
-          <NuxtLink class="page-link text-color f-600">
+          <a href="tel:+36707777615" class="page-link text-color f-600">
             Leadom a rendelésem
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </div>
@@ -320,9 +320,12 @@
           ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát!
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <NuxtLink class="page-link page-link--format text-color f-600">
+          <a
+            href="tel:+36707777615"
+            class="page-link page-link--format text-color f-600"
+          >
             Leadom a rendelésem
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </div>
@@ -509,9 +512,9 @@
           kényelmét elhagynák.
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <NuxtLink class="page-link page-link--format text-color f-600">
+          <a href="tel:+36707777615" class="page-link page-link--format text-color f-600">
             Leadom a rendelésem
-          </NuxtLink>
+          </a>
         </div>
       </div>
       <div class="page-information-content__blog-content">

@@ -225,7 +225,8 @@ ul {
 .footer-content__img-box__img,
 .form-group__input,
 .form-group__textarea,
-.footer-content__bottom__mapBox__iframe {
+.footer-content__bottom__mapBox__iframe,
+.confirmation-message {
   width: 100%;
 }
 
@@ -343,6 +344,15 @@ ul {
 
 .page-information-content__iTextBox {
   border-radius: 5em;
+}
+
+.confirmation-message {
+  padding: 0 1em;
+  border-radius: 2em;
+}
+
+.confirmation-message {
+  animation: slideInFromBottom 0.5s ease-out;
 }
 
 /********************  Identical instructions end **********************/
@@ -724,7 +734,15 @@ ul {
 }
 
 .supage-content {
-  padding: 13% 4% 23% 4%;
+  padding: 15% 4% 25% 4%;
+}
+
+.supage-content--offer-format {
+  padding: 15% 4% 3% 4%;
+}
+
+.supage-content__p__ul__li {
+  margin: 1.5em 0;
 }
 
 .supage-content__img {
@@ -776,6 +794,22 @@ ul {
   z-index: 1;
 }
 
+.page-information-content--subpage-about {
+  margin: 12% 0 3% 0;
+}
+
+.services-content__h3--subpage-format {
+  margin-top: 14%;
+}
+
+.prices-content--subpage-format {
+  padding-bottom: 5%;
+}
+
+.aszf-content {
+  margin: 3% 0 30% 0;
+}
+
 /********************  Subpage formating formating end **********************/
 
 /********************  Media formating start **********************/
@@ -786,7 +820,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1.5rem;
   }
   .slider-content__tBox__h1 {
@@ -829,7 +864,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.8rem;
   }
   .page-information-content__iTextBox__h4,
@@ -858,7 +894,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1.4rem;
   }
   .slider-content__tBox__h1 {
@@ -902,7 +939,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.7rem;
   }
   .page-information-content__iTextBox__h4,
@@ -931,7 +969,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1.3rem;
   }
   .slider-content__tBox__h1 {
@@ -976,7 +1015,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.6rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1005,7 +1045,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1.1rem;
   }
   .header-content__logo-box__link__img {
@@ -1053,7 +1094,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.4rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1082,7 +1124,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1.1rem;
   }
   .header-content__logo-box__link__img {
@@ -1130,7 +1173,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.3rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1159,7 +1203,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1rem;
   }
   .header-content__logo-box__link__img {
@@ -1207,7 +1252,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.2rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1236,7 +1282,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 1rem;
   }
   .header-content__logo-box__link__img {
@@ -1287,7 +1334,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1.1rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1321,6 +1369,15 @@ ul {
   .footer-content__bottom__infoBox__copyRBox__h6 {
     font-size: 0.7rem;
   }
+  .page-information-content--subpage-about {
+    margin: 12% 0 31% 0;
+  }
+  .prices-content--subpage-format {
+    padding-bottom: 3%;
+  }
+  .supage-content {
+    padding: 15% 4% 27% 4%;
+  }
 }
 
 @media (min-width: 991px) and (max-width: 1200px) {
@@ -1329,7 +1386,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 0.9rem;
   }
   .header-content__logo-box__link__img {
@@ -1380,7 +1438,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1rem;
   }
   .services-content__h3,
@@ -1423,6 +1482,21 @@ ul {
   .supage-content {
     padding: 10em 7% 25% 7%;
   }
+  .page-information-content--subpage-about {
+    margin: 13% 0 33% 0;
+  }
+  .services-content__h3--subpage-format {
+    margin-top: 17%;
+  }
+  .prices-content--subpage-format {
+    padding-bottom: 3%;
+  }
+  .supage-content {
+    padding: 17% 4% 30% 4%;
+  }
+  .aszf-content {
+    margin: 4% 0 35% 0;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1431,7 +1505,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 0.9rem;
   }
   .grid-7 {
@@ -1795,7 +1870,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1rem;
   }
   .supage-content__h6 {
@@ -1807,6 +1883,22 @@ ul {
   .supage-content__ul__li {
     margin-bottom: 5%;
   }
+  .page-information-content--subpage-about {
+    margin: 12em 0 20% 0;
+  }
+  .services-content__h3--subpage-format {
+    margin-top: 15em;
+    margin-bottom: 2.5em;
+  }
+  .prices-content--subpage-format {
+    padding-bottom: 3%;
+  }
+  .supage-content {
+    padding: 12em 4% 15% 4%;
+  }
+  .aszf-content {
+    margin: 13em 0 16% 0;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1815,7 +1907,8 @@ ul {
   .menu__item,
   .form-group__input,
   .form-group__textarea,
-  .supage-content__ul__li {
+  .supage-content__ul__li,
+  .supage-content__p__i {
     font-size: 0.9rem;
   }
   .grid-3,
@@ -2014,7 +2107,8 @@ ul {
   .page-information-content__blog-content__h3,
   .footer-content__h3,
   .services-content__linkItextBox__content__tBox,
-  .supage-content__h2 {
+  .supage-content__h2,
+  .aszf-content__h5 {
     font-size: 1.1rem;
   }
   .services-content__linkItextBox__content__tBox {
@@ -2172,7 +2266,8 @@ ul {
   .supage-content__h3,
   .supage-content__h4,
   .supage-content__h5,
-  .supage-content__h6 {
+  .supage-content__h6,
+  .aszf-content__h5 {
     font-size: 1rem;
   }
   .supage-content__h6 {
@@ -2190,6 +2285,19 @@ ul {
   .supage-content__img {
     width: 100%;
     margin: 2em 0 1% 0;
+  }
+  .page-information-content--subpage-about {
+    margin: 7.5em 0 20% 0;
+  }
+  .services-content__h3--subpage-format {
+    margin-top: 11em;
+    margin-bottom: 2.5em;
+  }
+  .supage-content {
+    padding: 9em 4% 15% 4%;
+  }
+  .aszf-content {
+    margin: 9em 0 16% 0;
   }
 }
 

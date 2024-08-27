@@ -26,19 +26,46 @@ const sources = [
                 "loc": "/arlista"
             },
             {
+                "loc": "/egyeni-igenyek"
+            },
+            {
                 "loc": "/galeria"
             },
             {
                 "loc": "/"
             },
             {
+                "loc": "/javitas"
+            },
+            {
                 "loc": "/kapcsolat"
+            },
+            {
+                "loc": "/kolcsonzes"
+            },
+            {
+                "loc": "/meretre-szabas-igazitas"
+            },
+            {
+                "loc": "/mosas"
+            },
+            {
+                "loc": "/nagy-mennyiseg"
             },
             {
                 "loc": "/rolunk"
             },
             {
                 "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/tisztitas"
+            },
+            {
+                "loc": "/varras"
+            },
+            {
+                "loc": "/vasalas"
             }
         ],
         "sourceType": "app"
@@ -53,16 +80,43 @@ const sources = [
         },
         "urls": [
             {
+                "loc": "/arlista"
+            },
+            {
+                "loc": "/kolcsonzes"
+            },
+            {
+                "loc": "/meretre-szabas-igazitas"
+            },
+            {
                 "loc": "/rolunk"
+            },
+            {
+                "loc": "/kapcsolat"
+            },
+            {
+                "loc": "/javitas"
+            },
+            {
+                "loc": "/varras"
+            },
+            {
+                "loc": "/mosas"
+            },
+            {
+                "loc": "/vasalas"
+            },
+            {
+                "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/nagy-mennyiseg"
             },
             {
                 "loc": "/ajanlatkeres"
             },
             {
-                "loc": "/arlista"
-            },
-            {
-                "loc": "/szolgaltatasok"
+                "loc": "/tisztitas"
             },
             {
                 "loc": "/galeria"
@@ -71,7 +125,7 @@ const sources = [
                 "loc": "/adatvedelmi-tajekoztato"
             },
             {
-                "loc": "/kapcsolat"
+                "loc": "/egyeni-igenyek"
             },
             {
                 "loc": "/"
