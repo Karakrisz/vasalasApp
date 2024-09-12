@@ -1,0 +1,1 @@
+import{u as t,c as s,a,o as l}from"./UM2S_Ypm.js";const o={class:"supage-content position-relative"},i={__name:"galeria",setup(n){return t({title:"Galéria"}),(r,e)=>(l(),s("div",o,e[0]||(e[0]=[a("h2",{class:"supage-content__h2"},"Galéria",-1),a("p",null,"feltöltés alatt...",-1)])))}};export{i as default};

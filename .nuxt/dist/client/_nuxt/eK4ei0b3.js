@@ -1,1 +1,0 @@
-import{u as e,c as t,o as a}from"./CzLv47vt.js";const o={class:"subpage-content subpage-footer-content"},r={__name:"kapcsolat",setup(s){return e({title:"Kapcsolat"}),(c,n)=>(a(),t("div",o))}};export{r as default};

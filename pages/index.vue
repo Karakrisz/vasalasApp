@@ -1,13 +1,12 @@
 <script setup lang="ts">
 
 import { ref, onMounted } from 'vue'
-
-import he from 'he'
+import { defineComponent } from 'vue'
 
 interface Post {
   id: number
   title: string
-  seo_title: string
+  slug: string
   body: string
   image: string
 }
@@ -35,13 +34,12 @@ onMounted(() => {
   fetchPosts()
 })
 
-function getShortBody(body: string) {
-  const decodedBody = he.decode(body)
-  if (decodedBody.length > 100) {
-    return decodedBody.substring(0, 100) + '...'
-  }
-  return decodedBody
-}
+const RichText = defineComponent({
+  props: ['content'],
+  render() {
+    return h('div', { innerHTML: this.content })
+  },
+})
 
 </script>
 <template>
@@ -570,11 +568,18 @@ function getShortBody(body: string) {
         </h3>
 
         <div class="page-information-content__blog-content__gBox pr grid-3">
-          <div class="page-information-content__blog-content__gBox__iTextBox">
+
+          <div
+            v-for="post in itemsPost"
+            :key="post.slug"
+            class="page-information-content__blog-content__gBox__iTextBox"
+          >
             <NuxtImg
-              src="/img/page-information/blog/blog.jpg"
-              alt="Vasalás Mester"
+              height="100%"
+              loading="lazy"
               class="page-information-content__blog-content__gBox__iTextBox__img"
+              :src="`http://127.0.0.1:8000/storage/${post.image}`"
+              alt="{{ post.title }}"
             />
             <div
               class="page-information-content__blog-content__gBox__iTextBox__tBox"
@@ -582,68 +587,16 @@ function getShortBody(body: string) {
               <h5
                 class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
               >
-                A Gyűrődésmentesség Művészete
+                {{ post.title }}
               </h5>
               <p
                 class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
               >
-                Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
-                Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
-                segítenek a gyűrődések nélküli, kifogástalan megjelenés
-                elérésében, akár otthon, akár útközben.
+                <RichText :content="post.body" />
               </p>
             </div>
           </div>
 
-          <div class="page-information-content__blog-content__gBox__iTextBox">
-            <NuxtImg
-              src="/img/page-information/blog/blog2.jpg"
-              alt="Vasalás Mester"
-              class="page-information-content__blog-content__gBox__iTextBox__img"
-            />
-            <div
-              class="page-information-content__blog-content__gBox__iTextBox__tBox"
-            >
-              <h5
-                class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
-              >
-                A Gyűrődésmentesség Művészete
-              </h5>
-              <p
-                class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
-              >
-                Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
-                Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
-                segítenek a gyűrődések nélküli, kifogástalan megjelenés
-                elérésében, akár otthon, akár útközben.
-              </p>
-            </div>
-          </div>
-
-          <div class="page-information-content__blog-content__gBox__iTextBox">
-            <NuxtImg
-              src="/img/page-information/blog/blog3.jpg"
-              alt="Vasalás Mester"
-              class="page-information-content__blog-content__gBox__iTextBox__img"
-            />
-            <div
-              class="page-information-content__blog-content__gBox__iTextBox__tBox"
-            >
-              <h5
-                class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
-              >
-                A Gyűrődésmentesség Művészete
-              </h5>
-              <p
-                class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
-              >
-                Fedezd fel a tökéletesen sima ruhadarabok elérésének titkait!
-                Bemutatjuk a legjobb vasalási technikákat és eszközöket, amelyek
-                segítenek a gyűrődések nélküli, kifogástalan megjelenés
-                elérésében, akár otthon, akár útközben.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

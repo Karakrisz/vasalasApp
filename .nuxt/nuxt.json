@@ -1,9 +1,9 @@
 {
-  "_hash": "v7ebdL1yRG",
+  "_hash": "0ke4uyuzNH",
   "project": {
     "rootDir": "/Applications/XAMPP/xamppfiles/htdocs/vasalasApp"
   },
   "versions": {
-    "nuxt": "3.11.1"
+    "nuxt": "3.13.1"
   }
 }

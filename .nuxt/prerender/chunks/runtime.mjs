@@ -8,10 +8,10 @@ import { snakeCase } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasA
 import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/defu/dist/defu.mjs';
 import { hash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ohash/dist/index.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withoutProtocol, withTrailingSlash, withLeadingSlash, withBase, withoutTrailingSlash, decodePath } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ufo/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/dist/index.mjs';
+import { createStorage, defineDriver, prefixStorage } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs.mjs';
-import file_58_47_47_47Applications_47XAMPP_47xamppfiles_47htdocs_47vasalasApp_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/nuxt/dist/core/runtime/nitro/cache-driver.js';
-import unstorage_47drivers_47fs_45lite from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs-lite.mjs';
+import fsDriver from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs-lite.mjs';
+import lruCache from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/lru-cache.mjs';
 import { toRouteMatcher, createRouter } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/radix3/dist/index.mjs';
 import { toValue } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
 import { promises } from 'node:fs';
@@ -58,9 +58,7 @@ function _expandFromEnv(value) {
 }
 
 const inlineAppConfig = {
-  "nuxt": {
-    "buildId": "274c6fdf-447e-4826-90c5-f2482237159f"
-  }
+  "nuxt": {}
 };
 
 
@@ -70,6 +68,7 @@ const appConfig = defuFn(inlineAppConfig);
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
+    "buildId": "80769c98-cd73-4f3d-b72b-64f1b57ac846",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -88,7 +87,7 @@ const _inlineRuntimeConfig = {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2024-08-27T13:58:59.492Z"
+          "X-Sitemap-Prerendered": "2024-09-12T19:31:40.577Z"
         }
       },
       "/_nuxt/builds/meta/**": {
@@ -254,12 +253,34 @@ for (const asset of serverAssets) {
   assets$1.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir }));
 }
 
+const normalizeFsKey = (item) => item.replaceAll(":", "_");
+const _47Applications_47XAMPP_47xamppfiles_47htdocs_47vasalasApp_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js = defineDriver((opts) => {
+  const fs = fsDriver({ base: opts.base });
+  const lru = lruCache({ max: 1e3 });
+  return {
+    ...fs,
+    // fall back to file system - only the bottom three methods are used in renderer
+    async setItem(key, value, opts2) {
+      await Promise.all([
+        fs.setItem(normalizeFsKey(key), value, opts2),
+        lru.setItem(key, value, opts2)
+      ]);
+    },
+    async hasItem(key, opts2) {
+      return await lru.hasItem(key, opts2) || await fs.hasItem(normalizeFsKey(key), opts2);
+    },
+    async getItem(key, opts2) {
+      return await lru.getItem(key, opts2) || await fs.getItem(normalizeFsKey(key), opts2);
+    }
+  };
+});
+
 const storage = createStorage({});
 
 storage.mount('/assets', assets$1);
 
-storage.mount('internal:nuxt:prerender', file_58_47_47_47Applications_47XAMPP_47xamppfiles_47htdocs_47vasalasApp_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js({"driver":"file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/nuxt/dist/core/runtime/nitro/cache-driver.js","base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.nuxt/cache/nitro/prerender"}));
-storage.mount('data', unstorage_47drivers_47fs_45lite({"driver":"fsLite","base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.data/kv"}));
+storage.mount('internal:nuxt:prerender', _47Applications_47XAMPP_47xamppfiles_47htdocs_47vasalasApp_47node_modules_47nuxt_47dist_47core_47runtime_47nitro_47cache_45driver_46js({"driver":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/nuxt/dist/core/runtime/nitro/cache-driver.js","base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.nuxt/cache/nitro/prerender"}));
+storage.mount('data', fsDriver({"driver":"fsLite","base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.data/kv"}));
 storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/server","ignore":["**/node_modules/**","**/.git/**"]}));
 storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Applications/XAMPP/xamppfiles/htdocs/vasalasApp/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
@@ -483,6 +504,9 @@ function defineCachedEventHandler(handler, opts = defaultCacheOptions) {
         fetch: globalThis.$fetch
       });
       event.context = incomingEvent.context;
+      event.context.cache = {
+        options: _opts
+      };
       const body = await handler(event) || _resSendBody;
       const headers = event.node.res.getHeaders();
       headers.etag = String(
@@ -1151,498 +1175,498 @@ const errorHandler = (async function errorhandler(error, event) {
 const assets = {
   "/200.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"96a9-pw2YPTb3jKGllHnT8IMSVUj1xmU\"",
-    "mtime": "2024-08-27T13:59:07.346Z",
-    "size": 38569,
+    "etag": "\"96c6-1hxTX2/ED0IsgR6xnMh8YpiQqvo\"",
+    "mtime": "2024-09-12T19:31:46.732Z",
+    "size": 38598,
     "path": "../../.output/public/200.html"
   },
   "/404.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"96a9-pw2YPTb3jKGllHnT8IMSVUj1xmU\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 38569,
+    "etag": "\"96c6-1hxTX2/ED0IsgR6xnMh8YpiQqvo\"",
+    "mtime": "2024-09-12T19:31:46.735Z",
+    "size": 38598,
     "path": "../../.output/public/404.html"
   },
   "/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
+    "etag": "\"45-hyH+Zg/cMZoFTujqtJqr1fdIKTs\"",
+    "mtime": "2024-09-12T19:31:47.936Z",
+    "size": 69,
     "path": "../../.output/public/_payload.json"
   },
   "/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"10713-CXMu82HgIqzc90qny9lUEZvpq9A\"",
-    "mtime": "2024-08-27T13:59:07.367Z",
-    "size": 67347,
+    "etag": "\"107aa-KxKW2o9ve49/b7pgrfvec9naOVU\"",
+    "mtime": "2024-09-12T19:31:46.737Z",
+    "size": 67498,
     "path": "../../.output/public/index.html"
   },
   "/__sitemap__/style.xsl": {
     "type": "application/xml",
     "etag": "\"174e-04KStjaK+j7dbchiMHqnnHF1ICc\"",
-    "mtime": "2024-08-27T13:59:07.105Z",
+    "mtime": "2024-09-12T19:31:46.658Z",
     "size": 5966,
     "path": "../../.output/public/__sitemap__/style.xsl"
   },
   "/adatvedelmi-tajekoztato/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-9U5u0ngcl6x4ypd6hlZVJ+GD1nE\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
+    "etag": "\"45-z10zHq7cjl7MCzwOIDHU0IGHHHo\"",
+    "mtime": "2024-09-12T19:31:47.982Z",
+    "size": 69,
     "path": "../../.output/public/adatvedelmi-tajekoztato/_payload.json"
   },
   "/adatvedelmi-tajekoztato/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"10e1b-fJj/W31TU50k9XMenN6x5hVz1YU\"",
-    "mtime": "2024-08-27T13:59:07.347Z",
-    "size": 69147,
+    "etag": "\"10f0b-PHIY1CP6YClJRF6/+qTuF5BnxLU\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 69387,
     "path": "../../.output/public/adatvedelmi-tajekoztato/index.html"
-  },
-  "/ajanlatkeres/_payload.json": {
-    "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
-    "path": "../../.output/public/ajanlatkeres/_payload.json"
-  },
-  "/ajanlatkeres/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"c192-eAcwbV/Y/0FKqTLw5qolDQGZxCQ\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 49554,
-    "path": "../../.output/public/ajanlatkeres/index.html"
   },
   "/arlista/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.406Z",
-    "size": 62,
+    "etag": "\"45-fP/rhYHLtwqeslXdNbeQRMLu610\"",
+    "mtime": "2024-09-12T19:31:47.944Z",
+    "size": 69,
     "path": "../../.output/public/arlista/_payload.json"
   },
   "/arlista/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cbf5-nWrJ3AxcfXU9mNqWwGJM5ykKv8Y\"",
-    "mtime": "2024-08-27T13:59:07.344Z",
-    "size": 52213,
+    "etag": "\"cce5-DIYQVX5BgzKU++7e1cNhtTeYINk\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 52453,
     "path": "../../.output/public/arlista/index.html"
   },
   "/egyeni-igenyek/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
+    "etag": "\"45-z10zHq7cjl7MCzwOIDHU0IGHHHo\"",
+    "mtime": "2024-09-12T19:31:47.975Z",
+    "size": 69,
     "path": "../../.output/public/egyeni-igenyek/_payload.json"
   },
   "/egyeni-igenyek/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"d11b-XF5dJ8i4g2zBOoLHQuktLka2Db8\"",
-    "mtime": "2024-08-27T13:59:07.359Z",
-    "size": 53531,
+    "etag": "\"d181-X0u6Xc3rj7414S5BavvfFxvnlgk\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53633,
     "path": "../../.output/public/egyeni-igenyek/index.html"
+  },
+  "/ajanlatkeres/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-2TmkYTKEYIY5yb7jm6WI7EB6g1M\"",
+    "mtime": "2024-09-12T19:31:47.944Z",
+    "size": 69,
+    "path": "../../.output/public/ajanlatkeres/_payload.json"
+  },
+  "/ajanlatkeres/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"c282-e3/vu1E+9LC836Rb6nDj2i6fYGo\"",
+    "mtime": "2024-09-12T19:31:47.615Z",
+    "size": 49794,
+    "path": "../../.output/public/ajanlatkeres/index.html"
   },
   "/galeria/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
+    "etag": "\"45-fm9sYgcNQ00AumWODaVrNTANfe4\"",
+    "mtime": "2024-09-12T19:31:47.943Z",
+    "size": 69,
     "path": "../../.output/public/galeria/_payload.json"
   },
   "/galeria/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"babc-eIYaGxMmYikufKV/98CRsMBs1fU\"",
-    "mtime": "2024-08-27T13:59:07.346Z",
-    "size": 47804,
+    "etag": "\"bbac-4USn9y4gVpx74eS5ZYoPjDWA7MM\"",
+    "mtime": "2024-09-12T19:31:47.615Z",
+    "size": 48044,
     "path": "../../.output/public/galeria/index.html"
   },
   "/javitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.734Z",
-    "size": 62,
+    "etag": "\"45-VwEMAPArWgWEYAtv2HCWR1w6yQQ\"",
+    "mtime": "2024-09-12T19:31:47.979Z",
+    "size": 69,
     "path": "../../.output/public/javitas/_payload.json"
   },
   "/javitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cf73-Xiltrw/RQ2k7Rq/DJ7Z/mTcH2hs\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 53107,
+    "etag": "\"cfd9-nGTlmaq+YMg35JawHaxQQoWlFhk\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53209,
     "path": "../../.output/public/javitas/index.html"
-  },
-  "/kapcsolat/_payload.json": {
-    "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.734Z",
-    "size": 62,
-    "path": "../../.output/public/kapcsolat/_payload.json"
-  },
-  "/kapcsolat/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"b9ca-ZT+WULrFV+ymtzC4T+dy1I3BBGg\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 47562,
-    "path": "../../.output/public/kapcsolat/index.html"
   },
   "/kolcsonzes/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.407Z",
-    "size": 62,
+    "etag": "\"45-wmg99pbFaT9yGxEXcMTnyXigWlc\"",
+    "mtime": "2024-09-12T19:31:47.983Z",
+    "size": 69,
     "path": "../../.output/public/kolcsonzes/_payload.json"
   },
   "/kolcsonzes/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"d0b9-VrIm1yUSSAIb6yiAn7mc2JvHewA\"",
-    "mtime": "2024-08-27T13:59:07.344Z",
-    "size": 53433,
+    "etag": "\"d11f-PvPSqTNfbUZSy3INsIERkGZK2tA\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53535,
     "path": "../../.output/public/kolcsonzes/index.html"
   },
-  "/mosas/_payload.json": {
+  "/kapcsolat/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.734Z",
-    "size": 62,
-    "path": "../../.output/public/mosas/_payload.json"
+    "etag": "\"45-fRNw/WoGzJdgzFhzSuNv8EsJoQ0\"",
+    "mtime": "2024-09-12T19:31:47.982Z",
+    "size": 69,
+    "path": "../../.output/public/kapcsolat/_payload.json"
   },
-  "/mosas/index.html": {
+  "/kapcsolat/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cef6-qYoLWCigbb0HmdAm8vfMQupnPcw\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 52982,
-    "path": "../../.output/public/mosas/index.html"
+    "etag": "\"baba-G2hhgsWUBi6v2dzZo1loIA/yDPg\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 47802,
+    "path": "../../.output/public/kapcsolat/index.html"
   },
   "/meretre-szabas-igazitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.407Z",
-    "size": 62,
+    "etag": "\"45-oU/VcgJ2eJZR0dkc4c4qWJy0zfs\"",
+    "mtime": "2024-09-12T19:31:47.982Z",
+    "size": 69,
     "path": "../../.output/public/meretre-szabas-igazitas/_payload.json"
   },
   "/meretre-szabas-igazitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"d0c0-EQPiEhRE1fZJ8GhJ0jZuwC1Bzos\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 53440,
+    "etag": "\"d126-zSC/zBunBjc6yfMwVqxjd3UU7/Q\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53542,
     "path": "../../.output/public/meretre-szabas-igazitas/index.html"
   },
-  "/rolunk/_payload.json": {
+  "/mosas/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.407Z",
-    "size": 62,
-    "path": "../../.output/public/rolunk/_payload.json"
+    "etag": "\"45-su+OfqABGcMIVbn9+bdEi7VxT+o\"",
+    "mtime": "2024-09-12T19:31:47.944Z",
+    "size": 69,
+    "path": "../../.output/public/mosas/_payload.json"
   },
-  "/rolunk/index.html": {
+  "/mosas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"bfcf-dR3IMPbeniSbCeVlnDShWellhpk\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 49103,
-    "path": "../../.output/public/rolunk/index.html"
+    "etag": "\"cf5c-6oonjmTkWpTZdKgQ8u4xhxH9qgM\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53084,
+    "path": "../../.output/public/mosas/index.html"
   },
   "/nagy-mennyiseg/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
+    "etag": "\"45-krKCDU6Qjo0XQY7L4WuCRnwIuj4\"",
+    "mtime": "2024-09-12T19:31:47.957Z",
+    "size": 69,
     "path": "../../.output/public/nagy-mennyiseg/_payload.json"
   },
   "/nagy-mennyiseg/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"d197-zwFl4CC0dvjPoOmbHh8hPTCrVEM\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 53655,
+    "etag": "\"d1fd-g78HsaBwX4WnO1pbbJUQ8tZQHnE\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53757,
     "path": "../../.output/public/nagy-mennyiseg/index.html"
+  },
+  "/rolunk/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-oA2L7knXkMRy3mtrLDl28aHUITg\"",
+    "mtime": "2024-09-12T19:31:47.944Z",
+    "size": 69,
+    "path": "../../.output/public/rolunk/_payload.json"
+  },
+  "/rolunk/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"c0bf-ZW7oBb+ifJNWHZDTipN+UTUeJZg\"",
+    "mtime": "2024-09-12T19:31:47.615Z",
+    "size": 49343,
+    "path": "../../.output/public/rolunk/index.html"
   },
   "/tisztitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
-    "size": 62,
+    "etag": "\"45-POx0tRwzOgmmIdI4M0K6YG6ll8s\"",
+    "mtime": "2024-09-12T19:31:47.957Z",
+    "size": 69,
     "path": "../../.output/public/tisztitas/_payload.json"
   },
   "/tisztitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cf69-VkMeAFHqypnRn1ofgAMZMPsDMTc\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 53097,
+    "etag": "\"cfcf-H4I+SeRiHrWbO4Y/Q8jxyeb/yS4\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53199,
     "path": "../../.output/public/tisztitas/index.html"
   },
   "/szolgaltatasok/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.739Z",
-    "size": 62,
+    "etag": "\"45-c4fy6NtP1Ft0ZVaOuuDUE4z+vY0\"",
+    "mtime": "2024-09-12T19:31:47.944Z",
+    "size": 69,
     "path": "../../.output/public/szolgaltatasok/_payload.json"
   },
   "/szolgaltatasok/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cf51-bD4gWfNCVss4KB4Fq5Lf7f4L7ck\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 53073,
+    "etag": "\"d041-bQVoVpdL6gMvUP9rxLTBhIbllY4\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53313,
     "path": "../../.output/public/szolgaltatasok/index.html"
   },
   "/varras/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.734Z",
-    "size": 62,
+    "etag": "\"45-EBHHn/c/FKqxqjfzo1BlwtZt+TY\"",
+    "mtime": "2024-09-12T19:31:47.957Z",
+    "size": 69,
     "path": "../../.output/public/varras/_payload.json"
   },
   "/varras/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"d059-cW26ALELNKv5LJNFhyzaNcfR/zA\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 53337,
+    "etag": "\"d0bf-sFHfx8NDTUnbnpRfqktoEZTAeKc\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53439,
     "path": "../../.output/public/varras/index.html"
   },
   "/vasalas/_payload.json": {
     "type": "application/json",
-    "etag": "\"3e-yoyVaPZvMulR67qWdRAqAMXN4v4\"",
-    "mtime": "2024-08-27T13:59:07.734Z",
-    "size": 62,
+    "etag": "\"45-jB71Fk5h/KYt4Hi4gbFrlwn+I/U\"",
+    "mtime": "2024-09-12T19:31:47.957Z",
+    "size": 69,
     "path": "../../.output/public/vasalas/_payload.json"
   },
   "/vasalas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cee4-fM8KYCptFY8GUsUNCgd6uFCRBUI\"",
-    "mtime": "2024-08-27T13:59:07.345Z",
-    "size": 52964,
+    "etag": "\"cf4a-OoSFcoq3cK73M9yTjqixw3ppZ9M\"",
+    "mtime": "2024-09-12T19:31:47.616Z",
+    "size": 53066,
     "path": "../../.output/public/vasalas/index.html"
   },
   "/_ipx/_/img/footer/contact.webp": {
     "type": "image/webp",
     "etag": "\"8794-xmQ99fZ2MHML/idtVagxvOZnJmI\"",
-    "mtime": "2024-08-27T13:59:08.322Z",
+    "mtime": "2024-09-12T19:31:47.982Z",
     "size": 34708,
     "path": "../../.output/public/_ipx/_/img/footer/contact.webp"
   },
   "/_ipx/_/img/footer/facebook.svg": {
     "type": "image/svg+xml",
     "etag": "\"31a-u4eK4v1DuWoO5P/SgKGUxM+OXTY\"",
-    "mtime": "2024-08-27T13:59:08.399Z",
+    "mtime": "2024-09-12T19:31:47.975Z",
     "size": 794,
     "path": "../../.output/public/_ipx/_/img/footer/facebook.svg"
   },
   "/_ipx/_/img/footer/instagram.svg": {
     "type": "image/svg+xml",
     "etag": "\"72d-kJGLi1L61e5RC7Eop/P5UEIQgiQ\"",
-    "mtime": "2024-08-27T13:59:08.399Z",
+    "mtime": "2024-09-12T19:31:47.975Z",
     "size": 1837,
     "path": "../../.output/public/_ipx/_/img/footer/instagram.svg"
   },
   "/_ipx/_/img/footer/mail.svg": {
     "type": "image/svg+xml",
     "etag": "\"2f2-Kv22crsj/zxXlGAV6cyeR9kdWw4\"",
-    "mtime": "2024-08-27T13:59:08.536Z",
+    "mtime": "2024-09-12T19:31:47.944Z",
     "size": 754,
     "path": "../../.output/public/_ipx/_/img/footer/mail.svg"
   },
   "/_ipx/_/img/footer/map.svg": {
     "type": "image/svg+xml",
     "etag": "\"32a-QTbn0MKypDfnNL+yly+A849B7ZQ\"",
-    "mtime": "2024-08-27T13:59:08.329Z",
+    "mtime": "2024-09-12T19:31:47.944Z",
     "size": 810,
     "path": "../../.output/public/_ipx/_/img/footer/map.svg"
   },
   "/_ipx/_/img/footer/phone.svg": {
     "type": "image/svg+xml",
     "etag": "\"88f-GDrfhrYobTQ9QvvM2G2OT1doBws\"",
-    "mtime": "2024-08-27T13:59:08.495Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 2191,
     "path": "../../.output/public/_ipx/_/img/footer/phone.svg"
+  },
+  "/_ipx/_/img/header/logo.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"1e63-wiumMY3OxieHJqpjPuoS+OjYghw\"",
+    "mtime": "2024-09-12T19:31:47.699Z",
+    "size": 7779,
+    "path": "../../.output/public/_ipx/_/img/header/logo.svg"
   },
   "/_ipx/_/img/page-information/page-information.webp": {
     "type": "image/webp",
     "etag": "\"13a1a-Y9LZz4Li+W1iPBmwVQ3p6+sfm4Q\"",
-    "mtime": "2024-08-27T13:59:08.328Z",
+    "mtime": "2024-09-12T19:31:48.135Z",
     "size": 80410,
     "path": "../../.output/public/_ipx/_/img/page-information/page-information.webp"
   },
   "/_ipx/_/img/page-information/page-information2.webp": {
     "type": "image/webp",
     "etag": "\"bb0e-i69gjUnvKAaMcqqaK0DwvsL0olk\"",
-    "mtime": "2024-08-27T13:59:08.948Z",
+    "mtime": "2024-09-12T19:31:48.138Z",
     "size": 47886,
     "path": "../../.output/public/_ipx/_/img/page-information/page-information2.webp"
   },
   "/_ipx/_/img/prices/action.svg": {
     "type": "image/svg+xml",
     "etag": "\"bd6-CP7fPrwyWN8t6mHcyJEY4agTftM\"",
-    "mtime": "2024-08-27T13:59:08.537Z",
+    "mtime": "2024-09-12T19:31:47.928Z",
     "size": 3030,
     "path": "../../.output/public/_ipx/_/img/prices/action.svg"
   },
   "/_ipx/_/img/prices/prices.svg": {
     "type": "image/svg+xml",
     "etag": "\"2851-8M4Rm+iiLBgrM7LVCkjX4WOuIVA\"",
-    "mtime": "2024-08-27T13:59:08.541Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 10321,
     "path": "../../.output/public/_ipx/_/img/prices/prices.svg"
   },
   "/_ipx/_/img/prices/prices2.svg": {
     "type": "image/svg+xml",
     "etag": "\"256f-VpmJvofMwMmzx/1x4iZEhZ/hE3o\"",
-    "mtime": "2024-08-27T13:59:08.540Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 9583,
     "path": "../../.output/public/_ipx/_/img/prices/prices2.svg"
   },
   "/_ipx/_/img/prices/prices3.svg": {
     "type": "image/svg+xml",
     "etag": "\"3cdb-zmgYnfZhzOB0mfVwT4SG1dYcpm4\"",
-    "mtime": "2024-08-27T13:59:08.541Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 15579,
     "path": "../../.output/public/_ipx/_/img/prices/prices3.svg"
   },
   "/_ipx/_/img/prices/prices4.svg": {
     "type": "image/svg+xml",
     "etag": "\"226c-COzP6BqLvC5D21gsiWr18n+GKUk\"",
-    "mtime": "2024-08-27T13:59:08.541Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 8812,
     "path": "../../.output/public/_ipx/_/img/prices/prices4.svg"
   },
   "/_ipx/_/img/prices/prices5.svg": {
     "type": "image/svg+xml",
     "etag": "\"4fd-QZcvI6uPBbNY4lT45Rb08Bi+sxo\"",
-    "mtime": "2024-08-27T13:59:08.495Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 1277,
     "path": "../../.output/public/_ipx/_/img/prices/prices5.svg"
   },
   "/_ipx/_/img/prices/prices6.svg": {
     "type": "image/svg+xml",
     "etag": "\"199b-DgmdXVAUism/fa9hYQDEWe3fPNU\"",
-    "mtime": "2024-08-27T13:59:08.542Z",
+    "mtime": "2024-09-12T19:31:47.936Z",
     "size": 6555,
     "path": "../../.output/public/_ipx/_/img/prices/prices6.svg"
-  },
-  "/_ipx/_/img/header/logo.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"1e63-wiumMY3OxieHJqpjPuoS+OjYghw\"",
-    "mtime": "2024-08-27T13:59:08.537Z",
-    "size": 7779,
-    "path": "../../.output/public/_ipx/_/img/header/logo.svg"
   },
   "/_ipx/_/img/services/map.svg": {
     "type": "image/svg+xml",
     "etag": "\"668-ZU1c2poXN71h5TdkDOsTbks3Jpw\"",
-    "mtime": "2024-08-27T13:59:08.655Z",
+    "mtime": "2024-09-12T19:31:47.866Z",
     "size": 1640,
     "path": "../../.output/public/_ipx/_/img/services/map.svg"
   },
   "/_ipx/_/img/services/phone.svg": {
     "type": "image/svg+xml",
     "etag": "\"51e-eEY0a1ZgdVYGfX0QAoK5HEFUJbA\"",
-    "mtime": "2024-08-27T13:59:08.655Z",
+    "mtime": "2024-09-12T19:31:47.710Z",
     "size": 1310,
     "path": "../../.output/public/_ipx/_/img/services/phone.svg"
   },
   "/_ipx/_/img/services/services.webp": {
     "type": "image/webp",
     "etag": "\"15e6e-qW/XSj10VsI6OVG2QP5J7tAjG98\"",
-    "mtime": "2024-08-27T13:59:08.545Z",
+    "mtime": "2024-09-12T19:31:47.705Z",
     "size": 89710,
     "path": "../../.output/public/_ipx/_/img/services/services.webp"
   },
   "/_ipx/_/img/services/services2.webp": {
     "type": "image/webp",
     "etag": "\"3acd0-cdzRZmQPf2I4VswjaJYrHX5ekrw\"",
-    "mtime": "2024-08-27T13:59:08.540Z",
+    "mtime": "2024-09-12T19:31:47.696Z",
     "size": 240848,
     "path": "../../.output/public/_ipx/_/img/services/services2.webp"
   },
   "/_ipx/_/img/services/services3.webp": {
     "type": "image/webp",
     "etag": "\"a6f0-wrZFn9/+nfLlQphtliR3x+YtR6Y\"",
-    "mtime": "2024-08-27T13:59:08.541Z",
+    "mtime": "2024-09-12T19:31:47.697Z",
     "size": 42736,
     "path": "../../.output/public/_ipx/_/img/services/services3.webp"
   },
   "/_ipx/_/img/services/services4.webp": {
     "type": "image/webp",
     "etag": "\"14210-iySuyK2RvbP3NB9ujXxuumT94Gs\"",
-    "mtime": "2024-08-27T13:59:08.494Z",
+    "mtime": "2024-09-12T19:31:47.697Z",
     "size": 82448,
     "path": "../../.output/public/_ipx/_/img/services/services4.webp"
   },
   "/_ipx/_/img/services/services5.webp": {
     "type": "image/webp",
     "etag": "\"17622-CJFCbv6YJvv/UuT91+/mh27pXg0\"",
-    "mtime": "2024-08-27T13:59:08.399Z",
+    "mtime": "2024-09-12T19:31:47.697Z",
     "size": 95778,
     "path": "../../.output/public/_ipx/_/img/services/services5.webp"
   },
   "/_ipx/_/img/services/services6.webp": {
     "type": "image/webp",
     "etag": "\"18554-c8GplmAAKACXijEPXoIxFMHcjBU\"",
-    "mtime": "2024-08-27T13:59:08.655Z",
+    "mtime": "2024-09-12T19:31:47.944Z",
     "size": 99668,
     "path": "../../.output/public/_ipx/_/img/services/services6.webp"
   },
   "/_ipx/_/img/services/services7.webp": {
     "type": "image/webp",
     "etag": "\"e998-9ZB0XI2K/eU3HT77nlzY/DNccps\"",
-    "mtime": "2024-08-27T13:59:08.322Z",
+    "mtime": "2024-09-12T19:31:47.700Z",
     "size": 59800,
     "path": "../../.output/public/_ipx/_/img/services/services7.webp"
   },
   "/_ipx/_/img/services/services8.webp": {
     "type": "image/webp",
     "etag": "\"17b88-l56xRrkxnjT+jTPI8RGcG8rMjYM\"",
-    "mtime": "2024-08-27T13:59:08.329Z",
+    "mtime": "2024-09-12T19:31:47.697Z",
     "size": 97160,
     "path": "../../.output/public/_ipx/_/img/services/services8.webp"
   },
   "/_ipx/_/img/services/services9.webp": {
     "type": "image/webp",
     "etag": "\"cac0-OJNrATXKd3K+5D9nZ6iwxveJ9dI\"",
-    "mtime": "2024-08-27T13:59:08.655Z",
+    "mtime": "2024-09-12T19:31:47.944Z",
     "size": 51904,
     "path": "../../.output/public/_ipx/_/img/services/services9.webp"
   },
   "/_ipx/_/img/services/time.svg": {
     "type": "image/svg+xml",
     "etag": "\"474-MNmi1NiqXaa9HPFWtzArIN5SURw\"",
-    "mtime": "2024-08-27T13:59:08.655Z",
+    "mtime": "2024-09-12T19:31:47.711Z",
     "size": 1140,
     "path": "../../.output/public/_ipx/_/img/services/time.svg"
   },
   "/_ipx/_/img/slider/slider-elem.svg": {
     "type": "image/svg+xml",
     "etag": "\"bc4-sKVoN+mzM51iDEXwShuzchg8+UU\"",
-    "mtime": "2024-08-27T13:59:08.653Z",
+    "mtime": "2024-09-12T19:31:47.710Z",
     "size": 3012,
     "path": "../../.output/public/_ipx/_/img/slider/slider-elem.svg"
   },
   "/_ipx/_/img/slider/slider-elem2.svg": {
     "type": "image/svg+xml",
     "etag": "\"427a-nJOwct+FrN8ztQcNIE/U3r4VXtA\"",
-    "mtime": "2024-08-27T13:59:08.654Z",
+    "mtime": "2024-09-12T19:31:47.735Z",
     "size": 17018,
     "path": "../../.output/public/_ipx/_/img/slider/slider-elem2.svg"
   },
   "/_ipx/_/img/slider/slider.webp": {
     "type": "image/webp",
     "etag": "\"a20a-wihyip3CAIOFir8lyvmPc9tcUNQ\"",
-    "mtime": "2024-08-27T13:59:08.773Z",
+    "mtime": "2024-09-12T19:31:47.692Z",
     "size": 41482,
     "path": "../../.output/public/_ipx/_/img/slider/slider.webp"
   },
   "/_ipx/_/img/page-information/blog/blog.jpg": {
     "type": "image/jpeg",
     "etag": "\"b983-aUOUW3Er/to3l27Sb6F9gZKjIK0\"",
-    "mtime": "2024-08-27T13:59:08.654Z",
+    "mtime": "2024-09-12T19:31:47.944Z",
     "size": 47491,
     "path": "../../.output/public/_ipx/_/img/page-information/blog/blog.jpg"
   },
   "/_ipx/_/img/page-information/blog/blog2.jpg": {
     "type": "image/jpeg",
     "etag": "\"6a81-852lV5PzfA6lO8dC5Vp/+OP93/k\"",
-    "mtime": "2024-08-27T13:59:08.656Z",
+    "mtime": "2024-09-12T19:31:47.968Z",
     "size": 27265,
     "path": "../../.output/public/_ipx/_/img/page-information/blog/blog2.jpg"
   },
   "/_ipx/_/img/page-information/blog/blog3.jpg": {
     "type": "image/jpeg",
     "etag": "\"21323-ggQS4K1ouGg/OX8m5ZeBMb10j7k\"",
-    "mtime": "2024-08-27T13:59:08.676Z",
+    "mtime": "2024-09-12T19:31:47.958Z",
     "size": 135971,
     "path": "../../.output/public/_ipx/_/img/page-information/blog/blog3.jpg"
   }
@@ -1653,7 +1677,7 @@ function readAsset (id) {
   return promises.readFile(resolve$1(serverDir, assets[id].path))
 }
 
-const publicAssetBases = {"/_nuxt/builds/meta":{"maxAge":31536000},"/_nuxt/builds":{"maxAge":1},"/_nuxt":{"maxAge":31536000}};
+const publicAssetBases = {"/_nuxt/builds/meta/":{"maxAge":31536000},"/_nuxt/builds/":{"maxAge":1},"/_nuxt/":{"maxAge":31536000}};
 
 function isPublicAssetURL(id = '') {
   if (assets[id]) {
@@ -2776,7 +2800,7 @@ const _lTXVz9 = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_eiIGDu = () => import('./build/renderer.mjs');
+const _lazy_eiIGDu = () => import('./build/server.mjs').then(function (n) { return n.r; });
 
 const handlers = [
   { route: '', handler: _f4b49z, lazy: false, middleware: true, method: undefined },
@@ -2913,5 +2937,5 @@ const localFetch = nitroApp.localFetch;
 const closePrerenderer = () => nitroApp.hooks.callHook("close");
 trapUnhandledNodeErrors();
 
-export { useRuntimeConfig as a, useStorage as b, closePrerenderer as c, getRouteRules as g, localFetch as l, useNitroApp as u };
+export { useNitroApp as a, useStorage as b, closePrerenderer as c, getRouteRules as g, localFetch as l, useRuntimeConfig as u };
 //# sourceMappingURL=runtime.mjs.map

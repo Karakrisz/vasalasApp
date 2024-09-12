@@ -1,1 +1,0 @@
-import{u as t,c as a,o as s,a as e}from"./CzLv47vt.js";const o={class:"supage-content position-relative"},c=e("h2",{class:"supage-content__h2"},"Galéria",-1),_=e("p",null,"feltöltés alatt...",-1),n=[c,_],u={__name:"galeria",setup(l){return t({title:"Galéria"}),(i,r)=>(s(),a("div",o,n))}};export{u as default};

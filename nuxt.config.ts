@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/app.css'],
   ssr: true,
+
   app: {
     head: {
       title: 'Vasalás Mester',
@@ -28,6 +29,7 @@ export default defineNuxtConfig({
             font-src 'self' https: data:;
             style-src 'self' https: 'unsafe-inline';
             script-src 'self' https: 'unsafe-inline' 'unsafe-eval';
+            connect-src 'self' https: http: http://127.0.0.1:8000/json-posts;
           `,
         },
       ],
@@ -70,4 +72,5 @@ export default defineNuxtConfig({
     trailingSlash: true,
   },
 
+  compatibilityDate: '2024-09-12',
 })

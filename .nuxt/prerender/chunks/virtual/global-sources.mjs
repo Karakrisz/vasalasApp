@@ -80,55 +80,55 @@ const sources = [
         },
         "urls": [
             {
-                "loc": "/arlista"
-            },
-            {
-                "loc": "/kolcsonzes"
-            },
-            {
-                "loc": "/meretre-szabas-igazitas"
-            },
-            {
-                "loc": "/rolunk"
-            },
-            {
-                "loc": "/kapcsolat"
-            },
-            {
-                "loc": "/javitas"
-            },
-            {
-                "loc": "/varras"
-            },
-            {
-                "loc": "/mosas"
-            },
-            {
-                "loc": "/vasalas"
-            },
-            {
-                "loc": "/szolgaltatasok"
-            },
-            {
-                "loc": "/nagy-mennyiseg"
-            },
-            {
-                "loc": "/ajanlatkeres"
-            },
-            {
-                "loc": "/tisztitas"
+                "loc": "/"
             },
             {
                 "loc": "/galeria"
             },
             {
-                "loc": "/adatvedelmi-tajekoztato"
+                "loc": "/rolunk"
+            },
+            {
+                "loc": "/ajanlatkeres"
+            },
+            {
+                "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/arlista"
+            },
+            {
+                "loc": "/mosas"
+            },
+            {
+                "loc": "/tisztitas"
+            },
+            {
+                "loc": "/varras"
+            },
+            {
+                "loc": "/vasalas"
+            },
+            {
+                "loc": "/nagy-mennyiseg"
             },
             {
                 "loc": "/egyeni-igenyek"
             },
             {
-                "loc": "/"
+                "loc": "/javitas"
+            },
+            {
+                "loc": "/meretre-szabas-igazitas"
+            },
+            {
+                "loc": "/adatvedelmi-tajekoztato"
+            },
+            {
+                "loc": "/kapcsolat"
+            },
+            {
+                "loc": "/kolcsonzes"
             }
         ],
         "sourceType": "app"
