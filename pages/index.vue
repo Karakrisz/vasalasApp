@@ -1,4 +1,49 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+import { ref, onMounted } from 'vue'
+
+import he from 'he'
+
+interface Post {
+  id: number
+  title: string
+  seo_title: string
+  body: string
+  image: string
+}
+
+const itemsPost = ref<Post[] | null>(null)
+const error = ref<string | null>(null)
+const loading = ref(false)
+
+async function fetchPosts() {
+  loading.value = true
+  try {
+    const response = await fetch('http://127.0.0.1:8000/json-posts')
+    if (!response.ok) throw new Error('Failed to fetch posts')
+    const data = await response.json()
+    itemsPost.value = data
+  } catch (e) {
+    error.value = (e as Error).message
+    console.error('Error fetching posts:', (e as Error).message)
+  } finally {
+    loading.value = false
+  }
+}
+
+onMounted(() => {
+  fetchPosts()
+})
+
+function getShortBody(body: string) {
+  const decodedBody = he.decode(body)
+  if (decodedBody.length > 100) {
+    return decodedBody.substring(0, 100) + '...'
+  }
+  return decodedBody
+}
+
+</script>
 <template>
   <section>
     <div class="slider-content pr">
