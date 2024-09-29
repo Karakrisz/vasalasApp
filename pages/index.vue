@@ -1,7 +1,5 @@
 <script setup lang="ts">
-
-import { ref, onMounted } from 'vue'
-import { defineComponent } from 'vue'
+import { useAsyncData, useRuntimeConfig } from '#app'
 
 interface Post {
   id: number
@@ -11,37 +9,23 @@ interface Post {
   image: string
 }
 
-const itemsPost = ref<Post[] | null>(null)
-const error = ref<string | null>(null)
-const loading = ref(false)
+const config = useRuntimeConfig()
 
-async function fetchPosts() {
-  loading.value = true
-  try {
-    const response = await fetch('http://127.0.0.1:8000/json-posts')
-    if (!response.ok) throw new Error('Failed to fetch posts')
-    const data = await response.json()
-    itemsPost.value = data
-  } catch (e) {
-    error.value = (e as Error).message
-    console.error('Error fetching posts:', (e as Error).message)
-  } finally {
-    loading.value = false
+const { data: itemsPost } = await useAsyncData<Post[]>('posts', () =>
+  $fetch(`${config.public.apiBaseUrl}/json-posts`)
+)
+
+const latestPosts = itemsPost.value?.slice(-3) || []
+
+function truncateContent(content: string, maxLength: number): string {
+  const textContent = content.replace(/<[^>]*>/g, '')
+  if (textContent.length <= maxLength) {
+    return textContent
   }
+  return textContent.slice(0, maxLength) + '...'
 }
-
-onMounted(() => {
-  fetchPosts()
-})
-
-const RichText = defineComponent({
-  props: ['content'],
-  render() {
-    return h('div', { innerHTML: this.content })
-  },
-})
-
 </script>
+
 <template>
   <section>
     <div class="slider-content pr">
@@ -555,7 +539,10 @@ const RichText = defineComponent({
           kényelmét elhagynák.
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <a href="tel:+36707777615" class="page-link page-link--format text-color f-600">
+          <a
+            href="tel:+36707777615"
+            class="page-link page-link--format text-color f-600"
+          >
             Leadom a rendelésem
           </a>
         </div>
@@ -568,35 +555,37 @@ const RichText = defineComponent({
         </h3>
 
         <div class="page-information-content__blog-content__gBox pr grid-3">
-
           <div
-            v-for="post in itemsPost"
+            v-for="post in latestPosts"
             :key="post.slug"
             class="page-information-content__blog-content__gBox__iTextBox"
           >
-            <NuxtImg
-              height="100%"
-              loading="lazy"
-              class="page-information-content__blog-content__gBox__iTextBox__img"
-              :src="`http://127.0.0.1:8000/storage/${post.image}`"
-              alt="{{ post.title }}"
-            />
-            <div
-              class="page-information-content__blog-content__gBox__iTextBox__tBox"
+            <NuxtLink
+              class="blog-box__link-box__Nuxtlink"
+              :to="`/posts/${post.slug}`"
             >
-              <h5
-                class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
+              <NuxtImg
+                height="100%"
+                loading="lazy"
+                class="page-information-content__blog-content__gBox__iTextBox__img"
+                :src="`${config.public.apiBaseUrl}/storage/${post.image}`"
+                alt="{{ post.title }}"
+              />
+              <div
+                class="page-information-content__blog-content__gBox__iTextBox__tBox"
               >
-                {{ post.title }}
-              </h5>
-              <p
-                class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
-              >
-                <RichText :content="post.body" />
-              </p>
-            </div>
+                <h5
+                  class="page-information-content__blog-content__gBox__iTextBox__tBox__h5 text-color-w"
+                >
+                  {{ post.title }}
+                </h5>
+                <p
+                  class="page-information-content__blog-content__gBox__iTextBox__tBox__p text-color-w"
+                  v-html="truncateContent(post.body, 150)"
+                ></p>
+              </div>
+            </NuxtLink>
           </div>
-
         </div>
       </div>
     </div>

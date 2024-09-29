@@ -1,12 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || 'http://127.0.0.1:8000'
+    }
+  },
   devtools: { enabled: true },
   css: ['~/assets/css/app.css'],
   ssr: true,
 
   app: {
     head: {
-      title: 'Vasalás Mester',
+      title: 'Vasalás Mester - Ingek mosása és vasalása Budapesten',
       htmlAttrs: {
         lang: 'hu',
       },
@@ -17,7 +22,7 @@ export default defineNuxtConfig({
           hid: 'description',
           name: 'description',
           content:
-            'Személyre szabott biztosítási megoldások mindenkinek. Megbízható alkusz a biztosítási piacon.',
+            'Ingek mosása és vasalása Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!',
         },
         { name: 'format-detection', content: 'telephone=no' },
         { hid: 'robots', name: 'robots', content: 'index, follow' },
@@ -29,7 +34,7 @@ export default defineNuxtConfig({
             font-src 'self' https: data:;
             style-src 'self' https: 'unsafe-inline';
             script-src 'self' https: 'unsafe-inline' 'unsafe-eval';
-            connect-src 'self' https: http: http://127.0.0.1:8000/json-posts;
+            connect-src 'self' https: http: https://vasalasmester.hu/api/public;
           `,
         },
       ],
@@ -73,4 +78,8 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-09-12',
+
+  sitemap: {
+    sources: ['/api/sitemap'],
+  },
 })

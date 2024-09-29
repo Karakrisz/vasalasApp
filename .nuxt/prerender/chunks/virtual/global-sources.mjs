@@ -1,5 +1,9 @@
 const sources = [
     {
+        "sourceType": "user",
+        "fetch": "/api/sitemap"
+    },
+    {
         "context": {
             "name": "sitemap:urls",
             "description": "Set with the `sitemap.urls` config."
@@ -83,16 +87,16 @@ const sources = [
                 "loc": "/"
             },
             {
-                "loc": "/galeria"
-            },
-            {
-                "loc": "/rolunk"
-            },
-            {
                 "loc": "/ajanlatkeres"
             },
             {
+                "loc": "/vasalas"
+            },
+            {
                 "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/tisztitas"
             },
             {
                 "loc": "/arlista"
@@ -101,22 +105,22 @@ const sources = [
                 "loc": "/mosas"
             },
             {
-                "loc": "/tisztitas"
+                "loc": "/javitas"
             },
             {
-                "loc": "/varras"
+                "loc": "/kolcsonzes"
             },
             {
-                "loc": "/vasalas"
+                "loc": "/kapcsolat"
             },
             {
-                "loc": "/nagy-mennyiseg"
+                "loc": "/galeria"
             },
             {
                 "loc": "/egyeni-igenyek"
             },
             {
-                "loc": "/javitas"
+                "loc": "/rolunk"
             },
             {
                 "loc": "/meretre-szabas-igazitas"
@@ -125,10 +129,28 @@ const sources = [
                 "loc": "/adatvedelmi-tajekoztato"
             },
             {
-                "loc": "/kapcsolat"
+                "loc": "/varras"
             },
             {
-                "loc": "/kolcsonzes"
+                "loc": "/nagy-mennyiseg"
+            },
+            {
+                "loc": "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere"
+            },
+            {
+                "loc": "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik"
+            },
+            {
+                "loc": "/posts/ajanlatkeres"
+            },
+            {
+                "loc": "/posts/adatvedelmi-tajekoztato"
+            },
+            {
+                "loc": "/posts/arlista"
             }
         ],
         "sourceType": "app"

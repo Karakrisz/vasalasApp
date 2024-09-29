@@ -176,7 +176,10 @@ const sendEmail = async () => {
                     KÜLDÉS
                   </button>
                 </div>
-                <div v-if="isSent" class="confirmation-message bg-color-w text-center">
+                <div
+                  v-if="isSent"
+                  class="confirmation-message bg-color-w text-center"
+                >
                   <p class="confirmation-message__p text-color f-600">
                     Köszönjük az üzenetét, hamarosan felvesszük Önnel a
                     kapcsolatot.
@@ -292,17 +295,20 @@ const sendEmail = async () => {
               >
                 Gyakran Ismételt Kérdések
               </NuxtLink>
-              <NuxtLink to="adatvedelmi-tajekoztato"
+              <NuxtLink
+                to="adatvedelmi-tajekoztato"
                 class="footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
               >
                 Adatvédelmi Szabályzat
               </NuxtLink>
-              <NuxtLink to="ajanlatkeres"
+              <NuxtLink
+                to="ajanlatkeres"
                 class="footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
               >
                 Kapcsolat
               </NuxtLink>
-              <NuxtLink to="arlista"
+              <NuxtLink
+                to="arlista"
                 class="footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
               >
                 Árlista

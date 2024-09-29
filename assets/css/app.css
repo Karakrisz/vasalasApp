@@ -810,6 +810,14 @@ ul {
   margin: 3% 0 30% 0;
 }
 
+.slug-blog__img {
+  width: 70%;
+}
+
+.slug-blog__h2 {
+  margin-bottom: 2em;
+  margin-top: -1.3em;
+}
 /********************  Subpage formating formating end **********************/
 
 /********************  Media formating start **********************/
@@ -1899,6 +1907,13 @@ ul {
   .aszf-content {
     margin: 13em 0 16% 0;
   }
+  .slug-blog__h2 {
+    margin: 0 0 1.3em 0;
+  }
+  .slug-blog__img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -2298,6 +2313,13 @@ ul {
   }
   .aszf-content {
     margin: 9em 0 16% 0;
+  }
+  .slug-blog__h2 {
+    margin: 0 0 1.3em 0;
+  }
+  .slug-blog__img {
+    width: 100%;
+    margin-bottom: 1em;
   }
 }
 

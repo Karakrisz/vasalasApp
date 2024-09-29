@@ -22,7 +22,9 @@ const specialPaths = [
   '/adatvedelmi-tajekoztato',
 ]
 
-const isSpecialPage = computed(() => specialPaths.includes(route.path))
+const isSpecialPage = computed(() => 
+  specialPaths.includes(route.path) || route.path.startsWith('/posts/')
+)
 
 const links = [
   { name: 'Kezdőlap', path: '/' },
