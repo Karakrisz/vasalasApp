@@ -32,12 +32,21 @@ const { data: post, error } = await useAsyncData<Post>('post', () =>
     >
       <h2 class="slug-blog__h2">{{ post.title }}</h2>
       <div v-html="post.body"></div>
+      <div class="blog-slug-content__psychologicalBox text-center">
+        <p class="blog-slug-content__psychologicalBox__p">
+          <i class="blog-slug-content__psychologicalBox__i f-500"
+            >Már csak egy lépés választ el a tökéletes tisztaságtól és
+            frissességtől! <br />
+            Nyomd meg az alábbi gombot az igenhez!</i
+          >
+        </p>
+      </div>
       <div class="blog-slug-content__linkBox text-center">
         <NuxtLink
-          to="/"
-          class="blog-slug-content__linkBox__link text-transform-uppercase text-color-w f-700"
+          to="/ajanlatkeres"
+          class="blog-slug-content__linkBox__link text-color-w f-700"
         >
-          gomb helye
+          IGEN, kérem a tisztaságot!
         </NuxtLink>
       </div>
     </div>
