@@ -206,6 +206,11 @@ ul {
 
 /********************  Identical instructions start **********************/
 
+.prices-content,
+.subapage-services-content {
+  background-image: url(/img/prices/prices-bg.webp);
+}
+
 .services-content__iTextBox-content__tBox__p,
 .footer-content__bottom__infoBox__copyRBox__h6,
 .footer-content__bottom__infoBox__header__socialBox__p,
@@ -258,7 +263,8 @@ ul {
 .footer-content__img-box__img,
 .footer-content__bottom__infoBox__header,
 .footer-content__bottom__mapBox__iframe,
-.supage-content__img {
+.supage-content__img,
+.supage-content {
   box-shadow: 0em 0.25em 0.8em 0em rgba(0, 0, 0, 0.1);
 }
 
@@ -280,7 +286,8 @@ ul {
 
 .prices-content,
 .page-information-content--bg,
-.footer-content {
+.footer-content,
+.subapage-services-content {
   background-size: cover;
 }
 
@@ -342,7 +349,8 @@ ul {
   border-radius: 3.5em;
 }
 
-.page-information-content__iTextBox {
+.page-information-content__iTextBox,
+.supage-content {
   border-radius: 5em;
 }
 
@@ -533,7 +541,6 @@ ul {
 /********************  Prices formating start **********************/
 
 .prices-content {
-  background-image: url(/img/prices/prices-bg.webp);
   padding: 7% 13% 33% 13%;
   margin-top: -4%;
 }
@@ -734,7 +741,9 @@ ul {
 }
 
 .supage-content {
-  padding: 15% 4% 25% 4%;
+  padding: 7%;
+  margin: -4em 5% 0 5%;
+  z-index: 10;
 }
 
 .supage-content--offer-format {
@@ -811,12 +820,21 @@ ul {
 }
 
 .slug-blog__img {
-  width: 70%;
+  width: 100%;
+  height: 100%;
 }
 
 .slug-blog__h2 {
   margin-bottom: 2em;
   margin-top: -1.3em;
+}
+
+.subapage-services-content {
+  padding: 10% 0 7% 0;
+}
+
+.services-content__linkItextBox--zIndex {
+  z-index: 10;
 }
 /********************  Subpage formating formating end **********************/
 

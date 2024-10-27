@@ -7,7 +7,7 @@ interface Post {
 export default defineSitemapEventHandler(async (e) => {
   try {
     // Fetch posts from the API
-    const response = await fetch('http://127.0.0.1:8000/json-posts')
+    const response = await fetch('https://vasalasmester.hu/api/public/json-posts')
 
     // Check if the response is okay
     if (!response.ok) {

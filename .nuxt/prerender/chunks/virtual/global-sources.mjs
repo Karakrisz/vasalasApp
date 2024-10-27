@@ -36,6 +36,9 @@ const sources = [
                 "loc": "/galeria"
             },
             {
+                "loc": "/hidden-blog"
+            },
+            {
                 "loc": "/"
             },
             {
@@ -87,55 +90,73 @@ const sources = [
                 "loc": "/"
             },
             {
-                "loc": "/ajanlatkeres"
-            },
-            {
-                "loc": "/vasalas"
-            },
-            {
-                "loc": "/szolgaltatasok"
-            },
-            {
-                "loc": "/tisztitas"
-            },
-            {
-                "loc": "/arlista"
-            },
-            {
-                "loc": "/mosas"
-            },
-            {
-                "loc": "/javitas"
-            },
-            {
-                "loc": "/kolcsonzes"
-            },
-            {
-                "loc": "/kapcsolat"
-            },
-            {
                 "loc": "/galeria"
-            },
-            {
-                "loc": "/egyeni-igenyek"
             },
             {
                 "loc": "/rolunk"
             },
             {
-                "loc": "/meretre-szabas-igazitas"
+                "loc": "/vasalas"
             },
             {
-                "loc": "/adatvedelmi-tajekoztato"
+                "loc": "/mosas"
             },
             {
-                "loc": "/varras"
+                "loc": "/tisztitas"
             },
             {
                 "loc": "/nagy-mennyiseg"
             },
             {
-                "loc": "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre"
+                "loc": "/kolcsonzes"
+            },
+            {
+                "loc": "/javitas"
+            },
+            {
+                "loc": "/ajanlatkeres"
+            },
+            {
+                "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/adatvedelmi-tajekoztato"
+            },
+            {
+                "loc": "/arlista"
+            },
+            {
+                "loc": "/egyeni-igenyek"
+            },
+            {
+                "loc": "/meretre-szabas-igazitas"
+            },
+            {
+                "loc": "/varras"
+            },
+            {
+                "loc": "/kapcsolat"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel"
+            },
+            {
+                "loc": "/hidden-blog"
+            },
+            {
+                "loc": "/posts/ajanlatkeres"
+            },
+            {
+                "loc": "/posts/arlista"
+            },
+            {
+                "loc": "/posts/adatvedelmi-tajekoztato"
             },
             {
                 "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere"
@@ -144,13 +165,7 @@ const sources = [
                 "loc": "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik"
             },
             {
-                "loc": "/posts/ajanlatkeres"
-            },
-            {
-                "loc": "/posts/adatvedelmi-tajekoztato"
-            },
-            {
-                "loc": "/posts/arlista"
+                "loc": "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre"
             }
         ],
         "sourceType": "app"

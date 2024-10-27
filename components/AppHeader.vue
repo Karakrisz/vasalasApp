@@ -20,6 +20,7 @@ const specialPaths = [
   '/kolcsonzes',
   '/egyeni-igenyek',
   '/adatvedelmi-tajekoztato',
+  '/hidden-blog',
 ]
 
 const isSpecialPage = computed(() => 

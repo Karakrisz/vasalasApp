@@ -112,7 +112,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "apiBaseUrl": "http://127.0.0.1:8000"
+    "apiBaseUrl": "https://vasalasmester.hu/api/public"
   },
   "sitemap": {
     "isI18nMapped": false,
@@ -2428,9 +2428,6 @@ const sources$1 = [
                 "loc": "/ajanlatkeres"
             },
             {
-                "loc": "/allblog"
-            },
-            {
                 "loc": "/arlista"
             },
             {
@@ -2438,6 +2435,9 @@ const sources$1 = [
             },
             {
                 "loc": "/galeria"
+            },
+            {
+                "loc": "/hidden-blog"
             },
             {
                 "loc": "/"
@@ -2494,7 +2494,7 @@ const childSources = /*#__PURE__*/Object.freeze({
 
 const sitemap = defineSitemapEventHandler(async (e) => {
   try {
-    const response = await fetch("http://127.0.0.1:8000/json-posts");
+    const response = await fetch("https://vasalasmester.hu/api/public/json-posts");
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
     }

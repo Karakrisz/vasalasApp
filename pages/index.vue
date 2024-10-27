@@ -1,29 +1,8 @@
 <script setup lang="ts">
-import { useAsyncData, useRuntimeConfig } from '#app'
+import { fetchPosts, truncateContent } from '~/utils/js/utils'
 
-interface Post {
-  id: number
-  title: string
-  slug: string
-  body: string
-  image: string
-}
-
-const config = useRuntimeConfig()
-
-const { data: itemsPost } = await useAsyncData<Post[]>('posts', () =>
-  $fetch(`${config.public.apiBaseUrl}/json-posts`)
-)
-
+const itemsPost = await fetchPosts()
 const latestPosts = itemsPost.value?.slice(-3) || []
-
-function truncateContent(content: string, maxLength: number): string {
-  const textContent = content.replace(/<[^>]*>/g, '')
-  if (textContent.length <= maxLength) {
-    return textContent
-  }
-  return textContent.slice(0, maxLength) + '...'
-}
 </script>
 
 <template>
@@ -408,7 +387,7 @@ function truncateContent(content: string, maxLength: number): string {
             <h3
               class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
-              800 Ft/db
+              990 Ft/db
             </h3>
           </div>
         </div>
@@ -428,7 +407,7 @@ function truncateContent(content: string, maxLength: number): string {
             <h3
               class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
-              2250 Ft/kg
+              2450 Ft/kg
             </h3>
           </div>
         </div>
@@ -455,7 +434,7 @@ function truncateContent(content: string, maxLength: number): string {
             <h3
               class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
             >
-              1200 Ft/kg
+              1490 Ft/kg
             </h3>
           </div>
         </div>
@@ -568,7 +547,7 @@ function truncateContent(content: string, maxLength: number): string {
                 height="100%"
                 loading="lazy"
                 class="page-information-content__blog-content__gBox__iTextBox__img"
-                :src="`${config.public.apiBaseUrl}/storage/${post.image}`"
+                :src="`${$config.public.apiBaseUrl}/storage/${post.image}`"
                 alt="{{ post.title }}"
               />
               <div
