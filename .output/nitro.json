@@ -1,9 +1,9 @@
 {
-  "date": "2024-10-27T16:40:52.547Z",
+  "date": "2024-10-27T16:56:15.125Z",
   "preset": "static",
   "framework": {
     "name": "nuxt",
-    "version": "3.13.1"
+    "version": "3.13.2"
   },
   "versions": {
     "nitro": "2.9.7"

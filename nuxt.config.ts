@@ -2,8 +2,9 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.API_BASE_URL || 'https://vasalasmester.hu/api/public'
-    }
+      apiBaseUrl:
+        process.env.API_BASE_URL || 'https://vasalasmester.hu/api/public',
+    },
   },
   devtools: { enabled: true },
   css: ['~/assets/css/app.css'],

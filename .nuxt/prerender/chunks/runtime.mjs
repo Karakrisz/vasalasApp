@@ -7,7 +7,7 @@ import { klona } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/n
 import { snakeCase } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/scule/dist/index.mjs';
 import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/defu/dist/defu.mjs';
 import { hash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withoutProtocol, withTrailingSlash, withLeadingSlash, withBase, withoutTrailingSlash, decodePath } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ufo/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withoutProtocol, withTrailingSlash, withLeadingSlash, withoutTrailingSlash, withBase, decodePath } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ufo/dist/index.mjs';
 import { createStorage, defineDriver, prefixStorage } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs.mjs';
 import fsDriver from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs-lite.mjs';
@@ -68,7 +68,7 @@ const appConfig = defuFn(inlineAppConfig);
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "8f84ff4a-0f52-4a1c-b2bc-c1e0ccabfa80",
+    "buildId": "8bc18d72-13d8-4f92-a155-c7bf03d1dce5",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -87,7 +87,7 @@ const _inlineRuntimeConfig = {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2024-10-27T16:40:40.838Z"
+          "X-Sitemap-Prerendered": "2024-10-27T16:55:59.707Z"
         }
       },
       "/_nuxt/builds/meta/**": {
@@ -121,6 +121,7 @@ const _inlineRuntimeConfig = {
     "sortEntries": true,
     "debug": false,
     "discoverImages": true,
+    "discoverVideos": true,
     "isNuxtContentDocumentDriven": false,
     "xsl": "/__sitemap__/style.xsl",
     "xslTips": true,
@@ -141,7 +142,7 @@ const _inlineRuntimeConfig = {
       }
     ],
     "credits": true,
-    "version": "5.1.5",
+    "version": "5.3.5",
     "sitemaps": {
       "sitemap.xml": {
         "sitemapName": "sitemap.xml",
@@ -176,7 +177,7 @@ const _inlineRuntimeConfig = {
         "trailingSlash": true
       }
     ],
-    "version": "2.2.12",
+    "version": "2.2.18",
     "debug": false
   },
   "ipx": {
@@ -264,8 +265,8 @@ const _47Applications_47XAMPP_47xamppfiles_47htdocs_47vasalasApp_47node_modules_
     // fall back to file system - only the bottom three methods are used in renderer
     async setItem(key, value, opts2) {
       await Promise.all([
-        fs.setItem(normalizeFsKey(key), value, opts2),
-        lru.setItem(key, value, opts2)
+        fs.setItem?.(normalizeFsKey(key), value, opts2),
+        lru.setItem?.(key, value, opts2)
       ]);
     },
     async hasItem(key, opts2) {
@@ -725,6 +726,151 @@ function getRouteRulesForPath(path) {
   return defu({}, ..._routeRulesMatcher.matchAll(path).reverse());
 }
 
+function normalizeSiteConfig(config) {
+  if (typeof config.indexable !== "undefined")
+    config.indexable = String(config.indexable) !== "false";
+  if (typeof config.trailingSlash !== "undefined" && !config.trailingSlash)
+    config.trailingSlash = String(config.trailingSlash) !== "false";
+  if (config.url && !hasProtocol(config.url, { acceptRelative: true, strict: false }))
+    config.url = withHttps(config.url);
+  const keys = Object.keys(config).sort((a, b) => a.localeCompare(b));
+  const newConfig = {};
+  for (const k of keys)
+    newConfig[k] = config[k];
+  return newConfig;
+}
+function createSiteConfigStack(options) {
+  const debug = options?.debug || false;
+  const stack = [];
+  function push(input) {
+    if (!input || typeof input !== "object" || Object.keys(input).length === 0)
+      return;
+    if (!input._context && debug) {
+      let lastFunctionName = new Error("tmp").stack?.split("\n")[2].split(" ")[5];
+      if (lastFunctionName?.includes("/"))
+        lastFunctionName = "anonymous";
+      input._context = lastFunctionName;
+    }
+    const entry = {};
+    for (const k in input) {
+      const val = input[k];
+      if (typeof val !== "undefined" && val !== "")
+        entry[k] = val;
+    }
+    if (Object.keys(entry).filter((k) => !k.startsWith("_")).length > 0)
+      stack.push(entry);
+  }
+  function get(options2) {
+    const siteConfig = {};
+    if (options2?.debug)
+      siteConfig._context = {};
+    for (const o in stack.sort((a, b) => (a._priority || 0) - (b._priority || 0))) {
+      for (const k in stack[o]) {
+        const key = k;
+        const val = options2?.resolveRefs ? toValue(stack[o][k]) : stack[o][k];
+        if (!k.startsWith("_") && typeof val !== "undefined") {
+          siteConfig[k] = val;
+          if (options2?.debug)
+            siteConfig._context[key] = stack[o]._context?.[key] || stack[o]._context || "anonymous";
+        }
+      }
+    }
+    return options2?.skipNormalize ? siteConfig : normalizeSiteConfig(siteConfig);
+  }
+  return {
+    stack,
+    push,
+    get
+  };
+}
+
+function envSiteConfig(env) {
+  return Object.fromEntries(Object.entries(env).filter(([k]) => k.startsWith("NUXT_SITE_") || k.startsWith("NUXT_PUBLIC_SITE_")).map(([k, v]) => [
+    k.replace(/^NUXT_(PUBLIC_)?SITE_/, "").split("_").map((s, i) => i === 0 ? s.toLowerCase() : s[0].toUpperCase() + s.slice(1).toLowerCase()).join(""),
+    v
+  ]));
+}
+
+function useNitroOrigin(e) {
+  const cert = process.env.NITRO_SSL_CERT;
+  const key = process.env.NITRO_SSL_KEY;
+  let host = process.env.NITRO_HOST || process.env.HOST || false;
+  let port = false;
+  let protocol = cert && key || !false ? "https" : "http";
+  if (process.env.__NUXT_DEV__) {
+    const origin = JSON.parse(process.env.__NUXT_DEV__).proxy.url;
+    host = withoutProtocol(origin);
+    protocol = origin.includes("https") ? "https" : "http";
+  } else if (process.env.NUXT_VITE_NODE_OPTIONS) {
+    const origin = JSON.parse(process.env.NUXT_VITE_NODE_OPTIONS).baseURL.replace("/__nuxt_vite_node__", "");
+    host = withoutProtocol(origin);
+    protocol = origin.includes("https") ? "https" : "http";
+  } else {
+    host = getRequestHost(e, { xForwardedHost: true }) || host;
+    protocol = getRequestProtocol(e, { xForwardedProto: true }) || protocol;
+  }
+  if (typeof host === "string" && host.includes(":")) {
+    port = host.split(":").pop();
+    host = host.split(":")[0];
+  }
+  port = port ? `:${port}` : "";
+  return withTrailingSlash(`${protocol}://${host}${port}`);
+}
+
+function useSiteConfig(e, _options) {
+  e.context.siteConfig = e.context.siteConfig || createSiteConfigStack();
+  const options = defu$1(_options, useRuntimeConfig(e)["nuxt-site-config"], { debug: false });
+  return e.context.siteConfig.get(options);
+}
+
+function resolveSitePath(pathOrUrl, options) {
+  let path = pathOrUrl;
+  if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
+    const parsed = parseURL(pathOrUrl);
+    path = parsed.pathname;
+  }
+  const base = withLeadingSlash(options.base || "/");
+  if (base !== "/" && path.startsWith(base)) {
+    path = path.slice(base.length);
+  }
+  let origin = withoutTrailingSlash(options.absolute ? options.siteUrl : "");
+  if (base !== "/" && origin.endsWith(base)) {
+    origin = origin.slice(0, origin.indexOf(base));
+  }
+  const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
+  const resolvedUrl = withBase(path, baseWithOrigin);
+  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
+}
+function isPathFile(path) {
+  const lastSegment = path.split("/").pop();
+  return !!(lastSegment || path).match(/\.[0-9a-z]+$/i)?.[0];
+}
+function fixSlashes(trailingSlash, pathOrUrl) {
+  const $url = parseURL(pathOrUrl);
+  if (isPathFile($url.pathname))
+    return pathOrUrl;
+  const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
+  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
+}
+
+function createSitePathResolver(e, options = {}) {
+  const siteConfig = useSiteConfig(e);
+  const nitroOrigin = useNitroOrigin(e);
+  const nuxtBase = useRuntimeConfig(e).app.baseURL || "/";
+  return (path) => {
+    return resolveSitePath(path, {
+      ...options,
+      siteUrl: options.canonical !== false || true ? siteConfig.url : nitroOrigin,
+      trailingSlash: siteConfig.trailingSlash,
+      base: nuxtBase
+    });
+  };
+}
+
+function defineNitroPlugin(def) {
+  return def;
+}
+
 const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_$";
 const unsafeChars = /[<>\b\f\n\r\t\0\u2028\u2029]/g;
 const reserved = /^(?:do|if|in|for|int|let|new|try|var|byte|case|char|else|enum|goto|long|this|void|with|await|break|catch|class|const|final|float|short|super|throw|while|yield|delete|double|export|import|native|return|switch|throws|typeof|boolean|default|extends|finally|package|private|abstract|continue|debugger|function|volatile|interface|protected|transient|implements|instanceof|synchronized)$/;
@@ -958,145 +1104,6 @@ function stringifyString(str) {
   return result;
 }
 
-function normalizeSiteConfig(config) {
-  if (typeof config.indexable !== "undefined")
-    config.indexable = String(config.indexable) !== "false";
-  if (typeof config.trailingSlash !== "undefined" && !config.trailingSlash)
-    config.trailingSlash = String(config.trailingSlash) !== "false";
-  if (config.url && !hasProtocol(config.url, { acceptRelative: true, strict: false }))
-    config.url = withHttps(config.url);
-  const keys = Object.keys(config).sort((a, b) => a.localeCompare(b));
-  const newConfig = {};
-  for (const k of keys)
-    newConfig[k] = config[k];
-  return newConfig;
-}
-function createSiteConfigStack(options) {
-  const debug = options?.debug || false;
-  const stack = [];
-  function push(input) {
-    if (!input || typeof input !== "object" || Object.keys(input).length === 0)
-      return;
-    if (!input._context && debug) {
-      let lastFunctionName = new Error("tmp").stack?.split("\n")[2].split(" ")[5];
-      if (lastFunctionName?.includes("/"))
-        lastFunctionName = "anonymous";
-      input._context = lastFunctionName;
-    }
-    const entry = {};
-    for (const k in input) {
-      const val = input[k];
-      if (typeof val !== "undefined" && val !== "")
-        entry[k] = val;
-    }
-    if (Object.keys(entry).filter((k) => !k.startsWith("_")).length > 0)
-      stack.push(entry);
-  }
-  function get(options2) {
-    const siteConfig = {};
-    if (options2?.debug)
-      siteConfig._context = {};
-    for (const o in stack.sort((a, b) => (a._priority || 0) - (b._priority || 0))) {
-      for (const k in stack[o]) {
-        const key = k;
-        const val = options2?.resolveRefs ? toValue(stack[o][k]) : stack[o][k];
-        if (!k.startsWith("_") && typeof val !== "undefined") {
-          siteConfig[k] = val;
-          if (options2?.debug)
-            siteConfig._context[key] = stack[o]._context?.[key] || stack[o]._context || "anonymous";
-        }
-      }
-    }
-    return options2?.skipNormalize ? siteConfig : normalizeSiteConfig(siteConfig);
-  }
-  return {
-    stack,
-    push,
-    get
-  };
-}
-
-function envSiteConfig(env) {
-  return Object.fromEntries(Object.entries(env).filter(([k]) => k.startsWith("NUXT_SITE_") || k.startsWith("NUXT_PUBLIC_SITE_")).map(([k, v]) => [
-    k.replace(/^NUXT_(PUBLIC_)?SITE_/, "").split("_").map((s, i) => i === 0 ? s.toLowerCase() : s[0].toUpperCase() + s.slice(1).toLowerCase()).join(""),
-    v
-  ]));
-}
-
-function useSiteConfig(e, _options) {
-  e.context.siteConfig = e.context.siteConfig || createSiteConfigStack();
-  const options = defu$1(_options, useRuntimeConfig(e)["nuxt-site-config"], { debug: false });
-  return e.context.siteConfig.get(options);
-}
-
-function useNitroOrigin(e) {
-  const cert = process.env.NITRO_SSL_CERT;
-  const key = process.env.NITRO_SSL_KEY;
-  let host = process.env.NITRO_HOST || process.env.HOST || false;
-  let port = false;
-  let protocol = cert && key || !false ? "https" : "http";
-  if (process.env.__NUXT_DEV__) {
-    const origin = JSON.parse(process.env.__NUXT_DEV__).proxy.url;
-    host = withoutProtocol(origin);
-    protocol = origin.includes("https") ? "https" : "http";
-  } else if (process.env.NUXT_VITE_NODE_OPTIONS) {
-    const origin = JSON.parse(process.env.NUXT_VITE_NODE_OPTIONS).baseURL.replace("/__nuxt_vite_node__", "");
-    host = withoutProtocol(origin);
-    protocol = origin.includes("https") ? "https" : "http";
-  } else {
-    host = getRequestHost(e, { xForwardedHost: true }) || host;
-    protocol = getRequestProtocol(e, { xForwardedProto: true }) || protocol;
-  }
-  if (typeof host === "string" && host.includes(":")) {
-    port = host.split(":").pop();
-    host = host.split(":")[0];
-  }
-  port = port ? `:${port}` : "";
-  return withTrailingSlash(`${protocol}://${host}${port}`);
-}
-
-function resolveSitePath(pathOrUrl, options) {
-  let path = pathOrUrl;
-  if (hasProtocol(pathOrUrl, { strict: false, acceptRelative: true })) {
-    const parsed = parseURL(pathOrUrl);
-    path = parsed.pathname;
-  }
-  const base = withLeadingSlash(options.base || "/");
-  if (base !== "/" && path.startsWith(base)) {
-    path = path.slice(base.length);
-  }
-  const origin = options.absolute ? options.siteUrl : "";
-  const baseWithOrigin = options.withBase ? withBase(base, origin || "/") : origin;
-  const resolvedUrl = withBase(path, baseWithOrigin);
-  return path === "/" && !options.withBase ? withTrailingSlash(resolvedUrl) : fixSlashes(options.trailingSlash, resolvedUrl);
-}
-function fixSlashes(trailingSlash, pathOrUrl) {
-  const $url = parseURL(pathOrUrl);
-  const isFileUrl = $url.pathname.includes(".");
-  if (isFileUrl)
-    return pathOrUrl;
-  const fixedPath = trailingSlash ? withTrailingSlash($url.pathname) : withoutTrailingSlash($url.pathname);
-  return `${$url.protocol ? `${$url.protocol}//` : ""}${$url.host || ""}${fixedPath}${$url.search || ""}${$url.hash || ""}`;
-}
-
-function createSitePathResolver(e, options = {}) {
-  const siteConfig = useSiteConfig(e);
-  const nitroOrigin = useNitroOrigin(e);
-  const nuxtBase = useRuntimeConfig(e).app.baseURL || "/";
-  return (path) => {
-    return resolveSitePath(path, {
-      ...options,
-      siteUrl: options.canonical !== false || true ? siteConfig.url : nitroOrigin,
-      trailingSlash: siteConfig.trailingSlash,
-      base: nuxtBase
-    });
-  };
-}
-
-function defineNitroPlugin(def) {
-  return def;
-}
-
 const PRERENDER_NO_SSR_ROUTES = /* @__PURE__ */ new Set(["/index.html", "/200.html", "/404.html"]);
 const _6UMXWDaklL = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
@@ -1136,7 +1143,7 @@ const errorHandler = (async function errorhandler(error, event) {
       error.fatal && "[fatal]",
       Number(errorObject.statusCode) !== 200 && `[${errorObject.statusCode}]`
     ].filter(Boolean).join(" ");
-    console.error(tags, errorObject.message + "\n" + stack.map((l) => "  " + l.text).join("  \n"));
+    console.error(tags, (error.message || error.toString() || "internal server error") + "\n" + stack.map((l) => "  " + l.text).join("  \n"));
   }
   if (event.handled) {
     return;
@@ -1177,717 +1184,717 @@ const errorHandler = (async function errorhandler(error, event) {
 const assets = {
   "/200.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"947-gAYMKwc5vH7v5eMn8Y2VGWd4pxU\"",
-    "mtime": "2024-10-27T16:40:46.903Z",
-    "size": 2375,
+    "etag": "\"9fc4-CLQXvEVo42riQlbwjnGg9HJJD8A\"",
+    "mtime": "2024-10-27T16:56:08.154Z",
+    "size": 40900,
     "path": "../../.output/public/200.html"
   },
   "/404.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"947-gAYMKwc5vH7v5eMn8Y2VGWd4pxU\"",
-    "mtime": "2024-10-27T16:40:46.903Z",
-    "size": 2375,
+    "etag": "\"9fc4-CLQXvEVo42riQlbwjnGg9HJJD8A\"",
+    "mtime": "2024-10-27T16:56:08.154Z",
+    "size": 40900,
     "path": "../../.output/public/404.html"
   },
   "/_payload.json": {
     "type": "application/json",
-    "etag": "\"157b9-BI6prkACD+HPGhpe9jxHCCv+hpY\"",
-    "mtime": "2024-10-27T16:40:48.839Z",
+    "etag": "\"157b9-AIxaFyvRV1dW608IV1qgANLsbNc\"",
+    "mtime": "2024-10-27T16:56:10.334Z",
     "size": 87993,
     "path": "../../.output/public/_payload.json"
   },
   "/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"7ca8-+Y6gXVlb3l9nx5EaT/iY6kdx1ck\"",
-    "mtime": "2024-10-27T16:40:47.373Z",
-    "size": 31912,
+    "etag": "\"113ec-zLbs1sJmaIx2gyJSzr0m2O/yq5c\"",
+    "mtime": "2024-10-27T16:56:08.448Z",
+    "size": 70636,
     "path": "../../.output/public/index.html"
   },
   "/__sitemap__/style.xsl": {
     "type": "application/xml",
     "etag": "\"174e-04KStjaK+j7dbchiMHqnnHF1ICc\"",
-    "mtime": "2024-10-27T16:40:46.833Z",
+    "mtime": "2024-10-27T16:56:08.052Z",
     "size": 5966,
     "path": "../../.output/public/__sitemap__/style.xsl"
   },
-  "/ajanlatkeres/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-VYO6XxNxu7oyMGyC8bnuEwbiK/g\"",
-    "mtime": "2024-10-27T16:40:48.839Z",
-    "size": 69,
-    "path": "../../.output/public/ajanlatkeres/_payload.json"
-  },
-  "/ajanlatkeres/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"35e8-uQsmdSUTpQLqNwpj1Fv5vF1S8RA\"",
-    "mtime": "2024-10-27T16:40:48.211Z",
-    "size": 13800,
-    "path": "../../.output/public/ajanlatkeres/index.html"
-  },
   "/adatvedelmi-tajekoztato/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-J1UTrGsXC+nrrqIax4SWZPED6Uc\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-GmKUU+HYFXerCbLVg2i6ptBhGaU\"",
+    "mtime": "2024-10-27T16:56:10.698Z",
     "size": 69,
     "path": "../../.output/public/adatvedelmi-tajekoztato/_payload.json"
   },
   "/adatvedelmi-tajekoztato/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"7fc2-/k3PmvGmzpEPHDBkabyDQBjQx/8\"",
-    "mtime": "2024-10-27T16:40:48.213Z",
-    "size": 32706,
+    "etag": "\"11671-RkHBmZRFmDCbV01DGtxSib3Yshc\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 71281,
     "path": "../../.output/public/adatvedelmi-tajekoztato/index.html"
+  },
+  "/ajanlatkeres/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-OWgCFF2kCqdi7S41dmTJY9gfT3U\"",
+    "mtime": "2024-10-27T16:56:10.478Z",
+    "size": 69,
+    "path": "../../.output/public/ajanlatkeres/_payload.json"
+  },
+  "/ajanlatkeres/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"cc97-5ROe3yQJbIh8KYPl5KWZfRhrW3g\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 52375,
+    "path": "../../.output/public/ajanlatkeres/index.html"
   },
   "/arlista/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-L+fGYoCsvBL0YmsPGXJXiEGWRjc\"",
-    "mtime": "2024-10-27T16:40:48.951Z",
+    "etag": "\"45-LfVh7gCu9WhX8m8artRD5pyQobU\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/arlista/_payload.json"
   },
   "/arlista/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"3fcb-gxG9GKiOLY3+9vOmuRYZMTtqa+Q\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 16331,
+    "etag": "\"d67a-ls0cjwNhQ4RJT+ntty4ghgZ+RXk\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 54906,
     "path": "../../.output/public/arlista/index.html"
-  },
-  "/galeria/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-9pwDSB7Lxf25AfT6vbc7boKL/qw\"",
-    "mtime": "2024-10-27T16:40:49.248Z",
-    "size": 69,
-    "path": "../../.output/public/galeria/_payload.json"
-  },
-  "/galeria/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"2be3-wuKTTZYo6zT2Ix3tih1Xv5ZomSU\"",
-    "mtime": "2024-10-27T16:40:48.214Z",
-    "size": 11235,
-    "path": "../../.output/public/galeria/index.html"
   },
   "/egyeni-igenyek/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-u3R0znlUubehDYVJb9y9f/VgHro\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-w2AqRWLRGcS4Mz0CRz3HwTlUp6s\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/egyeni-igenyek/_payload.json"
   },
   "/egyeni-igenyek/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"558d-Tu7n8swZfvdvsRcKSicZj9GB+s4\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21901,
+    "etag": "\"ec3c-KfnLWAd2g6A/1NcjbgLp8gL7C+U\"",
+    "mtime": "2024-10-27T16:56:09.323Z",
+    "size": 60476,
     "path": "../../.output/public/egyeni-igenyek/index.html"
+  },
+  "/galeria/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-HMYkbutZn3cfPLlWEltQm6wrML0\"",
+    "mtime": "2024-10-27T16:56:10.698Z",
+    "size": 69,
+    "path": "../../.output/public/galeria/_payload.json"
+  },
+  "/galeria/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"c292-bT7FMUc/sfEsWZJ5e1PDm5RKwBw\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 49810,
+    "path": "../../.output/public/galeria/index.html"
   },
   "/hidden-blog/_payload.json": {
     "type": "application/json",
-    "etag": "\"157b9-Np7ubq1dx6iHUek/mMJq81K8MkY\"",
-    "mtime": "2024-10-27T16:40:49.357Z",
+    "etag": "\"157b9-iZgW+KP3kTULB+h33CuHeLN+TW0\"",
+    "mtime": "2024-10-27T16:56:12.323Z",
     "size": 87993,
     "path": "../../.output/public/hidden-blog/_payload.json"
   },
   "/hidden-blog/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"6715-copu8eLQEjyJa6EDEw8TYnrZWXU\"",
-    "mtime": "2024-10-27T16:40:48.839Z",
-    "size": 26389,
+    "etag": "\"fe59-1wUzR4Mwh365orc5ZF2fFHkgHSg\"",
+    "mtime": "2024-10-27T16:56:11.630Z",
+    "size": 65113,
     "path": "../../.output/public/hidden-blog/index.html"
   },
   "/javitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-iQmgI65bvGImpAitau1yB/fWCaM\"",
-    "mtime": "2024-10-27T16:40:49.171Z",
+    "etag": "\"45-HAZB5Nz3aPlWqhFMi27DnDVtflU\"",
+    "mtime": "2024-10-27T16:56:10.480Z",
     "size": 69,
     "path": "../../.output/public/javitas/_payload.json"
   },
   "/javitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"5403-+mDGoKm+q28F9vXFmK0pXT5dnA0\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21507,
+    "etag": "\"eab2-s5QGOZRAcr8O0kkAJpYLvbqe3F4\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 60082,
     "path": "../../.output/public/javitas/index.html"
   },
   "/kapcsolat/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-WeiTHtpKXZw/gcngwN/IKLsxQSg\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-qKeSVZvJEyQi4y+NJGO0A3XP83U\"",
+    "mtime": "2024-10-27T16:56:10.698Z",
     "size": 69,
     "path": "../../.output/public/kapcsolat/_payload.json"
   },
   "/kapcsolat/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"2b71-W0DFDwY4DFjEkOToGQdEHagUJmo\"",
-    "mtime": "2024-10-27T16:40:48.213Z",
-    "size": 11121,
+    "etag": "\"c220-sB7P5p7wOTxYfbYDuBG8MsqFeSA\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 49696,
     "path": "../../.output/public/kapcsolat/index.html"
-  },
-  "/meretre-szabas-igazitas/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-Y54AgTvG2wco2FpNAizUKDxi3tM\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
-    "size": 69,
-    "path": "../../.output/public/meretre-szabas-igazitas/_payload.json"
-  },
-  "/meretre-szabas-igazitas/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"5501-4BW6L6480Gn/FzClvGAhAbV+sCE\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21761,
-    "path": "../../.output/public/meretre-szabas-igazitas/index.html"
   },
   "/kolcsonzes/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-YH8kB2DDw2SAdn85V67ToK7+lCc\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-w4ZBvLxiNjpx7VYHFW9kCCUBB/Y\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/kolcsonzes/_payload.json"
   },
   "/kolcsonzes/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"552b-8dpZHsqPyWesGVfr6ED9MT3RcHE\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21803,
+    "etag": "\"ebda-Sc4ev5U/Jo5hghzT6cb3YyvsjyQ\"",
+    "mtime": "2024-10-27T16:56:09.327Z",
+    "size": 60378,
     "path": "../../.output/public/kolcsonzes/index.html"
+  },
+  "/meretre-szabas-igazitas/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-zgJsbhlSvXne/OaGQMwXKquidQQ\"",
+    "mtime": "2024-10-27T16:56:10.698Z",
+    "size": 69,
+    "path": "../../.output/public/meretre-szabas-igazitas/_payload.json"
+  },
+  "/meretre-szabas-igazitas/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"ebb0-iSQXV+eytad66aRltcLS2Ee3ojo\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 60336,
+    "path": "../../.output/public/meretre-szabas-igazitas/index.html"
   },
   "/mosas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-7Z8bJEBkQSYdBpz/RNcbTPiLzYk\"",
-    "mtime": "2024-10-27T16:40:48.839Z",
+    "etag": "\"45-r8akSheWK1ORYGjENJjRHvXRLCk\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/mosas/_payload.json"
   },
   "/mosas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"53bc-ThzB02RIVUDJK6SVVfLvZzTEJFg\"",
-    "mtime": "2024-10-27T16:40:48.211Z",
-    "size": 21436,
+    "etag": "\"ea6b-29j+YYoLZzAIfu+owJuUkknZRjo\"",
+    "mtime": "2024-10-27T16:56:09.333Z",
+    "size": 60011,
     "path": "../../.output/public/mosas/index.html"
-  },
-  "/rolunk/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-RHLYAWOnzClPZ0ZaeMwO/07/fx4\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
-    "size": 69,
-    "path": "../../.output/public/rolunk/_payload.json"
-  },
-  "/rolunk/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"389f-WBUID/f1Mla2X99Ih7o+tyJ1zXc\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 14495,
-    "path": "../../.output/public/rolunk/index.html"
   },
   "/nagy-mennyiseg/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-cIsGngiCnJ8lBgXh6ZafdiTkryw\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-F7iq+0t7TsnGtDRhXpFqOukG3Dw\"",
+    "mtime": "2024-10-27T16:56:10.679Z",
     "size": 69,
     "path": "../../.output/public/nagy-mennyiseg/_payload.json"
   },
   "/nagy-mennyiseg/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"55ed-ux7Zk7ryf60PewxEk1t/fYUU8EA\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21997,
+    "etag": "\"ec9c-ga46jl7/GTktRfbcYCM851vnYGA\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 60572,
     "path": "../../.output/public/nagy-mennyiseg/index.html"
+  },
+  "/rolunk/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-Q2Dzau+Uw9j2Q8CBaPVGV19gDqc\"",
+    "mtime": "2024-10-27T16:56:10.337Z",
+    "size": 69,
+    "path": "../../.output/public/rolunk/_payload.json"
+  },
+  "/rolunk/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"cf4e-Y84LdjvzMXvQgLpXtfzarxfUvys\"",
+    "mtime": "2024-10-27T16:56:09.306Z",
+    "size": 53070,
+    "path": "../../.output/public/rolunk/index.html"
   },
   "/szolgaltatasok/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-OR611/ib1cQQZEgHw6AyIJju0x8\"",
-    "mtime": "2024-10-27T16:40:49.247Z",
+    "etag": "\"45-VqLTikNpwVB4kvqh0tbOBzzMaRQ\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/szolgaltatasok/_payload.json"
   },
   "/szolgaltatasok/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"40f8-KUTMs48/Z2pxr6kP6dCLFIzQq0M\"",
-    "mtime": "2024-10-27T16:40:48.214Z",
-    "size": 16632,
+    "etag": "\"d7a7-kZgjemX9MIgKeE40FqJfd4rerKg\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 55207,
     "path": "../../.output/public/szolgaltatasok/index.html"
   },
   "/tisztitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-kVrYj7gjo235T4WiF19IkS6UVjg\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-bndJjXNoO8hP4lD6rTgob1ScSjs\"",
+    "mtime": "2024-10-27T16:56:10.679Z",
     "size": 69,
     "path": "../../.output/public/tisztitas/_payload.json"
   },
   "/tisztitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"540a-cxI51bLSb9SVLTzF4NrdP92+HVo\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21514,
+    "etag": "\"eab9-WTj6B8vYDu6nniqPUCEc7OwntP4\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 60089,
     "path": "../../.output/public/tisztitas/index.html"
   },
   "/varras/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-Cz9MGVL6x+csj92A0s/La+rp8jc\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "etag": "\"45-AM4gt5I6+SbVV5M6S4fcag+qe44\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/varras/_payload.json"
   },
   "/varras/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"54e1-QsSi2ceuE4VQXNKIWRR9YLXyJQw\"",
-    "mtime": "2024-10-27T16:40:48.212Z",
-    "size": 21729,
+    "etag": "\"eb90-0U7l0So/0jLg0HwAl3mElLBp1Mo\"",
+    "mtime": "2024-10-27T16:56:09.322Z",
+    "size": 60304,
     "path": "../../.output/public/varras/index.html"
   },
   "/vasalas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-FtdG3qOFv5FCDZhtu5IQwQuWIjA\"",
-    "mtime": "2024-10-27T16:40:49.248Z",
+    "etag": "\"45-6GjDBSrZga26s3TfbpXvWfDikjA\"",
+    "mtime": "2024-10-27T16:56:10.724Z",
     "size": 69,
     "path": "../../.output/public/vasalas/_payload.json"
   },
   "/vasalas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"53a2-cUMuRYKt8w+ezEVVmIxZlW6JuTI\"",
-    "mtime": "2024-10-27T16:40:48.214Z",
-    "size": 21410,
+    "etag": "\"ea51-Thytxlcutmvwivcq6hvR8ucjGtg\"",
+    "mtime": "2024-10-27T16:56:09.323Z",
+    "size": 59985,
     "path": "../../.output/public/vasalas/index.html"
   },
   "/posts/adatvedelmi-tajekoztato/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-ykC0dzu/v7SyXJb5kHK7cYF+w7A\"",
-    "mtime": "2024-10-27T16:40:49.670Z",
+    "etag": "\"45-qzYM32IJUAbMKP8inuAMr6iNvNo\"",
+    "mtime": "2024-10-27T16:56:12.369Z",
     "size": 69,
     "path": "../../.output/public/posts/adatvedelmi-tajekoztato/_payload.json"
   },
   "/posts/adatvedelmi-tajekoztato/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"5ce3-3v3G5mb8eFnTQ3zq5qwFko+dJZk\"",
-    "mtime": "2024-10-27T16:40:49.667Z",
-    "size": 23779,
+    "etag": "\"f3da-CCoVRSdY2pdwbtEp6VzkNAfOD3U\"",
+    "mtime": "2024-10-27T16:56:12.155Z",
+    "size": 62426,
     "path": "../../.output/public/posts/adatvedelmi-tajekoztato/index.html"
   },
   "/posts/ajanlatkeres/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-qA4NHtBYEsskU+7qXfPE6uOl38A\"",
-    "mtime": "2024-10-27T16:40:49.582Z",
+    "etag": "\"45-eI3cRKj0NRaIP114EuLqXySCr9Y\"",
+    "mtime": "2024-10-27T16:56:12.372Z",
     "size": 69,
     "path": "../../.output/public/posts/ajanlatkeres/_payload.json"
   },
   "/posts/ajanlatkeres/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"5cac-YRyWCkJxToaBVwOGw21bLjAKxEI\"",
-    "mtime": "2024-10-27T16:40:49.577Z",
-    "size": 23724,
+    "etag": "\"f3a3-tW31Zq0TQ82F+VItGaEuvKUkBZo\"",
+    "mtime": "2024-10-27T16:56:12.280Z",
+    "size": 62371,
     "path": "../../.output/public/posts/ajanlatkeres/index.html"
   },
   "/posts/arlista/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-vZ8v3+CCe0GNiWsiqKo6WLt6dNU\"",
-    "mtime": "2024-10-27T16:40:50.112Z",
+    "etag": "\"45-SQd34Z6tAL9iAvr5SH8hTr7IU/0\"",
+    "mtime": "2024-10-27T16:56:12.372Z",
     "size": 69,
     "path": "../../.output/public/posts/arlista/_payload.json"
   },
   "/posts/arlista/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"5c93-aCTBB36PdxnuIjTzqW0pfl/lhLQ\"",
-    "mtime": "2024-10-27T16:40:50.099Z",
-    "size": 23699,
+    "etag": "\"f38a-f/zoXS17JG+XXWsQcFSdYpFpscQ\"",
+    "mtime": "2024-10-27T16:56:12.280Z",
+    "size": 62346,
     "path": "../../.output/public/posts/arlista/index.html"
   },
   "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/_payload.json": {
     "type": "application/json",
-    "etag": "\"137c-SB25k0PZbN9oFJioWUHz88skOAY\"",
-    "mtime": "2024-10-27T16:40:49.426Z",
+    "etag": "\"137c-lmTT1HVpFykYOt3BluExi1ZjZRs\"",
+    "mtime": "2024-10-27T16:56:11.663Z",
     "size": 4988,
     "path": "../../.output/public/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/_payload.json"
   },
   "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"54ee-3ydP93dJQKfZen9hr50MthF/Vd0\"",
-    "mtime": "2024-10-27T16:40:49.223Z",
-    "size": 21742,
+    "etag": "\"ebe5-siLIqN//osNZ4/nlSN+vCuy0qMg\"",
+    "mtime": "2024-10-27T16:56:10.729Z",
+    "size": 60389,
     "path": "../../.output/public/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/index.html"
   },
   "/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/_payload.json": {
     "type": "application/json",
-    "etag": "\"1320-EQ19ZJ/CeDBA3VmarkzYXxtLKl8\"",
-    "mtime": "2024-10-27T16:40:49.421Z",
+    "etag": "\"1320-QbyCzgVtXJ/JL1zlL1O6MpZf5+g\"",
+    "mtime": "2024-10-27T16:56:12.155Z",
     "size": 4896,
     "path": "../../.output/public/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/_payload.json"
   },
   "/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"549a-HOra50RemRAu6cEMnU6W9ibfbEI\"",
-    "mtime": "2024-10-27T16:40:49.182Z",
-    "size": 21658,
+    "etag": "\"eb91-GdR3uTU7S5ABNZ02YR6rD1m0GlQ\"",
+    "mtime": "2024-10-27T16:56:10.729Z",
+    "size": 60305,
     "path": "../../.output/public/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/index.html"
   },
   "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/_payload.json": {
     "type": "application/json",
-    "etag": "\"2e08-ONqd0NsSpzC/qc7E4SWxR66Nlds\"",
-    "mtime": "2024-10-27T16:40:49.963Z",
+    "etag": "\"2e08-h19Ck02k+KmY6DsWUy6jAJiI984\"",
+    "mtime": "2024-10-27T16:56:12.892Z",
     "size": 11784,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"6de3-UlI8Bdb1OuwAcxsTX5nqH4K7xPs\"",
-    "mtime": "2024-10-27T16:40:49.954Z",
-    "size": 28131,
+    "etag": "\"104da-yzFxF4n30H0hW8ZL9hfFZ02IkQg\"",
+    "mtime": "2024-10-27T16:56:12.845Z",
+    "size": 66778,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/index.html"
   },
   "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/_payload.json": {
     "type": "application/json",
-    "etag": "\"2c02-huptcoFPoe/bZqPc3iEpBn5gOYI\"",
-    "mtime": "2024-10-27T16:40:50.180Z",
+    "etag": "\"2c02-xLDXLaH+fQVNpPVm8ZcYotYo1KQ\"",
+    "mtime": "2024-10-27T16:56:12.887Z",
     "size": 11266,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"6b94-ozMSJrlgLADFzI+nUleVbYX5ifE\"",
-    "mtime": "2024-10-27T16:40:50.166Z",
-    "size": 27540,
+    "etag": "\"1028b-2EHst8SUYFG88Mj/qyZEG5hSTP8\"",
+    "mtime": "2024-10-27T16:56:12.840Z",
+    "size": 66187,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/index.html"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten/_payload.json": {
     "type": "application/json",
-    "etag": "\"612-TV3qVe71is9s4M2T3cczyDrWzJ8\"",
-    "mtime": "2024-10-27T16:40:49.510Z",
+    "etag": "\"612-VMecl8H3cyygaq2cWURTBeburYU\"",
+    "mtime": "2024-10-27T16:56:12.411Z",
     "size": 1554,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"4776-x0BVE0h+qnZWnl02TxABmTg3bA4\"",
-    "mtime": "2024-10-27T16:40:49.427Z",
-    "size": 18294,
+    "etag": "\"de6d-Q5M8qKibQuDL6A9jZl6SYXU8BsA\"",
+    "mtime": "2024-10-27T16:56:12.374Z",
+    "size": 56941,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten/index.html"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/_payload.json": {
     "type": "application/json",
-    "etag": "\"1bc3-CuFIaLU+frylkDDg73VXT5BVl0Q\"",
-    "mtime": "2024-10-27T16:40:49.514Z",
+    "etag": "\"1bc3-SZuSBl9LfO9fYkhXiAH4jpzgmHE\"",
+    "mtime": "2024-10-27T16:56:12.410Z",
     "size": 7107,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"5c2a-NubxUW7ZJ5nTnVq1t1Gy4+Y0QAk\"",
-    "mtime": "2024-10-27T16:40:49.462Z",
-    "size": 23594,
+    "etag": "\"f321-A7qZCMYDHvUStE3PpKRKSFpgfpQ\"",
+    "mtime": "2024-10-27T16:56:12.372Z",
+    "size": 62241,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/index.html"
   },
   "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/_payload.json": {
     "type": "application/json",
-    "etag": "\"35c4-G8rQ7pDdH26gcEl2isK4HN7E3Ds\"",
-    "mtime": "2024-10-27T16:40:49.514Z",
+    "etag": "\"35c4-W/N3UIUg0Y1ovUURKliMQALpF58\"",
+    "mtime": "2024-10-27T16:56:12.410Z",
     "size": 13764,
     "path": "../../.output/public/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/_payload.json"
   },
   "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"7526-5lqWj/R4f7QLQ7unxBE5k9SRXDo\"",
-    "mtime": "2024-10-27T16:40:49.475Z",
-    "size": 29990,
+    "etag": "\"10c1d-i+snOu8hR49aEnIt3dOqrCvMByU\"",
+    "mtime": "2024-10-27T16:56:12.374Z",
+    "size": 68637,
     "path": "../../.output/public/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/index.html"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"146f-GD75ZDBCUAanLoiH2LU0XhnHMzA\"",
-    "mtime": "2024-10-27T16:40:49.426Z",
+    "etag": "\"146f-d3tR22UNRsJqTU5qJOhR4EEDlxc\"",
+    "mtime": "2024-10-27T16:56:11.637Z",
     "size": 5231,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/_payload.json"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"55fa-MvWmBMg1qhKngLgNUcCLKDOBXBo\"",
-    "mtime": "2024-10-27T16:40:49.223Z",
-    "size": 22010,
+    "etag": "\"ecf1-ypVkrm81iIaqU6UnK1pNq+V1rDI\"",
+    "mtime": "2024-10-27T16:56:10.698Z",
+    "size": 60657,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/index.html"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/_payload.json": {
     "type": "application/json",
-    "etag": "\"13ff-/3qHktSszrc4Ygvbs+vmoDMPNRU\"",
-    "mtime": "2024-10-27T16:40:50.180Z",
+    "etag": "\"13ff-RMg+YCHw/SqKvYkPg5bOjDis6MY\"",
+    "mtime": "2024-10-27T16:56:12.895Z",
     "size": 5119,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/_payload.json"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"55c4-cCtTWQap8XawaRNxxrl90Lx+S+8\"",
-    "mtime": "2024-10-27T16:40:50.168Z",
-    "size": 21956,
+    "etag": "\"ecbb-KUk3w2TiOCuWIJkFaQy8SLUfbJY\"",
+    "mtime": "2024-10-27T16:56:12.860Z",
+    "size": 60603,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/index.html"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/_payload.json": {
     "type": "application/json",
-    "etag": "\"15c8-oUdMQJNO1MISE98OdOVUM03aTRo\"",
-    "mtime": "2024-10-27T16:40:50.116Z",
+    "etag": "\"15c8-ulJhNtmMuT/dURupJO/Jbach2RE\"",
+    "mtime": "2024-10-27T16:56:12.892Z",
     "size": 5576,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/_payload.json"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"572a-Zmr57bfzlfloGV+UHQA+Z5hjqx4\"",
-    "mtime": "2024-10-27T16:40:50.107Z",
-    "size": 22314,
+    "etag": "\"ee21-+SHlNsmrBfF1pIaBB4OLVdBA07A\"",
+    "mtime": "2024-10-27T16:56:12.840Z",
+    "size": 60961,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/index.html"
   },
   "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/_payload.json": {
     "type": "application/json",
-    "etag": "\"2b44-KGZSA8IEBczmjEifa3xmDjJ8wBk\"",
-    "mtime": "2024-10-27T16:40:49.510Z",
+    "etag": "\"2b44-vMe+QEyHJrdufaVmn2vwplIaUU8\"",
+    "mtime": "2024-10-27T16:56:12.410Z",
     "size": 11076,
     "path": "../../.output/public/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/_payload.json"
   },
   "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"6b7d-DXYeV6wdI4goOkMB31CHjEXGSOo\"",
-    "mtime": "2024-10-27T16:40:49.427Z",
-    "size": 27517,
+    "etag": "\"10274-dzYPe/rG3/R8f2BsUdZ0U1xjjE0\"",
+    "mtime": "2024-10-27T16:56:12.372Z",
+    "size": 66164,
     "path": "../../.output/public/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/index.html"
   },
   "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/_payload.json": {
     "type": "application/json",
-    "etag": "\"1548-eXdI22pWkC4ihCfWu+OMF4fnhJ8\"",
-    "mtime": "2024-10-27T16:40:50.116Z",
+    "etag": "\"1548-WnxS5NcpLmoSeK7oF/DkJV8uiEw\"",
+    "mtime": "2024-10-27T16:56:12.893Z",
     "size": 5448,
     "path": "../../.output/public/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/_payload.json"
   },
   "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"56c5-cTVEFiv4go1Bl0EXzqive5xKCQg\"",
-    "mtime": "2024-10-27T16:40:50.106Z",
-    "size": 22213,
+    "etag": "\"edbc-gfTaznsMF+SNHGmwyj0fixXaLbc\"",
+    "mtime": "2024-10-27T16:56:12.855Z",
+    "size": 60860,
     "path": "../../.output/public/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/index.html"
   },
   "/_ipx/_/img/contact.webp": {
     "type": "image/webp",
     "etag": "\"57f06-kBwH14OyHNiR2Ez2rNYGP8GhTfs\"",
-    "mtime": "2024-10-27T16:40:50.712Z",
+    "mtime": "2024-10-27T16:56:13.716Z",
     "size": 360198,
     "path": "../../.output/public/_ipx/_/img/contact.webp"
   },
   "/_ipx/_/img/subpage.webp": {
     "type": "image/webp",
     "etag": "\"6ca02-jCg0T6hvVH9tpZQbEM6sCIZKf9c\"",
-    "mtime": "2024-10-27T16:40:50.712Z",
+    "mtime": "2024-10-27T16:56:13.567Z",
     "size": 444930,
     "path": "../../.output/public/_ipx/_/img/subpage.webp"
   },
   "/_ipx/_/img/footer/contact.webp": {
     "type": "image/webp",
     "etag": "\"8794-xmQ99fZ2MHML/idtVagxvOZnJmI\"",
-    "mtime": "2024-10-27T16:40:48.313Z",
+    "mtime": "2024-10-27T16:56:09.514Z",
     "size": 34708,
     "path": "../../.output/public/_ipx/_/img/footer/contact.webp"
   },
   "/_ipx/_/img/footer/facebook.svg": {
     "type": "image/svg+xml",
     "etag": "\"31a-u4eK4v1DuWoO5P/SgKGUxM+OXTY\"",
-    "mtime": "2024-10-27T16:40:48.726Z",
+    "mtime": "2024-10-27T16:56:09.514Z",
     "size": 794,
     "path": "../../.output/public/_ipx/_/img/footer/facebook.svg"
   },
   "/_ipx/_/img/footer/instagram.svg": {
     "type": "image/svg+xml",
     "etag": "\"72d-kJGLi1L61e5RC7Eop/P5UEIQgiQ\"",
-    "mtime": "2024-10-27T16:40:48.726Z",
+    "mtime": "2024-10-27T16:56:10.259Z",
     "size": 1837,
     "path": "../../.output/public/_ipx/_/img/footer/instagram.svg"
   },
   "/_ipx/_/img/footer/mail.svg": {
     "type": "image/svg+xml",
     "etag": "\"2f2-Kv22crsj/zxXlGAV6cyeR9kdWw4\"",
-    "mtime": "2024-10-27T16:40:48.328Z",
+    "mtime": "2024-10-27T16:56:10.242Z",
     "size": 754,
     "path": "../../.output/public/_ipx/_/img/footer/mail.svg"
   },
   "/_ipx/_/img/footer/map.svg": {
     "type": "image/svg+xml",
     "etag": "\"32a-QTbn0MKypDfnNL+yly+A849B7ZQ\"",
-    "mtime": "2024-10-27T16:40:48.726Z",
+    "mtime": "2024-10-27T16:56:10.242Z",
     "size": 810,
     "path": "../../.output/public/_ipx/_/img/footer/map.svg"
   },
   "/_ipx/_/img/footer/phone.svg": {
     "type": "image/svg+xml",
     "etag": "\"88f-GDrfhrYobTQ9QvvM2G2OT1doBws\"",
-    "mtime": "2024-10-27T16:40:48.726Z",
+    "mtime": "2024-10-27T16:56:10.242Z",
     "size": 2191,
     "path": "../../.output/public/_ipx/_/img/footer/phone.svg"
   },
-  "/_ipx/_/img/prices/action.svg": {
+  "/_ipx/_/img/header/logo.svg": {
     "type": "image/svg+xml",
-    "etag": "\"bd6-CP7fPrwyWN8t6mHcyJEY4agTftM\"",
-    "mtime": "2024-10-27T16:40:48.834Z",
-    "size": 3030,
-    "path": "../../.output/public/_ipx/_/img/prices/action.svg"
-  },
-  "/_ipx/_/img/prices/prices.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"2851-8M4Rm+iiLBgrM7LVCkjX4WOuIVA\"",
-    "mtime": "2024-10-27T16:40:48.802Z",
-    "size": 10321,
-    "path": "../../.output/public/_ipx/_/img/prices/prices.svg"
-  },
-  "/_ipx/_/img/prices/prices2.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"256f-VpmJvofMwMmzx/1x4iZEhZ/hE3o\"",
-    "mtime": "2024-10-27T16:40:48.834Z",
-    "size": 9583,
-    "path": "../../.output/public/_ipx/_/img/prices/prices2.svg"
-  },
-  "/_ipx/_/img/prices/prices3.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"3cdb-zmgYnfZhzOB0mfVwT4SG1dYcpm4\"",
-    "mtime": "2024-10-27T16:40:48.834Z",
-    "size": 15579,
-    "path": "../../.output/public/_ipx/_/img/prices/prices3.svg"
-  },
-  "/_ipx/_/img/prices/prices4.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"226c-COzP6BqLvC5D21gsiWr18n+GKUk\"",
-    "mtime": "2024-10-27T16:40:48.950Z",
-    "size": 8812,
-    "path": "../../.output/public/_ipx/_/img/prices/prices4.svg"
-  },
-  "/_ipx/_/img/prices/prices5.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"4fd-QZcvI6uPBbNY4lT45Rb08Bi+sxo\"",
-    "mtime": "2024-10-27T16:40:48.951Z",
-    "size": 1277,
-    "path": "../../.output/public/_ipx/_/img/prices/prices5.svg"
-  },
-  "/_ipx/_/img/prices/prices6.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"199b-DgmdXVAUism/fa9hYQDEWe3fPNU\"",
-    "mtime": "2024-10-27T16:40:49.172Z",
-    "size": 6555,
-    "path": "../../.output/public/_ipx/_/img/prices/prices6.svg"
+    "etag": "\"1e63-wiumMY3OxieHJqpjPuoS+OjYghw\"",
+    "mtime": "2024-10-27T16:56:09.514Z",
+    "size": 7779,
+    "path": "../../.output/public/_ipx/_/img/header/logo.svg"
   },
   "/_ipx/_/img/slider/slider-elem.svg": {
     "type": "image/svg+xml",
     "etag": "\"bc4-sKVoN+mzM51iDEXwShuzchg8+UU\"",
-    "mtime": "2024-10-27T16:40:48.727Z",
+    "mtime": "2024-10-27T16:56:09.520Z",
     "size": 3012,
     "path": "../../.output/public/_ipx/_/img/slider/slider-elem.svg"
   },
   "/_ipx/_/img/slider/slider-elem2.svg": {
     "type": "image/svg+xml",
     "etag": "\"427a-nJOwct+FrN8ztQcNIE/U3r4VXtA\"",
-    "mtime": "2024-10-27T16:40:48.328Z",
+    "mtime": "2024-10-27T16:56:09.514Z",
     "size": 17018,
     "path": "../../.output/public/_ipx/_/img/slider/slider-elem2.svg"
   },
   "/_ipx/_/img/slider/slider.webp": {
     "type": "image/webp",
     "etag": "\"a20a-wihyip3CAIOFir8lyvmPc9tcUNQ\"",
-    "mtime": "2024-10-27T16:40:48.799Z",
+    "mtime": "2024-10-27T16:56:10.335Z",
     "size": 41482,
     "path": "../../.output/public/_ipx/_/img/slider/slider.webp"
-  },
-  "/_ipx/_/img/header/logo.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"1e63-wiumMY3OxieHJqpjPuoS+OjYghw\"",
-    "mtime": "2024-10-27T16:40:48.329Z",
-    "size": 7779,
-    "path": "../../.output/public/_ipx/_/img/header/logo.svg"
   },
   "/_ipx/_/img/page-information/page-information.webp": {
     "type": "image/webp",
     "etag": "\"13a1a-Y9LZz4Li+W1iPBmwVQ3p6+sfm4Q\"",
-    "mtime": "2024-10-27T16:40:49.235Z",
+    "mtime": "2024-10-27T16:56:10.733Z",
     "size": 80410,
     "path": "../../.output/public/_ipx/_/img/page-information/page-information.webp"
   },
   "/_ipx/_/img/page-information/page-information2.webp": {
     "type": "image/webp",
     "etag": "\"bb0e-i69gjUnvKAaMcqqaK0DwvsL0olk\"",
-    "mtime": "2024-10-27T16:40:49.349Z",
+    "mtime": "2024-10-27T16:56:12.154Z",
     "size": 47886,
     "path": "../../.output/public/_ipx/_/img/page-information/page-information2.webp"
   },
   "/_ipx/_/img/services/map.svg": {
     "type": "image/svg+xml",
     "etag": "\"668-ZU1c2poXN71h5TdkDOsTbks3Jpw\"",
-    "mtime": "2024-10-27T16:40:48.791Z",
+    "mtime": "2024-10-27T16:56:10.272Z",
     "size": 1640,
     "path": "../../.output/public/_ipx/_/img/services/map.svg"
   },
   "/_ipx/_/img/services/phone.svg": {
     "type": "image/svg+xml",
     "etag": "\"51e-eEY0a1ZgdVYGfX0QAoK5HEFUJbA\"",
-    "mtime": "2024-10-27T16:40:48.311Z",
+    "mtime": "2024-10-27T16:56:09.514Z",
     "size": 1310,
     "path": "../../.output/public/_ipx/_/img/services/phone.svg"
   },
   "/_ipx/_/img/services/services.webp": {
     "type": "image/webp",
     "etag": "\"15e6e-qW/XSj10VsI6OVG2QP5J7tAjG98\"",
-    "mtime": "2024-10-27T16:40:48.800Z",
+    "mtime": "2024-10-27T16:56:10.335Z",
     "size": 89710,
     "path": "../../.output/public/_ipx/_/img/services/services.webp"
   },
   "/_ipx/_/img/services/services2.webp": {
     "type": "image/webp",
     "etag": "\"3acd0-cdzRZmQPf2I4VswjaJYrHX5ekrw\"",
-    "mtime": "2024-10-27T16:40:48.801Z",
+    "mtime": "2024-10-27T16:56:10.335Z",
     "size": 240848,
     "path": "../../.output/public/_ipx/_/img/services/services2.webp"
   },
   "/_ipx/_/img/services/services3.webp": {
     "type": "image/webp",
     "etag": "\"a6f0-wrZFn9/+nfLlQphtliR3x+YtR6Y\"",
-    "mtime": "2024-10-27T16:40:48.800Z",
+    "mtime": "2024-10-27T16:56:10.335Z",
     "size": 42736,
     "path": "../../.output/public/_ipx/_/img/services/services3.webp"
   },
   "/_ipx/_/img/services/services4.webp": {
     "type": "image/webp",
     "etag": "\"14210-iySuyK2RvbP3NB9ujXxuumT94Gs\"",
-    "mtime": "2024-10-27T16:40:48.800Z",
+    "mtime": "2024-10-27T16:56:10.336Z",
     "size": 82448,
     "path": "../../.output/public/_ipx/_/img/services/services4.webp"
   },
   "/_ipx/_/img/services/services5.webp": {
     "type": "image/webp",
     "etag": "\"17622-CJFCbv6YJvv/UuT91+/mh27pXg0\"",
-    "mtime": "2024-10-27T16:40:48.803Z",
+    "mtime": "2024-10-27T16:56:10.336Z",
     "size": 95778,
     "path": "../../.output/public/_ipx/_/img/services/services5.webp"
   },
   "/_ipx/_/img/services/services6.webp": {
     "type": "image/webp",
     "etag": "\"18554-c8GplmAAKACXijEPXoIxFMHcjBU\"",
-    "mtime": "2024-10-27T16:40:48.837Z",
+    "mtime": "2024-10-27T16:56:10.336Z",
     "size": 99668,
     "path": "../../.output/public/_ipx/_/img/services/services6.webp"
   },
   "/_ipx/_/img/services/services7.webp": {
     "type": "image/webp",
     "etag": "\"e998-9ZB0XI2K/eU3HT77nlzY/DNccps\"",
-    "mtime": "2024-10-27T16:40:49.181Z",
+    "mtime": "2024-10-27T16:56:10.338Z",
     "size": 59800,
     "path": "../../.output/public/_ipx/_/img/services/services7.webp"
   },
   "/_ipx/_/img/services/services8.webp": {
     "type": "image/webp",
     "etag": "\"17b88-l56xRrkxnjT+jTPI8RGcG8rMjYM\"",
-    "mtime": "2024-10-27T16:40:48.840Z",
+    "mtime": "2024-10-27T16:56:10.481Z",
     "size": 97160,
     "path": "../../.output/public/_ipx/_/img/services/services8.webp"
   },
   "/_ipx/_/img/services/services9.webp": {
     "type": "image/webp",
     "etag": "\"cac0-OJNrATXKd3K+5D9nZ6iwxveJ9dI\"",
-    "mtime": "2024-10-27T16:40:49.248Z",
+    "mtime": "2024-10-27T16:56:10.725Z",
     "size": 51904,
     "path": "../../.output/public/_ipx/_/img/services/services9.webp"
   },
   "/_ipx/_/img/services/time.svg": {
     "type": "image/svg+xml",
     "etag": "\"474-MNmi1NiqXaa9HPFWtzArIN5SURw\"",
-    "mtime": "2024-10-27T16:40:48.312Z",
+    "mtime": "2024-10-27T16:56:09.511Z",
     "size": 1140,
     "path": "../../.output/public/_ipx/_/img/services/time.svg"
+  },
+  "/_ipx/_/img/prices/action.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"bd6-CP7fPrwyWN8t6mHcyJEY4agTftM\"",
+    "mtime": "2024-10-27T16:56:10.304Z",
+    "size": 3030,
+    "path": "../../.output/public/_ipx/_/img/prices/action.svg"
+  },
+  "/_ipx/_/img/prices/prices.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"2851-8M4Rm+iiLBgrM7LVCkjX4WOuIVA\"",
+    "mtime": "2024-10-27T16:56:10.337Z",
+    "size": 10321,
+    "path": "../../.output/public/_ipx/_/img/prices/prices.svg"
+  },
+  "/_ipx/_/img/prices/prices2.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"256f-VpmJvofMwMmzx/1x4iZEhZ/hE3o\"",
+    "mtime": "2024-10-27T16:56:10.337Z",
+    "size": 9583,
+    "path": "../../.output/public/_ipx/_/img/prices/prices2.svg"
+  },
+  "/_ipx/_/img/prices/prices3.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"3cdb-zmgYnfZhzOB0mfVwT4SG1dYcpm4\"",
+    "mtime": "2024-10-27T16:56:10.339Z",
+    "size": 15579,
+    "path": "../../.output/public/_ipx/_/img/prices/prices3.svg"
+  },
+  "/_ipx/_/img/prices/prices4.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"226c-COzP6BqLvC5D21gsiWr18n+GKUk\"",
+    "mtime": "2024-10-27T16:56:10.364Z",
+    "size": 8812,
+    "path": "../../.output/public/_ipx/_/img/prices/prices4.svg"
+  },
+  "/_ipx/_/img/prices/prices5.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"4fd-QZcvI6uPBbNY4lT45Rb08Bi+sxo\"",
+    "mtime": "2024-10-27T16:56:10.679Z",
+    "size": 1277,
+    "path": "../../.output/public/_ipx/_/img/prices/prices5.svg"
+  },
+  "/_ipx/_/img/prices/prices6.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"199b-DgmdXVAUism/fa9hYQDEWe3fPNU\"",
+    "mtime": "2024-10-27T16:56:10.683Z",
+    "size": 6555,
+    "path": "../../.output/public/_ipx/_/img/prices/prices6.svg"
   }
 };
 
@@ -2417,7 +2424,7 @@ function normaliseDate(d) {
   return date;
 }
 
-async function fetchDataSource(input) {
+async function fetchDataSource(input, event) {
   const context = typeof input.context === "string" ? { name: input.context } : input.context || { name: "fetch" };
   context.tips = context.tips || [];
   const url = typeof input.fetch === "string" ? input.fetch : input.fetch[0];
@@ -2434,7 +2441,7 @@ async function fetchDataSource(input) {
       signal: timeoutController.signal,
       headers: defu$1(options?.headers, {
         Accept: "application/json"
-      }),
+      }, event ? { Host: getRequestHost(event, { xForwardedHost: true }) } : {}),
       // @ts-expect-error untyped
       onResponse({ response }) {
         if (typeof response._data === "string" && response._data.startsWith("<!DOCTYPE html>"))
@@ -2481,7 +2488,7 @@ function globalSitemapSources() {
 function childSitemapSources(definition) {
   return definition?._hasSourceChunk ? import('./virtual/child-sources.mjs').then((m) => m.sources[definition.sitemapName] || []) : Promise.resolve([]);
 }
-async function resolveSitemapSources(sources) {
+async function resolveSitemapSources(sources, event) {
   return (await Promise.all(
     sources.map((source) => {
       if (typeof source === "object" && "urls" in source) {
@@ -2492,7 +2499,7 @@ async function resolveSitemapSources(sources) {
         };
       }
       if (source.fetch)
-        return fetchDataSource(source);
+        return fetchDataSource(source, event);
       return {
         ...source,
         error: "Invalid source"
@@ -2828,7 +2835,7 @@ async function buildSitemap(sitemap, resolvers, runtimeConfig) {
   }
   const sources = sitemap.includeAppSources ? await globalSitemapSources() : [];
   sources.push(...await childSitemapSources(sitemap));
-  let resolvedSources = await resolveSitemapSources(sources);
+  let resolvedSources = await resolveSitemapSources(sources, resolvers.event);
   if (autoI18n)
     resolvedSources = normaliseI18nSources(resolvedSources, { autoI18n, isI18nMapped, ...sitemap });
   const normalisedUrls = normaliseSitemapUrls(resolvedSources.map((e) => e.urls).flat(), resolvers);
@@ -2946,7 +2953,10 @@ async function buildSitemapIndex(resolvers, runtimeConfig) {
       return typeof entry === "string" ? { sitemap: entry } : entry;
     }));
   }
-  const sitemapXml = entries.map((e) => [
+  const ctx = { sitemaps: entries };
+  const nitro = useNitroApp();
+  await nitro.hooks.callHook("sitemap:index-resolved", ctx);
+  const sitemapXml = ctx.sitemaps.map((e) => [
     "    <sitemap>",
     `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
     // lastmod is optional
@@ -3020,7 +3030,7 @@ const _lTXVz9 = lazyEventHandler(() => {
 });
 
 const _lazy_9aWIgi = () => import('./routes/api/sitemap.mjs');
-const _lazy_eiIGDu = () => import('./build/server.mjs').then(function (n) { return n.r; });
+const _lazy_eiIGDu = () => import('./_/renderer.mjs').then(function (n) { return n.r; });
 
 const handlers = [
   { route: '', handler: _f4b49z, lazy: false, middleware: true, method: undefined },
