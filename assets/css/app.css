@@ -741,7 +741,7 @@ ul {
 }
 
 .supage-content {
-  padding: 7%;
+  padding: 7% 7% 0 7%;
   margin: -4em 5% 0 5%;
   z-index: 10;
 }
@@ -831,10 +831,21 @@ ul {
 
 .subapage-services-content {
   padding: 10% 0 7% 0;
+  margin-top: -8.5%;
 }
 
 .services-content__linkItextBox--zIndex {
   z-index: 10;
+}
+
+.blog-slug-content__linkBox {
+  padding: 3% 0 7% 0;
+}
+
+.blog-slug-content__linkBox__link {
+  background: #428af5;
+  padding: 0.7em 2em;
+  border-radius: 2em;
 }
 /********************  Subpage formating formating end **********************/
 
@@ -891,7 +902,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.8rem;
   }
   .page-information-content__iTextBox__h4,
@@ -966,7 +978,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.7rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1042,7 +1055,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.6rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1121,7 +1135,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.4rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1200,7 +1215,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.3rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1279,7 +1295,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.2rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1361,7 +1378,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1.1rem;
   }
   .page-information-content__iTextBox__h4,
@@ -1465,7 +1483,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1rem;
   }
   .services-content__h3,
@@ -1897,7 +1916,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1rem;
   }
   .supage-content__h6 {
@@ -2300,7 +2320,8 @@ ul {
   .supage-content__h4,
   .supage-content__h5,
   .supage-content__h6,
-  .aszf-content__h5 {
+  .aszf-content__h5,
+  .blog-slug-content__linkBox__link {
     font-size: 1rem;
   }
   .supage-content__h6 {

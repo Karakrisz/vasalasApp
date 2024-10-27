@@ -32,10 +32,14 @@ const { data: post, error } = await useAsyncData<Post>('post', () =>
     >
       <h2 class="slug-blog__h2">{{ post.title }}</h2>
       <div v-html="post.body"></div>
-      <!-- <NuxtLink to="/" class="go-back-button">
-        <span class="go-back-button__icon">&#8592;</span>
-        <span class="go-back-button__text">Vissza a főoldalra</span>
-      </NuxtLink> -->
+      <div class="blog-slug-content__linkBox text-center">
+        <NuxtLink
+          to="/"
+          class="blog-slug-content__linkBox__link text-transform-uppercase text-color-w f-700"
+        >
+          gomb helye
+        </NuxtLink>
+      </div>
     </div>
   </div>
   <div class="subapage-services-content pr">
@@ -43,7 +47,9 @@ const { data: post, error } = await useAsyncData<Post>('post', () =>
       SZOLGÁLTATÁSAINK
     </h3>
 
-    <div class="services-content__linkItextBox services-content__linkItextBox--zIndex pr grid-3">
+    <div
+      class="services-content__linkItextBox services-content__linkItextBox--zIndex pr grid-3"
+    >
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
           to="/vasalas"
