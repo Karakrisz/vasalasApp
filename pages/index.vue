@@ -43,9 +43,9 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           vagy akár több ezret is egyszerre - igénytől függően.
         </p>
         <div class="slider-content__tBox__lBox">
-          <a href="tel:+36707777615" class="page-link text-color f-600">
+          <NuxtLink to="/ajanlatkeres" class="page-link text-color f-600">
             Leadom a rendelésem
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -326,12 +326,12 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát!
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <a
-            href="tel:+36707777615"
+          <NuxtLink
+            to="/ajanlatkeres"
             class="page-link page-link--format text-color f-600"
           >
             Leadom a rendelésem
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -479,9 +479,21 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           </div>
         </div>
       </div>
-      <div class="prices-content__lBox text-center">
-        <NuxtLink class="page-link page-link--format text-color f-600">
-          Teljes árlista
+      <div class="blog-slug-content__psychologicalBox text-center">
+        <p class="blog-slug-content__psychologicalBox__p">
+          <i class="blog-slug-content__psychologicalBox__i f-500"
+            >Már csak egy lépés választ el a tökéletes tisztaságtól és
+            frissességtől! <br />
+            Nyomd meg az alábbi gombot az igenhez!</i
+          >
+        </p>
+      </div>
+      <div class="blog-slug-content__linkBox text-center">
+        <NuxtLink
+          to="/ajanlatkeres"
+          class="blog-slug-content__linkBox__link text-color-w f-700"
+        >
+          IGEN, kérem a tisztaságot!
         </NuxtLink>
       </div>
     </div>
@@ -518,12 +530,12 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           kényelmét elhagynák.
         </p>
         <div class="page-information-content__iTextBox__link-box">
-          <a
-            href="tel:+36707777615"
+          <NuxtLink
+            to="/ajanlatkeres"
             class="page-link page-link--format text-color f-600"
           >
             Leadom a rendelésem
-          </a>
+          </NuxtLink>
         </div>
       </div>
       <div class="page-information-content__blog-content">

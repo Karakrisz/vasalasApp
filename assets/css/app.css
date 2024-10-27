@@ -2004,9 +2004,14 @@ ul {
     font-size: 0.9rem;
   }
   .grid-3,
-  .grid-6,
   .grid-7 {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .prices-content__iTextBox__div__h6 {
+    padding: 0% 10% 20% 10%;
   }
   .services-content__iTextBox,
   .services-content__linkItextBox,
@@ -2263,7 +2268,7 @@ ul {
     height: 34%;
   }
   .prices-content__iTextBox__div__prices-box {
-    padding: 11% 10% 0 10%;
+    padding: 5% 10% 0 10%;
   }
   .prices-content__iTextBox__div__prices-box__h3 {
     font-size: 1.4rem;

@@ -68,12 +68,12 @@ useHead({
         </p>
       </div>
       <div class="blog-slug-content__linkBox text-center">
-        <NuxtLink
-          to="/ajanlatkeres"
+        <a
+          href="tel:+36307777609"
           class="blog-slug-content__linkBox__link text-color-w f-700"
         >
           IGEN, hívás most!
-        </NuxtLink>
+      </a>
       </div>
     </div>
   </section>

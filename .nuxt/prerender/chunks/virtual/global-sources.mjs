@@ -90,19 +90,16 @@ const sources = [
                 "loc": "/"
             },
             {
-                "loc": "/galeria"
-            },
-            {
-                "loc": "/rolunk"
-            },
-            {
-                "loc": "/vasalas"
+                "loc": "/ajanlatkeres"
             },
             {
                 "loc": "/mosas"
             },
             {
-                "loc": "/tisztitas"
+                "loc": "/arlista"
+            },
+            {
+                "loc": "/javitas"
             },
             {
                 "loc": "/nagy-mennyiseg"
@@ -111,25 +108,19 @@ const sources = [
                 "loc": "/kolcsonzes"
             },
             {
-                "loc": "/javitas"
-            },
-            {
-                "loc": "/ajanlatkeres"
-            },
-            {
-                "loc": "/szolgaltatasok"
-            },
-            {
-                "loc": "/adatvedelmi-tajekoztato"
-            },
-            {
-                "loc": "/arlista"
+                "loc": "/meretre-szabas-igazitas"
             },
             {
                 "loc": "/egyeni-igenyek"
             },
             {
-                "loc": "/meretre-szabas-igazitas"
+                "loc": "/rolunk"
+            },
+            {
+                "loc": "/tisztitas"
+            },
+            {
+                "loc": "/adatvedelmi-tajekoztato"
             },
             {
                 "loc": "/varras"
@@ -138,34 +129,61 @@ const sources = [
                 "loc": "/kapcsolat"
             },
             {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten"
+                "loc": "/szolgaltatasok"
             },
             {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere"
+                "loc": "/vasalas"
             },
             {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel"
+                "loc": "/galeria"
             },
             {
                 "loc": "/hidden-blog"
             },
             {
-                "loc": "/posts/ajanlatkeres"
+                "loc": "/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben"
             },
             {
-                "loc": "/posts/arlista"
+                "loc": "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben"
             },
             {
-                "loc": "/posts/adatvedelmi-tajekoztato"
-            },
-            {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere"
+                "loc": "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas"
             },
             {
                 "loc": "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik"
             },
             {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere"
+            },
+            {
                 "loc": "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre"
+            },
+            {
+                "loc": "/posts/ajanlatkeres"
+            },
+            {
+                "loc": "/posts/adatvedelmi-tajekoztato"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel"
+            },
+            {
+                "loc": "/posts/arlista"
+            },
+            {
+                "loc": "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben"
+            },
+            {
+                "loc": "/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere"
+            },
+            {
+                "loc": "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas"
             }
         ],
         "sourceType": "app"

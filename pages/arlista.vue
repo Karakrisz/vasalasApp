@@ -6,6 +6,14 @@ useHead({
 
 <template>
   <section>
+    <div class="subpage-imgBox">
+      <NuxtImg
+        src="/img/subpage.webp"
+        alt="Vasalás Mester"
+        class="slug-blog__img"
+        loading="lazy"
+      />
+    </div>
     <div class="page-information-content--subpage-about">
       <div class="prices-content prices-content--subpage-format">
         <h3
@@ -57,7 +65,7 @@ useHead({
               <h3
                 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
               >
-                800 Ft/db
+                990 Ft/db
               </h3>
             </div>
           </div>
@@ -77,7 +85,7 @@ useHead({
               <h3
                 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
               >
-                2250 Ft/kg
+                2450 Ft/kg
               </h3>
             </div>
           </div>
@@ -104,7 +112,7 @@ useHead({
               <h3
                 class="prices-content__iTextBox__div__prices-box__h3 text-center text-color-w"
               >
-                1200 Ft/kg
+                1490 Ft/kg
               </h3>
             </div>
           </div>
@@ -149,12 +157,23 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="prices-content__lBox text-center">
-          <NuxtLink class="page-link page-link--format text-color f-600">
-            Teljes árlista
-          </NuxtLink>
-        </div>
       </div>
+    </div>
+    <div class="blog-slug-content__psychologicalBox text-center">
+      <p class="blog-slug-content__psychologicalBox__p">
+        <i class="blog-slug-content__psychologicalBox__i f-500"
+          >Kérdése van? Csak egy hívásra vagyunk, hogy mindent elintézzünk
+          Önnek!</i
+        >
+      </p>
+    </div>
+    <div class="blog-slug-content__linkBox text-center">
+      <NuxtLink
+        to="/ajanlatkeres"
+        class="blog-slug-content__linkBox__link text-color-w f-700"
+      >
+        IGEN, hívás most!
+      </NuxtLink>
     </div>
   </section>
 </template>

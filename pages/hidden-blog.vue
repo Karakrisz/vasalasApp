@@ -2,10 +2,24 @@
 import { fetchPosts, truncateContent } from '~/utils/js/utils'
 
 const itemsPost = await fetchPosts()
+
+// const router = useRouter()
+
+// onMounted(() => {
+//   router.push('/rolunk')
+// })
 </script>
 <template>
   <section>
-    <div class="supage-content supage-content--blog-format position-relative">
+    <div class="subpage-imgBox">
+      <NuxtImg
+        src="/img/subpage.webp"
+        alt="Vasalás Mester"
+        class="slug-blog__img"
+        loading="lazy"
+      />
+    </div>
+    <div class="supage-content supage-content--blog-format pr bg-color-w">
       <div class="page-information-content__blog-content">
         <h3
           class="page-information-content__blog-content__h3 text-center text-transform-uppercase f-700"
@@ -13,7 +27,9 @@ const itemsPost = await fetchPosts()
           BLOG
         </h3>
 
-        <div class="page-information-content__blog-content__gBox pr grid-3">
+        <div
+          class="page-information-content__blog-content__gBox page-information-content__blog-content__gBox--hiddenPage pr grid-3"
+        >
           <div
             v-for="post in itemsPost"
             :key="post.slug"
@@ -46,6 +62,23 @@ const itemsPost = await fetchPosts()
             </NuxtLink>
           </div>
         </div>
+      </div>
+      <div class="blog-slug-content__psychologicalBox text-center">
+        <p class="blog-slug-content__psychologicalBox__p">
+          <i class="blog-slug-content__psychologicalBox__i f-500"
+            >Már csak egy lépés választ el a tökéletes tisztaságtól és
+            frissességtől! <br />
+            Nyomd meg az alábbi gombot az igenhez!</i
+          >
+        </p>
+      </div>
+      <div class="blog-slug-content__linkBox text-center">
+        <NuxtLink
+          to="/ajanlatkeres"
+          class="blog-slug-content__linkBox__link text-color-w f-700"
+        >
+          IGEN, kérem a tisztaságot!
+        </NuxtLink>
       </div>
     </div>
   </section>

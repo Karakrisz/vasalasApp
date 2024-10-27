@@ -29,7 +29,7 @@ const isSpecialPage = computed(() =>
 
 const links = [
   { name: 'Kezdőlap', path: '/' },
-  { name: 'Galéria', path: '/galeria' },
+  // { name: 'Galéria', path: '/galeria' },
   { name: 'Rólunk', path: '/rolunk' },
   { name: 'Ajánlatkérés', path: '/ajanlatkeres' },
   { name: 'Szolgáltatások', path: '/szolgaltatasok' },

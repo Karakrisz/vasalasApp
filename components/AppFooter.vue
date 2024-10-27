@@ -17,7 +17,7 @@ const FooterIsSpecialPage = computed(() =>
 )
 
 const FooterLinks = [
-  { name: 'Galéria', path: '/galeria' },
+  // { name: 'Galéria', path: '/galeria' },
   { name: 'Rólunk', path: '/rolunk' },
   { name: 'Ajánlatkérés', path: '/ajanlatkeres' },
   { name: 'Szolgáltatások', path: '/szolgaltatasok' },
@@ -206,7 +206,7 @@ const sendEmail = async () => {
               <p class="footer-content__bottom__infoBox__header__lBox__p">
                 <a
                   class="footer-content__bottom__infoBox__header__lBox__p__link text-color-w"
-                  href="tel:+36707777609"
+                  href="tel:+36307777609"
                 >
                   <NuxtImg
                     src="/img/footer/phone.svg"
@@ -214,7 +214,7 @@ const sendEmail = async () => {
                     class="footer-content__bottom__infoBox__header__lBox__img"
                     height="100%"
                   />
-                  +36 70 7777 609
+                  +36 30 777 7609
                 </a>
               </p>
               <p class="footer-content__bottom__infoBox__header__lBox__p">
@@ -290,11 +290,11 @@ const sendEmail = async () => {
             </NuxtLink>
 
             <div class="footer-content__bottom__infoBox__bodyLinkBox">
-              <NuxtLink
+              <!-- <NuxtLink
                 class="footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
               >
                 Gyakran Ismételt Kérdések
-              </NuxtLink>
+              </NuxtLink> -->
               <NuxtLink
                 to="adatvedelmi-tajekoztato"
                 class="footer-content__bottom__infoBox__bodyLinkBox__link text-color-w f-500"
