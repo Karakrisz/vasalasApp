@@ -12,17 +12,18 @@ useHead({
 </script>
 
 <template>
-  <div class="supage-content supage-content--services position-relative">
+  <div class="subpage-imgBox">
+    <NuxtImg
+      src="/img/subpage.webp"
+      alt="Vasalás Mester"
+      class="slug-blog__img"
+      loading="lazy"
+    />
+  </div>
+  <div class="supage-content supage-content--services bg-color-w pr">
     <h2 class="supage-content__h2">
       Nagy Mennyiségű Ruhák Kezelése - Vasalás Mester
     </h2>
-    <NuxtImg
-      src="/img/services/services6.webp"
-      alt="Nagy Mennyiségű Ruhák Kezelése - Vasalás Mester"
-      class="supage-content__img"
-      loading="lazy"
-    />
-
     <p class="supage-content__p">
       A Vasalás Mester professzionális nagy mennyiségű ruhakezelési
       szolgáltatásokat kínál Budapesten és környékén, különös tekintettel az
@@ -94,27 +95,11 @@ useHead({
       </li>
       <li class="supage-content__ul__li">
         <strong class="supage-content__ul__li__strong"
-          >Specializáció az ingek kezelésében:</strong
-        >
-        Az ingek nagy mennyiségben történő mosása, vasalása és javítása
-        különleges szakértelmet igényel, amelyet csapatunk tapasztalatai és
-        tudása biztosít. Minden ing tökéletes állapotban kerül vissza Önhöz.
-      </li>
-      <li class="supage-content__ul__li">
-        <strong class="supage-content__ul__li__strong"
           >Környezetbarát eljárások:</strong
         >
         Nagy mennyiségű ruhakezelési szolgáltatásaink során is fenntartható
         módszereket alkalmazunk, amelyek minimalizálják a környezeti hatásokat,
         miközben magas színvonalú eredményeket nyújtanak.
-      </li>
-      <li class="supage-content__ul__li">
-        <strong class="supage-content__ul__li__strong"
-          >Rugalmas szolgáltatási terület:</strong
-        >
-        Budapesten és környékén nyújtunk professzionális nagy mennyiségű
-        ruhakezelési szolgáltatásokat, amelyek könnyen elérhetők minden ügyfél
-        számára, legyen szó kisebb vállalkozásokról vagy nagyvállalatokról.
       </li>
       <li class="supage-content__ul__li">
         <strong class="supage-content__ul__li__strong"
@@ -135,10 +120,193 @@ useHead({
       ruháinak kezelését, és élvezze a megbízhatóság és a minőség nyújtotta
       előnyöket!
     </p>
+    <div class="blog-slug-content__psychologicalBox text-center">
+      <p class="blog-slug-content__psychologicalBox__p">
+        <i class="blog-slug-content__psychologicalBox__i f-500"
+          >Már csak egy lépés választ el a tökéletes tisztaságtól és
+          frissességtől! <br />
+          Nyomd meg az alábbi gombot az igenhez!</i
+        >
+      </p>
+    </div>
+    <div class="blog-slug-content__linkBox text-center">
+      <NuxtLink
+        to="/ajanlatkeres"
+        class="blog-slug-content__linkBox__link text-color-w f-700"
+      >
+        IGEN, kérem a szolgáltatást!
+      </NuxtLink>
+    </div>
+  </div>
+  <div class="subapage-services-content pr">
+    <h3 class="services-content__h3 text-center text-transform-uppercase f-700">
+      SZOLGÁLTATÁSAINK
+    </h3>
 
-    <NuxtLink to="/" class="go-back-button">
-      <span class="go-back-button__icon">&#8592;</span>
-      <span class="go-back-button__text">Vissza a főoldalra</span>
-    </NuxtLink>
+    <div
+      class="services-content__linkItextBox services-content__linkItextBox--zIndex pr grid-3"
+    >
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/vasalas"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            VASALÁS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/mosas"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services2.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            MOSÁS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/tisztitas"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services3.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            TISZTÍTÁS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/varras"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services4.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            VARRÁS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/javitas"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services5.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            JAVÍTÁS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/nagy-mennyiseg"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services6.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            NAGY MENNYISÉG
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/meretre-szabas-igazitas"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services7.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            MÉRETRE SZABÁS IGAZÍTÁS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/kolcsonzes"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services8.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            KÖLCSÖNZÉS
+          </div>
+        </NuxtLink>
+      </div>
+
+      <div class="services-content__linkItextBox__content pr">
+        <NuxtLink
+          to="/egyeni-igenyek"
+          class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
+        >
+          <NuxtImg
+            src="/img/services/services9.webp"
+            alt="Vasalás Mester"
+            class="services-content__linkItextBox__content__img"
+          />
+          <div
+            class="services-content__linkItextBox__content__tBox text-center pa"
+          >
+            EGYÉNI IGÉNYEK MEGVALÓSÍTÁSA
+          </div>
+        </NuxtLink>
+      </div>
+    </div>
   </div>
 </template>

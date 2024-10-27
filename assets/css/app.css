@@ -2413,6 +2413,9 @@ ul {
   .supage-content {
     z-index: 0;
   }
+  .supage-content--mobileW {
+    margin-bottom: 16%;
+  }
 }
 
 @media (min-width: 640px) and (max-width: 768px) {

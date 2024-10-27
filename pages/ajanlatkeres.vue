@@ -6,7 +6,15 @@ useHead({
 
 <template>
   <section>
-    <div class="supage-content supage-content--offer-format position-relative">
+    <div class="subpage-imgBox">
+      <NuxtImg
+        src="/img/contact.webp"
+        alt="Vasalás Mester"
+        class="slug-blog__img"
+        loading="lazy"
+      />
+    </div>
+    <div class="supage-content supage-content--mobileW pr bg-color-w">
       <h2 class="supage-content__h2 text-transform-uppercase">
         ÍRJON NEKÜNK, HAMAR VÁLASZOLUNK
       </h2>
@@ -51,6 +59,22 @@ useHead({
           Szabályzatot.
         </i>
       </p>
+      <div class="blog-slug-content__psychologicalBox text-center">
+        <p class="blog-slug-content__psychologicalBox__p">
+          <i class="blog-slug-content__psychologicalBox__i f-500"
+            >Nem szeretne írni? Csak egy hívásra vagyunk, hogy mindent
+            elintézzünk Önnek!</i
+          >
+        </p>
+      </div>
+      <div class="blog-slug-content__linkBox text-center">
+        <NuxtLink
+          to="/ajanlatkeres"
+          class="blog-slug-content__linkBox__link text-color-w f-700"
+        >
+          IGEN, hívás most!
+        </NuxtLink>
+      </div>
     </div>
   </section>
 </template>
