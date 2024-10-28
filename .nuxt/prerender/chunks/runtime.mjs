@@ -68,7 +68,7 @@ const appConfig = defuFn(inlineAppConfig);
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "8bc18d72-13d8-4f92-a155-c7bf03d1dce5",
+    "buildId": "f1f21797-c3ae-4617-8eb1-a7e281813155",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -87,7 +87,7 @@ const _inlineRuntimeConfig = {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2024-10-27T16:55:59.707Z"
+          "X-Sitemap-Prerendered": "2024-10-28T11:02:17.865Z"
         }
       },
       "/_nuxt/builds/meta/**": {
@@ -1184,717 +1184,717 @@ const errorHandler = (async function errorhandler(error, event) {
 const assets = {
   "/200.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"9fc4-CLQXvEVo42riQlbwjnGg9HJJD8A\"",
-    "mtime": "2024-10-27T16:56:08.154Z",
+    "etag": "\"9fc4-CdjHth0yiJ2qW3U7iOuabuKBOy4\"",
+    "mtime": "2024-10-28T11:02:27.641Z",
     "size": 40900,
     "path": "../../.output/public/200.html"
   },
   "/404.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"9fc4-CLQXvEVo42riQlbwjnGg9HJJD8A\"",
-    "mtime": "2024-10-27T16:56:08.154Z",
+    "etag": "\"9fc4-CdjHth0yiJ2qW3U7iOuabuKBOy4\"",
+    "mtime": "2024-10-28T11:02:27.641Z",
     "size": 40900,
     "path": "../../.output/public/404.html"
   },
   "/_payload.json": {
     "type": "application/json",
-    "etag": "\"157b9-AIxaFyvRV1dW608IV1qgANLsbNc\"",
-    "mtime": "2024-10-27T16:56:10.334Z",
+    "etag": "\"157b9-6obXJh6/9at7djfMVciHQbITgpM\"",
+    "mtime": "2024-10-28T11:02:29.285Z",
     "size": 87993,
     "path": "../../.output/public/_payload.json"
   },
   "/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"113ec-zLbs1sJmaIx2gyJSzr0m2O/yq5c\"",
-    "mtime": "2024-10-27T16:56:08.448Z",
+    "etag": "\"113ec-/X2HSxMmFR69WVYoPzOiMbuFwuU\"",
+    "mtime": "2024-10-28T11:02:28.023Z",
     "size": 70636,
     "path": "../../.output/public/index.html"
   },
   "/__sitemap__/style.xsl": {
     "type": "application/xml",
     "etag": "\"174e-04KStjaK+j7dbchiMHqnnHF1ICc\"",
-    "mtime": "2024-10-27T16:56:08.052Z",
+    "mtime": "2024-10-28T11:02:27.566Z",
     "size": 5966,
     "path": "../../.output/public/__sitemap__/style.xsl"
   },
   "/adatvedelmi-tajekoztato/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-GmKUU+HYFXerCbLVg2i6ptBhGaU\"",
-    "mtime": "2024-10-27T16:56:10.698Z",
+    "etag": "\"45-5LBpA8ZVn0H3RnEef+9y+bJmOpU\"",
+    "mtime": "2024-10-28T11:02:29.558Z",
     "size": 69,
     "path": "../../.output/public/adatvedelmi-tajekoztato/_payload.json"
   },
   "/adatvedelmi-tajekoztato/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"11671-RkHBmZRFmDCbV01DGtxSib3Yshc\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"11671-4TthwByZobbiufLReGoIev4Px18\"",
+    "mtime": "2024-10-28T11:02:28.456Z",
     "size": 71281,
     "path": "../../.output/public/adatvedelmi-tajekoztato/index.html"
   },
-  "/ajanlatkeres/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-OWgCFF2kCqdi7S41dmTJY9gfT3U\"",
-    "mtime": "2024-10-27T16:56:10.478Z",
-    "size": 69,
-    "path": "../../.output/public/ajanlatkeres/_payload.json"
-  },
-  "/ajanlatkeres/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"cc97-5ROe3yQJbIh8KYPl5KWZfRhrW3g\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
-    "size": 52375,
-    "path": "../../.output/public/ajanlatkeres/index.html"
-  },
   "/arlista/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-LfVh7gCu9WhX8m8artRD5pyQobU\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
+    "etag": "\"45-TfiSkMSWCR1W31wCXO8s6U0saKE\"",
+    "mtime": "2024-10-28T11:02:29.558Z",
     "size": 69,
     "path": "../../.output/public/arlista/_payload.json"
   },
   "/arlista/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"d67a-ls0cjwNhQ4RJT+ntty4ghgZ+RXk\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
-    "size": 54906,
+    "etag": "\"d668-lQhqyhBbwDasK11tAzP0nsO6gWs\"",
+    "mtime": "2024-10-28T11:02:28.456Z",
+    "size": 54888,
     "path": "../../.output/public/arlista/index.html"
   },
-  "/egyeni-igenyek/_payload.json": {
+  "/ajanlatkeres/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-w2AqRWLRGcS4Mz0CRz3HwTlUp6s\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
+    "etag": "\"45-PXCE+bSP/wTQ9T0oQmdikhPZM50\"",
+    "mtime": "2024-10-28T11:02:29.347Z",
     "size": 69,
-    "path": "../../.output/public/egyeni-igenyek/_payload.json"
+    "path": "../../.output/public/ajanlatkeres/_payload.json"
   },
-  "/egyeni-igenyek/index.html": {
+  "/ajanlatkeres/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ec3c-KfnLWAd2g6A/1NcjbgLp8gL7C+U\"",
-    "mtime": "2024-10-27T16:56:09.323Z",
-    "size": 60476,
-    "path": "../../.output/public/egyeni-igenyek/index.html"
+    "etag": "\"cc85-ub03ybkPdt9fcH4mRnaIsVuy5yM\"",
+    "mtime": "2024-10-28T11:02:28.452Z",
+    "size": 52357,
+    "path": "../../.output/public/ajanlatkeres/index.html"
   },
   "/galeria/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-HMYkbutZn3cfPLlWEltQm6wrML0\"",
-    "mtime": "2024-10-27T16:56:10.698Z",
+    "etag": "\"45-5LBpA8ZVn0H3RnEef+9y+bJmOpU\"",
+    "mtime": "2024-10-28T11:02:29.366Z",
     "size": 69,
     "path": "../../.output/public/galeria/_payload.json"
   },
   "/galeria/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"c292-bT7FMUc/sfEsWZJ5e1PDm5RKwBw\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"c292-I4raO3FZq07DjdLaPBGd50egSWA\"",
+    "mtime": "2024-10-28T11:02:28.452Z",
     "size": 49810,
     "path": "../../.output/public/galeria/index.html"
   },
+  "/egyeni-igenyek/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-GiGs3T5JYoyah198PxJCUDvxHcg\"",
+    "mtime": "2024-10-28T11:02:29.366Z",
+    "size": 69,
+    "path": "../../.output/public/egyeni-igenyek/_payload.json"
+  },
+  "/egyeni-igenyek/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"ec3c-IylXOzlb0Z0MKzVjEndUmUEG/GY\"",
+    "mtime": "2024-10-28T11:02:28.452Z",
+    "size": 60476,
+    "path": "../../.output/public/egyeni-igenyek/index.html"
+  },
   "/hidden-blog/_payload.json": {
     "type": "application/json",
-    "etag": "\"157b9-iZgW+KP3kTULB+h33CuHeLN+TW0\"",
-    "mtime": "2024-10-27T16:56:12.323Z",
+    "etag": "\"157b9-ST8t8KepHepGmjjqzMZj7VQhj4c\"",
+    "mtime": "2024-10-28T11:02:29.816Z",
     "size": 87993,
     "path": "../../.output/public/hidden-blog/_payload.json"
   },
   "/hidden-blog/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"fe59-1wUzR4Mwh365orc5ZF2fFHkgHSg\"",
-    "mtime": "2024-10-27T16:56:11.630Z",
+    "etag": "\"fe59-8OZg5+K3U9H9XzoQcWrhULT8ZyQ\"",
+    "mtime": "2024-10-28T11:02:29.583Z",
     "size": 65113,
     "path": "../../.output/public/hidden-blog/index.html"
   },
   "/javitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-HAZB5Nz3aPlWqhFMi27DnDVtflU\"",
-    "mtime": "2024-10-27T16:56:10.480Z",
+    "etag": "\"45-HBEaInCYSgYmJqAQhO+9a9tUhZc\"",
+    "mtime": "2024-10-28T11:02:29.366Z",
     "size": 69,
     "path": "../../.output/public/javitas/_payload.json"
   },
   "/javitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"eab2-s5QGOZRAcr8O0kkAJpYLvbqe3F4\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"eab2-b46f+moAHd13YjVv5eM+eoXqbrQ\"",
+    "mtime": "2024-10-28T11:02:28.452Z",
     "size": 60082,
     "path": "../../.output/public/javitas/index.html"
   },
-  "/kapcsolat/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-qKeSVZvJEyQi4y+NJGO0A3XP83U\"",
-    "mtime": "2024-10-27T16:56:10.698Z",
-    "size": 69,
-    "path": "../../.output/public/kapcsolat/_payload.json"
-  },
-  "/kapcsolat/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"c220-sB7P5p7wOTxYfbYDuBG8MsqFeSA\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
-    "size": 49696,
-    "path": "../../.output/public/kapcsolat/index.html"
-  },
   "/kolcsonzes/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-w4ZBvLxiNjpx7VYHFW9kCCUBB/Y\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
+    "etag": "\"45-xWOt5Pf5mW85V00k6auLQXURnDQ\"",
+    "mtime": "2024-10-28T11:02:29.347Z",
     "size": 69,
     "path": "../../.output/public/kolcsonzes/_payload.json"
   },
   "/kolcsonzes/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ebda-Sc4ev5U/Jo5hghzT6cb3YyvsjyQ\"",
-    "mtime": "2024-10-27T16:56:09.327Z",
+    "etag": "\"ebda-OKNZePkjcUT3JTiuKLiQCwUEHUs\"",
+    "mtime": "2024-10-28T11:02:28.452Z",
     "size": 60378,
     "path": "../../.output/public/kolcsonzes/index.html"
   },
   "/meretre-szabas-igazitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-zgJsbhlSvXne/OaGQMwXKquidQQ\"",
-    "mtime": "2024-10-27T16:56:10.698Z",
+    "etag": "\"45-2+wSB7/METL3IOzSLnkXs9AReto\"",
+    "mtime": "2024-10-28T11:02:29.307Z",
     "size": 69,
     "path": "../../.output/public/meretre-szabas-igazitas/_payload.json"
   },
   "/meretre-szabas-igazitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ebb0-iSQXV+eytad66aRltcLS2Ee3ojo\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"ebb0-ZaWCOuDAJprcXXkXdMm1uj8Zr/c\"",
+    "mtime": "2024-10-28T11:02:28.451Z",
     "size": 60336,
     "path": "../../.output/public/meretre-szabas-igazitas/index.html"
   },
   "/mosas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-r8akSheWK1ORYGjENJjRHvXRLCk\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
+    "etag": "\"45-p2gXEhDxrtFbs9ZmTahk8mnXq+A\"",
+    "mtime": "2024-10-28T11:02:29.366Z",
     "size": 69,
     "path": "../../.output/public/mosas/_payload.json"
   },
   "/mosas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ea6b-29j+YYoLZzAIfu+owJuUkknZRjo\"",
-    "mtime": "2024-10-27T16:56:09.333Z",
+    "etag": "\"ea6b-n1KWg6N9eYCU+MxITKEwPW83/R8\"",
+    "mtime": "2024-10-28T11:02:28.456Z",
     "size": 60011,
     "path": "../../.output/public/mosas/index.html"
   },
   "/nagy-mennyiseg/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-F7iq+0t7TsnGtDRhXpFqOukG3Dw\"",
-    "mtime": "2024-10-27T16:56:10.679Z",
+    "etag": "\"45-VKu3Z7pso4hL4ateroBN4z0uSCo\"",
+    "mtime": "2024-10-28T11:02:29.313Z",
     "size": 69,
     "path": "../../.output/public/nagy-mennyiseg/_payload.json"
   },
   "/nagy-mennyiseg/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ec9c-ga46jl7/GTktRfbcYCM851vnYGA\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"ec9c-55bHyM9qjNGwQKhLa90mo6xBvso\"",
+    "mtime": "2024-10-28T11:02:28.451Z",
     "size": 60572,
     "path": "../../.output/public/nagy-mennyiseg/index.html"
   },
+  "/kapcsolat/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-N2ooqxXM5PGDRrJPZirxBsmTGHA\"",
+    "mtime": "2024-10-28T11:02:29.366Z",
+    "size": 69,
+    "path": "../../.output/public/kapcsolat/_payload.json"
+  },
+  "/kapcsolat/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"c220-upXBsfoW37tX6BwgGVd1FnGJD4M\"",
+    "mtime": "2024-10-28T11:02:28.456Z",
+    "size": 49696,
+    "path": "../../.output/public/kapcsolat/index.html"
+  },
   "/rolunk/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-Q2Dzau+Uw9j2Q8CBaPVGV19gDqc\"",
-    "mtime": "2024-10-27T16:56:10.337Z",
+    "etag": "\"45-ML7XcVW98YgdmlgYQ/AP43evEvU\"",
+    "mtime": "2024-10-28T11:02:29.285Z",
     "size": 69,
     "path": "../../.output/public/rolunk/_payload.json"
   },
   "/rolunk/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"cf4e-Y84LdjvzMXvQgLpXtfzarxfUvys\"",
-    "mtime": "2024-10-27T16:56:09.306Z",
+    "etag": "\"cf4e-1LQwtpfvp040JEDF9U/CvNEqbsI\"",
+    "mtime": "2024-10-28T11:02:28.451Z",
     "size": 53070,
     "path": "../../.output/public/rolunk/index.html"
   },
-  "/szolgaltatasok/_payload.json": {
-    "type": "application/json",
-    "etag": "\"45-VqLTikNpwVB4kvqh0tbOBzzMaRQ\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
-    "size": 69,
-    "path": "../../.output/public/szolgaltatasok/_payload.json"
-  },
-  "/szolgaltatasok/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"d7a7-kZgjemX9MIgKeE40FqJfd4rerKg\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
-    "size": 55207,
-    "path": "../../.output/public/szolgaltatasok/index.html"
-  },
   "/tisztitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-bndJjXNoO8hP4lD6rTgob1ScSjs\"",
-    "mtime": "2024-10-27T16:56:10.679Z",
+    "etag": "\"45-7mVMcI24qa9OJpjt1OIdDNdib5Q\"",
+    "mtime": "2024-10-28T11:02:29.299Z",
     "size": 69,
     "path": "../../.output/public/tisztitas/_payload.json"
   },
   "/tisztitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"eab9-WTj6B8vYDu6nniqPUCEc7OwntP4\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"eab9-SoJXD92GgshkbE5TM1MQ/0iH9lg\"",
+    "mtime": "2024-10-28T11:02:28.451Z",
     "size": 60089,
     "path": "../../.output/public/tisztitas/index.html"
   },
   "/varras/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-AM4gt5I6+SbVV5M6S4fcag+qe44\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
+    "etag": "\"45-sXQRF6EZS90bcukzDp53e5DsgB0\"",
+    "mtime": "2024-10-28T11:02:29.299Z",
     "size": 69,
     "path": "../../.output/public/varras/_payload.json"
   },
   "/varras/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"eb90-0U7l0So/0jLg0HwAl3mElLBp1Mo\"",
-    "mtime": "2024-10-27T16:56:09.322Z",
+    "etag": "\"eb90-3y3FBJUB4QCPS8R4sJoG7moTJxg\"",
+    "mtime": "2024-10-28T11:02:28.451Z",
     "size": 60304,
     "path": "../../.output/public/varras/index.html"
   },
+  "/szolgaltatasok/_payload.json": {
+    "type": "application/json",
+    "etag": "\"45-L2H/D+V3ye+enrZcJk8z3b+O0V0\"",
+    "mtime": "2024-10-28T11:02:29.552Z",
+    "size": 69,
+    "path": "../../.output/public/szolgaltatasok/_payload.json"
+  },
+  "/szolgaltatasok/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"d7a7-Lni2QQtf5sQ6VRqx87pRgeJ8l/U\"",
+    "mtime": "2024-10-28T11:02:28.456Z",
+    "size": 55207,
+    "path": "../../.output/public/szolgaltatasok/index.html"
+  },
   "/vasalas/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-6GjDBSrZga26s3TfbpXvWfDikjA\"",
-    "mtime": "2024-10-27T16:56:10.724Z",
+    "etag": "\"45-bLIy6oU+Te/nWmxiKr6KVMqVZpE\"",
+    "mtime": "2024-10-28T11:02:29.300Z",
     "size": 69,
     "path": "../../.output/public/vasalas/_payload.json"
   },
   "/vasalas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ea51-Thytxlcutmvwivcq6hvR8ucjGtg\"",
-    "mtime": "2024-10-27T16:56:09.323Z",
+    "etag": "\"ea51-1Uf2zHwVPqeQYDKVOyKoHxovCrc\"",
+    "mtime": "2024-10-28T11:02:28.451Z",
     "size": 59985,
     "path": "../../.output/public/vasalas/index.html"
   },
   "/posts/adatvedelmi-tajekoztato/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-qzYM32IJUAbMKP8inuAMr6iNvNo\"",
-    "mtime": "2024-10-27T16:56:12.369Z",
+    "etag": "\"45-HPo5j+NioBp/OEEvxoo1qJApto0\"",
+    "mtime": "2024-10-28T11:02:29.816Z",
     "size": 69,
     "path": "../../.output/public/posts/adatvedelmi-tajekoztato/_payload.json"
   },
   "/posts/adatvedelmi-tajekoztato/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"f3da-CCoVRSdY2pdwbtEp6VzkNAfOD3U\"",
-    "mtime": "2024-10-27T16:56:12.155Z",
+    "etag": "\"f3da-mMnQ5AK5plsEcLFykbw28vTdbe4\"",
+    "mtime": "2024-10-28T11:02:29.607Z",
     "size": 62426,
     "path": "../../.output/public/posts/adatvedelmi-tajekoztato/index.html"
   },
   "/posts/ajanlatkeres/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-eI3cRKj0NRaIP114EuLqXySCr9Y\"",
-    "mtime": "2024-10-27T16:56:12.372Z",
+    "etag": "\"45-yWYevGnhxElCZIm0MJzPq7eSfy0\"",
+    "mtime": "2024-10-28T11:02:29.816Z",
     "size": 69,
     "path": "../../.output/public/posts/ajanlatkeres/_payload.json"
   },
   "/posts/ajanlatkeres/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"f3a3-tW31Zq0TQ82F+VItGaEuvKUkBZo\"",
-    "mtime": "2024-10-27T16:56:12.280Z",
+    "etag": "\"f3a3-OHuupmPWTe6z8CUnpYL8CibKEwA\"",
+    "mtime": "2024-10-28T11:02:29.607Z",
     "size": 62371,
     "path": "../../.output/public/posts/ajanlatkeres/index.html"
   },
   "/posts/arlista/_payload.json": {
     "type": "application/json",
-    "etag": "\"45-SQd34Z6tAL9iAvr5SH8hTr7IU/0\"",
-    "mtime": "2024-10-27T16:56:12.372Z",
+    "etag": "\"45-7FsGWxc9hEawas3rjHHxcKfhi7c\"",
+    "mtime": "2024-10-28T11:02:29.825Z",
     "size": 69,
     "path": "../../.output/public/posts/arlista/_payload.json"
   },
   "/posts/arlista/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"f38a-f/zoXS17JG+XXWsQcFSdYpFpscQ\"",
-    "mtime": "2024-10-27T16:56:12.280Z",
+    "etag": "\"f38a-3/6GSDx2P5dEsl8Jyi1NIBzFv+Y\"",
+    "mtime": "2024-10-28T11:02:29.816Z",
     "size": 62346,
     "path": "../../.output/public/posts/arlista/index.html"
   },
   "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/_payload.json": {
     "type": "application/json",
-    "etag": "\"137c-lmTT1HVpFykYOt3BluExi1ZjZRs\"",
-    "mtime": "2024-10-27T16:56:11.663Z",
+    "etag": "\"137c-/BYjPrZtWDiriDKi5n5HylE0XYs\"",
+    "mtime": "2024-10-28T11:02:29.572Z",
     "size": 4988,
     "path": "../../.output/public/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/_payload.json"
   },
   "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ebe5-siLIqN//osNZ4/nlSN+vCuy0qMg\"",
-    "mtime": "2024-10-27T16:56:10.729Z",
+    "etag": "\"ebe5-gtZ0nMp503lHnBd1TVHs08eaUoQ\"",
+    "mtime": "2024-10-28T11:02:29.308Z",
     "size": 60389,
     "path": "../../.output/public/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben/index.html"
   },
   "/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/_payload.json": {
     "type": "application/json",
-    "etag": "\"1320-QbyCzgVtXJ/JL1zlL1O6MpZf5+g\"",
-    "mtime": "2024-10-27T16:56:12.155Z",
+    "etag": "\"1320-On+OTk50lE46MkGsPYzDF6Nowg0\"",
+    "mtime": "2024-10-28T11:02:29.572Z",
     "size": 4896,
     "path": "../../.output/public/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/_payload.json"
   },
   "/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"eb91-GdR3uTU7S5ABNZ02YR6rD1m0GlQ\"",
-    "mtime": "2024-10-27T16:56:10.729Z",
+    "etag": "\"eb91-vKz9T6l3gn1G98ziBTbXMBHtVs0\"",
+    "mtime": "2024-10-28T11:02:29.308Z",
     "size": 60305,
     "path": "../../.output/public/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben/index.html"
   },
-  "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/_payload.json": {
-    "type": "application/json",
-    "etag": "\"2e08-h19Ck02k+KmY6DsWUy6jAJiI984\"",
-    "mtime": "2024-10-27T16:56:12.892Z",
-    "size": 11784,
-    "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/_payload.json"
-  },
-  "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/index.html": {
-    "type": "text/html; charset=utf-8",
-    "etag": "\"104da-yzFxF4n30H0hW8ZL9hfFZ02IkQg\"",
-    "mtime": "2024-10-27T16:56:12.845Z",
-    "size": 66778,
-    "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/index.html"
-  },
   "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/_payload.json": {
     "type": "application/json",
-    "etag": "\"2c02-xLDXLaH+fQVNpPVm8ZcYotYo1KQ\"",
-    "mtime": "2024-10-27T16:56:12.887Z",
+    "etag": "\"2c02-l07/4rCQAENVm3s1es/snVQaob4\"",
+    "mtime": "2024-10-28T11:02:30.534Z",
     "size": 11266,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"1028b-2EHst8SUYFG88Mj/qyZEG5hSTP8\"",
-    "mtime": "2024-10-27T16:56:12.840Z",
+    "etag": "\"1028b-uDcbIvOjL7zdG0w3ghBoRE5Sflw\"",
+    "mtime": "2024-10-28T11:02:30.530Z",
     "size": 66187,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere/index.html"
   },
+  "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/_payload.json": {
+    "type": "application/json",
+    "etag": "\"2e08-7gQiTAr1ED0moibD7KrWCHOCxEY\"",
+    "mtime": "2024-10-28T11:02:30.498Z",
+    "size": 11784,
+    "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/_payload.json"
+  },
+  "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/index.html": {
+    "type": "text/html; charset=utf-8",
+    "etag": "\"104da-HJW6b222UQchuKMg1XMB0hG14ic\"",
+    "mtime": "2024-10-28T11:02:30.487Z",
+    "size": 66778,
+    "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel/index.html"
+  },
   "/posts/ingek-mosasa-es-vasalasa-budapesten/_payload.json": {
     "type": "application/json",
-    "etag": "\"612-VMecl8H3cyygaq2cWURTBeburYU\"",
-    "mtime": "2024-10-27T16:56:12.411Z",
+    "etag": "\"612-K8l35xphr2JDefzB3xTjebhrYLE\"",
+    "mtime": "2024-10-28T11:02:30.155Z",
     "size": 1554,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"de6d-Q5M8qKibQuDL6A9jZl6SYXU8BsA\"",
-    "mtime": "2024-10-27T16:56:12.374Z",
+    "etag": "\"de6d-I9Zd72692dO5nwpVKUjE1OOIq7c\"",
+    "mtime": "2024-10-28T11:02:30.150Z",
     "size": 56941,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten/index.html"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/_payload.json": {
     "type": "application/json",
-    "etag": "\"1bc3-SZuSBl9LfO9fYkhXiAH4jpzgmHE\"",
-    "mtime": "2024-10-27T16:56:12.410Z",
+    "etag": "\"1bc3-F9lEDbiwek7Pq+HmtAphoADZwX4\"",
+    "mtime": "2024-10-28T11:02:29.950Z",
     "size": 7107,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/_payload.json"
   },
   "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"f321-A7qZCMYDHvUStE3PpKRKSFpgfpQ\"",
-    "mtime": "2024-10-27T16:56:12.372Z",
+    "etag": "\"f321-mbYovRQSXgX2p0jUe3Ebn+Yqiuc\"",
+    "mtime": "2024-10-28T11:02:29.944Z",
     "size": 62241,
     "path": "../../.output/public/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere/index.html"
   },
   "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/_payload.json": {
     "type": "application/json",
-    "etag": "\"35c4-W/N3UIUg0Y1ovUURKliMQALpF58\"",
-    "mtime": "2024-10-27T16:56:12.410Z",
+    "etag": "\"35c4-r7U8HplxAf3FlBFA7FJiGb4Hves\"",
+    "mtime": "2024-10-28T11:02:30.070Z",
     "size": 13764,
     "path": "../../.output/public/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/_payload.json"
   },
   "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"10c1d-i+snOu8hR49aEnIt3dOqrCvMByU\"",
-    "mtime": "2024-10-27T16:56:12.374Z",
+    "etag": "\"10c1d-hWF3jwr8D0gW73RmdyFBY54AIyc\"",
+    "mtime": "2024-10-28T11:02:30.058Z",
     "size": 68637,
     "path": "../../.output/public/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre/index.html"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/_payload.json": {
     "type": "application/json",
-    "etag": "\"146f-d3tR22UNRsJqTU5qJOhR4EEDlxc\"",
-    "mtime": "2024-10-27T16:56:11.637Z",
+    "etag": "\"146f-4u8aF+qeTyZDC3QnNOoHPi8Wa8M\"",
+    "mtime": "2024-10-28T11:02:29.558Z",
     "size": 5231,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/_payload.json"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ecf1-ypVkrm81iIaqU6UnK1pNq+V1rDI\"",
-    "mtime": "2024-10-27T16:56:10.698Z",
+    "etag": "\"ecf1-iYa4/5Hg7awsG1O+ryzOqcovwzA\"",
+    "mtime": "2024-10-28T11:02:28.985Z",
     "size": 60657,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas/index.html"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/_payload.json": {
     "type": "application/json",
-    "etag": "\"13ff-RMg+YCHw/SqKvYkPg5bOjDis6MY\"",
-    "mtime": "2024-10-27T16:56:12.895Z",
+    "etag": "\"13ff-F71rfslcjXlouAM4wzDZ0VaFjpI\"",
+    "mtime": "2024-10-28T11:02:30.501Z",
     "size": 5119,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/_payload.json"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ecbb-KUk3w2TiOCuWIJkFaQy8SLUfbJY\"",
-    "mtime": "2024-10-27T16:56:12.860Z",
+    "etag": "\"ecbb-Qo8lncQyWR0s0iQH0NziLraJ48Y\"",
+    "mtime": "2024-10-28T11:02:30.488Z",
     "size": 60603,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas/index.html"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/_payload.json": {
     "type": "application/json",
-    "etag": "\"15c8-ulJhNtmMuT/dURupJO/Jbach2RE\"",
-    "mtime": "2024-10-27T16:56:12.892Z",
+    "etag": "\"15c8-OVMMDUs163RWxUu6IYK2sK+Dgw4\"",
+    "mtime": "2024-10-28T11:02:30.498Z",
     "size": 5576,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/_payload.json"
   },
   "/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"ee21-+SHlNsmrBfF1pIaBB4OLVdBA07A\"",
-    "mtime": "2024-10-27T16:56:12.840Z",
+    "etag": "\"ee21-R/mgGAoVW3I7qALiXBumwyT49m0\"",
+    "mtime": "2024-10-28T11:02:30.487Z",
     "size": 60961,
     "path": "../../.output/public/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen/index.html"
   },
   "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/_payload.json": {
     "type": "application/json",
-    "etag": "\"2b44-vMe+QEyHJrdufaVmn2vwplIaUU8\"",
-    "mtime": "2024-10-27T16:56:12.410Z",
+    "etag": "\"2b44-cbzOJ6vwPy5uONiPBdKbxLKR/Q0\"",
+    "mtime": "2024-10-28T11:02:29.908Z",
     "size": 11076,
     "path": "../../.output/public/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/_payload.json"
   },
   "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"10274-dzYPe/rG3/R8f2BsUdZ0U1xjjE0\"",
-    "mtime": "2024-10-27T16:56:12.372Z",
+    "etag": "\"10274-JaPt7WLYDExFHGFg1rwN1GRvUt4\"",
+    "mtime": "2024-10-28T11:02:29.874Z",
     "size": 66164,
     "path": "../../.output/public/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik/index.html"
   },
   "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/_payload.json": {
     "type": "application/json",
-    "etag": "\"1548-WnxS5NcpLmoSeK7oF/DkJV8uiEw\"",
-    "mtime": "2024-10-27T16:56:12.893Z",
+    "etag": "\"1548-xSxGz2lterQoRuafUhG2SgK23hU\"",
+    "mtime": "2024-10-28T11:02:30.553Z",
     "size": 5448,
     "path": "../../.output/public/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/_payload.json"
   },
   "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/index.html": {
     "type": "text/html; charset=utf-8",
-    "etag": "\"edbc-gfTaznsMF+SNHGmwyj0fixXaLbc\"",
-    "mtime": "2024-10-27T16:56:12.855Z",
+    "etag": "\"edbc-564Ppgh1aoD94lqAs7wnz0jVn7Q\"",
+    "mtime": "2024-10-28T11:02:30.546Z",
     "size": 60860,
     "path": "../../.output/public/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben/index.html"
   },
   "/_ipx/_/img/contact.webp": {
     "type": "image/webp",
     "etag": "\"57f06-kBwH14OyHNiR2Ez2rNYGP8GhTfs\"",
-    "mtime": "2024-10-27T16:56:13.716Z",
+    "mtime": "2024-10-28T11:02:30.902Z",
     "size": 360198,
     "path": "../../.output/public/_ipx/_/img/contact.webp"
   },
   "/_ipx/_/img/subpage.webp": {
     "type": "image/webp",
     "etag": "\"6ca02-jCg0T6hvVH9tpZQbEM6sCIZKf9c\"",
-    "mtime": "2024-10-27T16:56:13.567Z",
+    "mtime": "2024-10-28T11:02:30.804Z",
     "size": 444930,
     "path": "../../.output/public/_ipx/_/img/subpage.webp"
   },
   "/_ipx/_/img/footer/contact.webp": {
     "type": "image/webp",
     "etag": "\"8794-xmQ99fZ2MHML/idtVagxvOZnJmI\"",
-    "mtime": "2024-10-27T16:56:09.514Z",
+    "mtime": "2024-10-28T11:02:28.504Z",
     "size": 34708,
     "path": "../../.output/public/_ipx/_/img/footer/contact.webp"
   },
   "/_ipx/_/img/footer/facebook.svg": {
     "type": "image/svg+xml",
     "etag": "\"31a-u4eK4v1DuWoO5P/SgKGUxM+OXTY\"",
-    "mtime": "2024-10-27T16:56:09.514Z",
+    "mtime": "2024-10-28T11:02:28.512Z",
     "size": 794,
     "path": "../../.output/public/_ipx/_/img/footer/facebook.svg"
   },
   "/_ipx/_/img/footer/instagram.svg": {
     "type": "image/svg+xml",
     "etag": "\"72d-kJGLi1L61e5RC7Eop/P5UEIQgiQ\"",
-    "mtime": "2024-10-27T16:56:10.259Z",
+    "mtime": "2024-10-28T11:02:28.947Z",
     "size": 1837,
     "path": "../../.output/public/_ipx/_/img/footer/instagram.svg"
   },
   "/_ipx/_/img/footer/mail.svg": {
     "type": "image/svg+xml",
     "etag": "\"2f2-Kv22crsj/zxXlGAV6cyeR9kdWw4\"",
-    "mtime": "2024-10-27T16:56:10.242Z",
+    "mtime": "2024-10-28T11:02:29.167Z",
     "size": 754,
     "path": "../../.output/public/_ipx/_/img/footer/mail.svg"
   },
   "/_ipx/_/img/footer/map.svg": {
     "type": "image/svg+xml",
     "etag": "\"32a-QTbn0MKypDfnNL+yly+A849B7ZQ\"",
-    "mtime": "2024-10-27T16:56:10.242Z",
+    "mtime": "2024-10-28T11:02:28.985Z",
     "size": 810,
     "path": "../../.output/public/_ipx/_/img/footer/map.svg"
   },
   "/_ipx/_/img/footer/phone.svg": {
     "type": "image/svg+xml",
     "etag": "\"88f-GDrfhrYobTQ9QvvM2G2OT1doBws\"",
-    "mtime": "2024-10-27T16:56:10.242Z",
+    "mtime": "2024-10-28T11:02:29.167Z",
     "size": 2191,
     "path": "../../.output/public/_ipx/_/img/footer/phone.svg"
   },
   "/_ipx/_/img/header/logo.svg": {
     "type": "image/svg+xml",
     "etag": "\"1e63-wiumMY3OxieHJqpjPuoS+OjYghw\"",
-    "mtime": "2024-10-27T16:56:09.514Z",
+    "mtime": "2024-10-28T11:02:28.985Z",
     "size": 7779,
     "path": "../../.output/public/_ipx/_/img/header/logo.svg"
-  },
-  "/_ipx/_/img/slider/slider-elem.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"bc4-sKVoN+mzM51iDEXwShuzchg8+UU\"",
-    "mtime": "2024-10-27T16:56:09.520Z",
-    "size": 3012,
-    "path": "../../.output/public/_ipx/_/img/slider/slider-elem.svg"
-  },
-  "/_ipx/_/img/slider/slider-elem2.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"427a-nJOwct+FrN8ztQcNIE/U3r4VXtA\"",
-    "mtime": "2024-10-27T16:56:09.514Z",
-    "size": 17018,
-    "path": "../../.output/public/_ipx/_/img/slider/slider-elem2.svg"
-  },
-  "/_ipx/_/img/slider/slider.webp": {
-    "type": "image/webp",
-    "etag": "\"a20a-wihyip3CAIOFir8lyvmPc9tcUNQ\"",
-    "mtime": "2024-10-27T16:56:10.335Z",
-    "size": 41482,
-    "path": "../../.output/public/_ipx/_/img/slider/slider.webp"
   },
   "/_ipx/_/img/page-information/page-information.webp": {
     "type": "image/webp",
     "etag": "\"13a1a-Y9LZz4Li+W1iPBmwVQ3p6+sfm4Q\"",
-    "mtime": "2024-10-27T16:56:10.733Z",
+    "mtime": "2024-10-28T11:02:29.573Z",
     "size": 80410,
     "path": "../../.output/public/_ipx/_/img/page-information/page-information.webp"
   },
   "/_ipx/_/img/page-information/page-information2.webp": {
     "type": "image/webp",
     "etag": "\"bb0e-i69gjUnvKAaMcqqaK0DwvsL0olk\"",
-    "mtime": "2024-10-27T16:56:12.154Z",
+    "mtime": "2024-10-28T11:02:29.816Z",
     "size": 47886,
     "path": "../../.output/public/_ipx/_/img/page-information/page-information2.webp"
-  },
-  "/_ipx/_/img/services/map.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"668-ZU1c2poXN71h5TdkDOsTbks3Jpw\"",
-    "mtime": "2024-10-27T16:56:10.272Z",
-    "size": 1640,
-    "path": "../../.output/public/_ipx/_/img/services/map.svg"
-  },
-  "/_ipx/_/img/services/phone.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"51e-eEY0a1ZgdVYGfX0QAoK5HEFUJbA\"",
-    "mtime": "2024-10-27T16:56:09.514Z",
-    "size": 1310,
-    "path": "../../.output/public/_ipx/_/img/services/phone.svg"
-  },
-  "/_ipx/_/img/services/services.webp": {
-    "type": "image/webp",
-    "etag": "\"15e6e-qW/XSj10VsI6OVG2QP5J7tAjG98\"",
-    "mtime": "2024-10-27T16:56:10.335Z",
-    "size": 89710,
-    "path": "../../.output/public/_ipx/_/img/services/services.webp"
-  },
-  "/_ipx/_/img/services/services2.webp": {
-    "type": "image/webp",
-    "etag": "\"3acd0-cdzRZmQPf2I4VswjaJYrHX5ekrw\"",
-    "mtime": "2024-10-27T16:56:10.335Z",
-    "size": 240848,
-    "path": "../../.output/public/_ipx/_/img/services/services2.webp"
-  },
-  "/_ipx/_/img/services/services3.webp": {
-    "type": "image/webp",
-    "etag": "\"a6f0-wrZFn9/+nfLlQphtliR3x+YtR6Y\"",
-    "mtime": "2024-10-27T16:56:10.335Z",
-    "size": 42736,
-    "path": "../../.output/public/_ipx/_/img/services/services3.webp"
-  },
-  "/_ipx/_/img/services/services4.webp": {
-    "type": "image/webp",
-    "etag": "\"14210-iySuyK2RvbP3NB9ujXxuumT94Gs\"",
-    "mtime": "2024-10-27T16:56:10.336Z",
-    "size": 82448,
-    "path": "../../.output/public/_ipx/_/img/services/services4.webp"
-  },
-  "/_ipx/_/img/services/services5.webp": {
-    "type": "image/webp",
-    "etag": "\"17622-CJFCbv6YJvv/UuT91+/mh27pXg0\"",
-    "mtime": "2024-10-27T16:56:10.336Z",
-    "size": 95778,
-    "path": "../../.output/public/_ipx/_/img/services/services5.webp"
-  },
-  "/_ipx/_/img/services/services6.webp": {
-    "type": "image/webp",
-    "etag": "\"18554-c8GplmAAKACXijEPXoIxFMHcjBU\"",
-    "mtime": "2024-10-27T16:56:10.336Z",
-    "size": 99668,
-    "path": "../../.output/public/_ipx/_/img/services/services6.webp"
-  },
-  "/_ipx/_/img/services/services7.webp": {
-    "type": "image/webp",
-    "etag": "\"e998-9ZB0XI2K/eU3HT77nlzY/DNccps\"",
-    "mtime": "2024-10-27T16:56:10.338Z",
-    "size": 59800,
-    "path": "../../.output/public/_ipx/_/img/services/services7.webp"
-  },
-  "/_ipx/_/img/services/services8.webp": {
-    "type": "image/webp",
-    "etag": "\"17b88-l56xRrkxnjT+jTPI8RGcG8rMjYM\"",
-    "mtime": "2024-10-27T16:56:10.481Z",
-    "size": 97160,
-    "path": "../../.output/public/_ipx/_/img/services/services8.webp"
-  },
-  "/_ipx/_/img/services/services9.webp": {
-    "type": "image/webp",
-    "etag": "\"cac0-OJNrATXKd3K+5D9nZ6iwxveJ9dI\"",
-    "mtime": "2024-10-27T16:56:10.725Z",
-    "size": 51904,
-    "path": "../../.output/public/_ipx/_/img/services/services9.webp"
-  },
-  "/_ipx/_/img/services/time.svg": {
-    "type": "image/svg+xml",
-    "etag": "\"474-MNmi1NiqXaa9HPFWtzArIN5SURw\"",
-    "mtime": "2024-10-27T16:56:09.511Z",
-    "size": 1140,
-    "path": "../../.output/public/_ipx/_/img/services/time.svg"
   },
   "/_ipx/_/img/prices/action.svg": {
     "type": "image/svg+xml",
     "etag": "\"bd6-CP7fPrwyWN8t6mHcyJEY4agTftM\"",
-    "mtime": "2024-10-27T16:56:10.304Z",
+    "mtime": "2024-10-28T11:02:29.254Z",
     "size": 3030,
     "path": "../../.output/public/_ipx/_/img/prices/action.svg"
   },
   "/_ipx/_/img/prices/prices.svg": {
     "type": "image/svg+xml",
     "etag": "\"2851-8M4Rm+iiLBgrM7LVCkjX4WOuIVA\"",
-    "mtime": "2024-10-27T16:56:10.337Z",
+    "mtime": "2024-10-28T11:02:29.273Z",
     "size": 10321,
     "path": "../../.output/public/_ipx/_/img/prices/prices.svg"
   },
   "/_ipx/_/img/prices/prices2.svg": {
     "type": "image/svg+xml",
     "etag": "\"256f-VpmJvofMwMmzx/1x4iZEhZ/hE3o\"",
-    "mtime": "2024-10-27T16:56:10.337Z",
+    "mtime": "2024-10-28T11:02:29.273Z",
     "size": 9583,
     "path": "../../.output/public/_ipx/_/img/prices/prices2.svg"
   },
   "/_ipx/_/img/prices/prices3.svg": {
     "type": "image/svg+xml",
     "etag": "\"3cdb-zmgYnfZhzOB0mfVwT4SG1dYcpm4\"",
-    "mtime": "2024-10-27T16:56:10.339Z",
+    "mtime": "2024-10-28T11:02:29.273Z",
     "size": 15579,
     "path": "../../.output/public/_ipx/_/img/prices/prices3.svg"
   },
   "/_ipx/_/img/prices/prices4.svg": {
     "type": "image/svg+xml",
     "etag": "\"226c-COzP6BqLvC5D21gsiWr18n+GKUk\"",
-    "mtime": "2024-10-27T16:56:10.364Z",
+    "mtime": "2024-10-28T11:02:29.287Z",
     "size": 8812,
     "path": "../../.output/public/_ipx/_/img/prices/prices4.svg"
   },
   "/_ipx/_/img/prices/prices5.svg": {
     "type": "image/svg+xml",
     "etag": "\"4fd-QZcvI6uPBbNY4lT45Rb08Bi+sxo\"",
-    "mtime": "2024-10-27T16:56:10.679Z",
+    "mtime": "2024-10-28T11:02:29.314Z",
     "size": 1277,
     "path": "../../.output/public/_ipx/_/img/prices/prices5.svg"
   },
   "/_ipx/_/img/prices/prices6.svg": {
     "type": "image/svg+xml",
     "etag": "\"199b-DgmdXVAUism/fa9hYQDEWe3fPNU\"",
-    "mtime": "2024-10-27T16:56:10.683Z",
+    "mtime": "2024-10-28T11:02:29.347Z",
     "size": 6555,
     "path": "../../.output/public/_ipx/_/img/prices/prices6.svg"
+  },
+  "/_ipx/_/img/slider/slider-elem.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"bc4-sKVoN+mzM51iDEXwShuzchg8+UU\"",
+    "mtime": "2024-10-28T11:02:28.985Z",
+    "size": 3012,
+    "path": "../../.output/public/_ipx/_/img/slider/slider-elem.svg"
+  },
+  "/_ipx/_/img/slider/slider-elem2.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"427a-nJOwct+FrN8ztQcNIE/U3r4VXtA\"",
+    "mtime": "2024-10-28T11:02:29.167Z",
+    "size": 17018,
+    "path": "../../.output/public/_ipx/_/img/slider/slider-elem2.svg"
+  },
+  "/_ipx/_/img/slider/slider.webp": {
+    "type": "image/webp",
+    "etag": "\"a20a-wihyip3CAIOFir8lyvmPc9tcUNQ\"",
+    "mtime": "2024-10-28T11:02:29.254Z",
+    "size": 41482,
+    "path": "../../.output/public/_ipx/_/img/slider/slider.webp"
+  },
+  "/_ipx/_/img/services/map.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"668-ZU1c2poXN71h5TdkDOsTbks3Jpw\"",
+    "mtime": "2024-10-28T11:02:29.237Z",
+    "size": 1640,
+    "path": "../../.output/public/_ipx/_/img/services/map.svg"
+  },
+  "/_ipx/_/img/services/phone.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"51e-eEY0a1ZgdVYGfX0QAoK5HEFUJbA\"",
+    "mtime": "2024-10-28T11:02:28.947Z",
+    "size": 1310,
+    "path": "../../.output/public/_ipx/_/img/services/phone.svg"
+  },
+  "/_ipx/_/img/services/services.webp": {
+    "type": "image/webp",
+    "etag": "\"15e6e-qW/XSj10VsI6OVG2QP5J7tAjG98\"",
+    "mtime": "2024-10-28T11:02:29.254Z",
+    "size": 89710,
+    "path": "../../.output/public/_ipx/_/img/services/services.webp"
+  },
+  "/_ipx/_/img/services/services2.webp": {
+    "type": "image/webp",
+    "etag": "\"3acd0-cdzRZmQPf2I4VswjaJYrHX5ekrw\"",
+    "mtime": "2024-10-28T11:02:29.255Z",
+    "size": 240848,
+    "path": "../../.output/public/_ipx/_/img/services/services2.webp"
+  },
+  "/_ipx/_/img/services/services3.webp": {
+    "type": "image/webp",
+    "etag": "\"a6f0-wrZFn9/+nfLlQphtliR3x+YtR6Y\"",
+    "mtime": "2024-10-28T11:02:29.254Z",
+    "size": 42736,
+    "path": "../../.output/public/_ipx/_/img/services/services3.webp"
+  },
+  "/_ipx/_/img/services/services4.webp": {
+    "type": "image/webp",
+    "etag": "\"14210-iySuyK2RvbP3NB9ujXxuumT94Gs\"",
+    "mtime": "2024-10-28T11:02:29.255Z",
+    "size": 82448,
+    "path": "../../.output/public/_ipx/_/img/services/services4.webp"
+  },
+  "/_ipx/_/img/services/services5.webp": {
+    "type": "image/webp",
+    "etag": "\"17622-CJFCbv6YJvv/UuT91+/mh27pXg0\"",
+    "mtime": "2024-10-28T11:02:29.273Z",
+    "size": 95778,
+    "path": "../../.output/public/_ipx/_/img/services/services5.webp"
+  },
+  "/_ipx/_/img/services/services6.webp": {
+    "type": "image/webp",
+    "etag": "\"18554-c8GplmAAKACXijEPXoIxFMHcjBU\"",
+    "mtime": "2024-10-28T11:02:29.285Z",
+    "size": 99668,
+    "path": "../../.output/public/_ipx/_/img/services/services6.webp"
+  },
+  "/_ipx/_/img/services/services7.webp": {
+    "type": "image/webp",
+    "etag": "\"e998-9ZB0XI2K/eU3HT77nlzY/DNccps\"",
+    "mtime": "2024-10-28T11:02:29.273Z",
+    "size": 59800,
+    "path": "../../.output/public/_ipx/_/img/services/services7.webp"
+  },
+  "/_ipx/_/img/services/services8.webp": {
+    "type": "image/webp",
+    "etag": "\"17b88-l56xRrkxnjT+jTPI8RGcG8rMjYM\"",
+    "mtime": "2024-10-28T11:02:29.299Z",
+    "size": 97160,
+    "path": "../../.output/public/_ipx/_/img/services/services8.webp"
+  },
+  "/_ipx/_/img/services/services9.webp": {
+    "type": "image/webp",
+    "etag": "\"cac0-OJNrATXKd3K+5D9nZ6iwxveJ9dI\"",
+    "mtime": "2024-10-28T11:02:29.348Z",
+    "size": 51904,
+    "path": "../../.output/public/_ipx/_/img/services/services9.webp"
+  },
+  "/_ipx/_/img/services/time.svg": {
+    "type": "image/svg+xml",
+    "etag": "\"474-MNmi1NiqXaa9HPFWtzArIN5SURw\"",
+    "mtime": "2024-10-28T11:02:28.512Z",
+    "size": 1140,
+    "path": "../../.output/public/_ipx/_/img/services/time.svg"
   }
 };
 
@@ -3030,7 +3030,7 @@ const _lTXVz9 = lazyEventHandler(() => {
 });
 
 const _lazy_9aWIgi = () => import('./routes/api/sitemap.mjs');
-const _lazy_eiIGDu = () => import('./_/renderer.mjs').then(function (n) { return n.r; });
+const _lazy_eiIGDu = () => import('./build/server.mjs').then(function (n) { return n.r; });
 
 const handlers = [
   { route: '', handler: _f4b49z, lazy: false, middleware: true, method: undefined },

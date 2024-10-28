@@ -206,7 +206,7 @@ const sendEmail = async () => {
               <p class="footer-content__bottom__infoBox__header__lBox__p">
                 <a
                   class="footer-content__bottom__infoBox__header__lBox__p__link text-color-w"
-                  href="tel:+36307777609"
+                  href="tel:+36307777009"
                 >
                   <NuxtImg
                     src="/img/footer/phone.svg"
@@ -214,7 +214,7 @@ const sendEmail = async () => {
                     class="footer-content__bottom__infoBox__header__lBox__img"
                     height="100%"
                   />
-                  +36 30 777 7609
+                  +36 30 777 7009
                 </a>
               </p>
               <p class="footer-content__bottom__infoBox__header__lBox__p">

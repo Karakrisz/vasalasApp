@@ -1,0 +1,1 @@
+import{u as t}from"./BwcwqZgP.js";import{c as e,o}from"./BmlboR7Z.js";const a={class:"subpage-content subpage-footer-content"},_={__name:"kapcsolat",setup(s){return t({title:"Kapcsolat"}),(c,n)=>(o(),e("div",a))}};export{_ as default};

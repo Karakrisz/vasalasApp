@@ -1,6 +1,13 @@
 <script setup>
 useHead({
-  title: 'Árlista',
+  title: 'Árlista - Vasalás Mester',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Professzionális ingvasalási szolgáltatások Budapesten és környékén a Vasalás Mesterrel. Környezetbarát eljárások és csomagolás.',
+    },
+  ],
 })
 </script>
 

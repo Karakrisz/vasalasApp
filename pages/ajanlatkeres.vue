@@ -1,6 +1,13 @@
 <script setup>
 useHead({
-  title: 'Ajánlatkérés',
+  title: 'Ajánlatkérés - Vasalás Mester',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Professzionális ingvasalási szolgáltatások Budapesten és környékén a Vasalás Mesterrel. Környezetbarát eljárások és csomagolás.',
+    },
+  ],
 })
 </script>
 
@@ -69,7 +76,7 @@ useHead({
       </div>
       <div class="blog-slug-content__linkBox text-center">
         <a
-          href="tel:+36307777609"
+          href="tel:+36307777009"
           class="blog-slug-content__linkBox__link text-color-w f-700"
         >
           IGEN, hívás most!

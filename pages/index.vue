@@ -71,8 +71,8 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             <p class="services-content__iTextBox-content__tBox__p">
               <a
                 class="services-content__iTextBox-content__tBox__link f-300 text-color"
-                href="tel:+36707777609"
-                >06 70 7777 609</a
+                href="tel:+36307777009"
+                >06 30 7777 009</a
               >
             </p>
           </div>
